@@ -157,8 +157,7 @@ ol {
 	padding: 17px 25px;
 	min-width: 170px;
 	color: #fff;
-	background: #2916e0;
-	line-height: 1;
+	background: #f05941 line-height: 1;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	text-align: center;
@@ -210,12 +209,14 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		transform: rotate(180deg);
 		border: 4px solid #673ab7;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
@@ -230,11 +231,13 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		border: 4px solid #673ab7;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		border: 4px solid #f44336;
@@ -361,8 +364,7 @@ ol {
 }
 
 .site-logo {
-	background: #2916e0;
-	width: calc(100% - 90px);
+	background: #f05941 width: calc(100% - 90px);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -431,7 +433,7 @@ ol {
 
 .main-menu ul li a:hover,
 .main-menu ul li a.active {
-	color: #2916e0;
+	color: #f05941
 }
 
 .sm-footer {
@@ -484,7 +486,7 @@ ol {
 }
 
 .copyright-text a:hover {
-	color: #2916e0;
+	color: #f05941
 }
 
 /*---------------------
@@ -529,8 +531,7 @@ ol {
 	padding: 4px 20px;
 	margin-bottom: 10px;
 	font-size: 12px;
-	color: #2916e0;
-	text-transform: uppercase;
+	color: #f05941 text-transform: uppercase;
 	font-weight: 600;
 	border-radius: 2px;
 	background: #fff;
@@ -546,6 +547,7 @@ ol {
 
 @media only screen and (min-width: 576px) and (max-width: 767px),
 only screen and (min-width: 768px) and (max-width: 991px) {
+
 	.pana-accordion-item .pa-text h2,
 	.hero-item .pa-text h2 {
 		font-size: 48px;
@@ -553,6 +555,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 @media (max-width: 576px) {
+
 	.pana-accordion-item .pa-text h2,
 	.hero-item .pa-text h2 {
 		font-size: 36px;
@@ -560,6 +563,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 @media (max-width: 420px) {
+
 	.pana-accordion-item .pa-text h2,
 	.hero-item .pa-text h2 {
 		font-size: 24px;
@@ -574,6 +578,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 @media (max-width: 420px) {
+
 	.pana-accordion-item .pa-text h4,
 	.hero-item .pa-text h4 {
 		font-size: 16px;
@@ -717,13 +722,15 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .about-section .about-left {
-	background: #2916e0;
+	background: #f05941;
+	/* brand orange */
 	-ms-flex: 0 0 47%;
 	-webkit-box-flex: 0;
 	flex: 0 0 47%;
 	max-width: 47%;
 	padding: 0 15px;
 }
+
 
 @media only screen and (min-width: 992px) and (max-width: 1200px),
 only screen and (min-width: 768px) and (max-width: 991px),
@@ -838,8 +845,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 .about-text h2 {
 	display: inline-block;
 	padding-bottom: 8px;
-	border-bottom: 3px solid #2916e0;
-	margin-bottom: 20px;
+	border-bottom: 3px solid #f05941 margin-bottom: 20px;
 }
 
 .about-text p {
@@ -1004,7 +1010,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .gallery-filter li.active {
-	color: #2916e0;
+	color: #f05941
 }
 
 .grid-sizer,
@@ -1013,6 +1019,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
 	.grid-sizer,
 	.gallery-item {
 		width: 25%;
@@ -1021,6 +1028,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (min-width: 576px) and (max-width: 767px) {
+
 	.grid-sizer,
 	.gallery-item {
 		width: 50%;
@@ -1028,6 +1036,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 @media (max-width: 576px) {
+
 	.grid-sizer,
 	.gallery-item {
 		width: 100%;
@@ -1154,7 +1163,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 .fr-thumbnail-active {
-	border: 2px solid #2916e0;
+	border: 2px solid #f05941
 }
 
 /*----------------
@@ -1178,6 +1187,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
+
 	.blog-grid-sizer,
 	.blog-grid {
 		width: 25%;
@@ -1185,6 +1195,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
 	.blog-grid-sizer,
 	.blog-grid {
 		width: 33.333333%;
@@ -1193,6 +1204,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (min-width: 576px) and (max-width: 767px) {
+
 	.blog-grid-sizer,
 	.blog-grid {
 		width: 50%;
@@ -1200,10 +1212,12 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 @media (max-width: 576px) {
+
 	.blog-grid-sizer,
 	.blog-grid {
 		width: 100%;
 	}
+
 	.blog-grid-sizer img,
 	.blog-grid img {
 		min-height: 250px;
@@ -1246,8 +1260,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 	margin-bottom: 10px;
 	font-size: 12px;
 	letter-spacing: 2px;
-	color: #2916e0;
-	text-transform: uppercase;
+	color: #f05941 text-transform: uppercase;
 	font-weight: 600;
 	border-radius: 2px;
 	background: #fff;
@@ -1352,8 +1365,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 	margin-bottom: 10px;
 	font-size: 12px;
 	letter-spacing: 2px;
-	color: #2916e0;
-	text-transform: uppercase;
+	color: #f05941 text-transform: uppercase;
 	font-weight: 600;
 	border-radius: 2px;
 	background: #fff;
@@ -1384,8 +1396,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 	text-align: center;
 	letter-spacing: 2px;
 	border-radius: 2px;
-	color: #2916e0;
-	background: #ebebeb;
+	color: #f05941 background: #ebebeb;
 	-webkit-transition: 0.3s;
 	-o-transition: 0.3s;
 	transition: 0.3s;
@@ -1393,7 +1404,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 .post-cata:hover {
 	color: #fff;
-	background: #2916e0;
+	background: #f05941
 }
 
 .post-share span {
@@ -1410,15 +1421,13 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 	height: 36px;
 	text-align: center;
 	padding-top: 8px;
-	color: #2916e0;
-	border-radius: 52px;
+	color: #f05941 border-radius: 52px;
 	margin-left: 4px;
 	background: #ebebeb;
 }
 
 .post-share a:hover {
-	background: #2916e0;
-	color: #fff;
+	background: #f05941 color: #fff;
 }
 
 .blog-navigation {
@@ -1654,9 +1663,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 .comment-option .single-comment-item .sc-text .comment-btn:hover {
-	background: #2916e0;
-	border-color: #2916e0;
-	color: #fff;
+	background: #f05941 border-color: #f05941 color: #fff;
 }
 
 .comment-form .row {
@@ -1686,7 +1693,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 .comment-form form input:focus,
 .comment-form form textarea:focus {
-	border: 1px solid #2916e0;
+	border: 1px solid #f05941
 }
 
 .comment-form form input::-webkit-input-placeholder,
@@ -1747,8 +1754,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 500;
-	background: #2916e0;
-	border: none;
+	background: #f05941 border: none;
 	padding: 13px 37px 12px;
 	border-radius: 50px;
 }
@@ -1809,8 +1815,7 @@ only screen and (min-width: 992px) and (max-width: 1200px),
 .contact-info i {
 	display: block;
 	font-size: 48px;
-	color: #2916e0;
-	margin-bottom: 20px;
+	color: #f05941 margin-bottom: 20px;
 }
 
 .contact-info p {
