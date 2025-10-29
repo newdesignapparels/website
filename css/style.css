@@ -1234,6 +1234,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 .blog-grid {
 	padding: 0 5px;
+
 	margin-bottom: 10px;
 }
 
@@ -2004,4 +2005,9 @@ body {
 .blog-grid-warp {
   background: #fff;
   padding: 40px 0;
+}
+
+.blog-grid {
+  padding-left: 75px; /* adds gap outside iframe */
+  box-sizing: border-box;
 }
