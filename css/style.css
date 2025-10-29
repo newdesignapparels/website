@@ -1968,18 +1968,40 @@ body {
 
 
 
-
-/* Allow touch scrolling even when iframes are on screen */
+/* Allow mobile scrolling with embedded Instagram reels */
 .blog-section {
-  -webkit-overflow-scrolling: touch;
+  position: relative;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.blog-grid iframe {
-  pointer-events: none; /* prevents iframe from blocking swipe */
+/* Wrapper for reels */
+.blog-grid {
+  position: relative;
+  padding-left: 20px; /* your requested left gap */
+  padding-right: 20px;
 }
 
-.blog-grid iframe:hover,
-.blog-grid iframe:focus {
-  pointer-events: auto; /* re-enable interaction when tapped */
+/* iframe wrapper fix */
+.blog-item {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y !important;
+}
+
+/* Instagram iframe */
+.blog-item iframe {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  border: none;
+  background: #fff;
+  pointer-events: auto; /* allow clicks */
+}
+
+/* Make sure the white background shows */
+.blog-grid-warp {
+  background: #fff;
+  padding: 40px 0;
 }

@@ -61,7 +61,8 @@
 		}
 
 		.blog-grid {
-			padding-left: 100px; /* adds gap outside iframe */
+			padding-left: 100px;
+			/* adds gap outside iframe */
 			width: 100%;
 			max-width: 600px;
 			margin-bottom: 70px;
@@ -216,6 +217,20 @@
 	</section>
 
 	<!-- Scripts -->
+
+	<script>
+		document.querySelectorAll('.blog-item iframe').forEach(iframe => {
+			iframe.addEventListener('touchstart', e => {
+				e.stopPropagation(); // allow tap to interact with reel
+			});
+		});
+	</script>
+
+
+
+
+
+
 	<script src="js/vendor/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
