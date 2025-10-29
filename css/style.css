@@ -1830,23 +1830,24 @@ only screen and (min-width: 992px) and (max-width: 1200px),
 
 .nice-scroll {
     width: 100%;
-    overflow-y: auto;
+    overflow: visible;
   }
 
-  /* Center content properly */
   .blog-section {
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 40px 0;
   }
 
   .blog-grid-warp {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 900px; /* Controls how wide your reels column is */
+    max-width: 900px;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 0 15px;
   }
 
   .blog-grid {
@@ -1860,12 +1861,19 @@ only screen and (min-width: 992px) and (max-width: 1200px),
     width: 100%;
     height: 600px;
     border: none;
+    pointer-events: auto; /* keeps reel interactive */
   }
 
-  /* Optional: small shadow + smooth layout */
+  /* Optional: nice clean background & spacing */
   .blog-item {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     overflow: hidden;
+  }
+
+  /* Fix scrolling on mobile Safari/Chrome */
+  body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
