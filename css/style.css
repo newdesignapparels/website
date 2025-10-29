@@ -1828,190 +1828,56 @@ only screen and (min-width: 992px) and (max-width: 1200px),
 
   
 
-
-
-
-
-/* Enable normal scrolling everywhere */
-html, body {
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  margin: 0;
-  padding: 0;
-}
-
-/* Let the nice-scroll wrapper stay neutral (won’t block touch) */
 .nice-scroll {
-  width: 100%;
-  overflow: unset !important;
-  position: relative;
-}
+    width: 100%;
+    overflow: visible;
+  }
 
-/* Center the blog layout */
-.blog-section {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 40px 0;
-  background: #fafafa;
-}
+  .blog-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 0;
+  }
 
-/* Grid container for posts */
-.blog-grid-warp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+  .blog-grid-warp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 
-/* Each post section */
-.blog-grid {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 70px; /* spacing between reels */
-  text-align: center;
-}
+  .blog-grid {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 50px;
+  }
 
-/* Instagram title between reels */
-.bi-tag {
-  display: inline-block;
-  background: #f5f5f5;
-  color: #333;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  padding: 10px 22px;
-  border-radius: 30px;
-  margin: 40px 0;
-  cursor: default;
-  user-select: none;
-}
-
-/* Fix iframe scroll blocking on touch screens */
-.blog-item iframe {
-  display: block;
-  width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 10px;
-  pointer-events: none; /* prevents iframe from stealing swipe */
-}
-
-.blog-item iframe:focus,
-.blog-item iframe:hover {
-  pointer-events: auto; /* user can still tap to interact */
-}
-
-/* Container around each reel */
-.blog-item {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
-
-/* Responsive tweak for mobile */
-@media (max-width: 768px) {
   .blog-item iframe {
-    height: 500px;
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: none;
+    pointer-events: auto; /* keeps reel interactive */
   }
 
-  .bi-tag {
-    margin: 30px 0;
-  }
-}
-
-
-
-
-
-
-html, body {
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  margin: 0;
-  padding: 0;
-}
-
-.nice-scroll {
-  width: 100%;
-  overflow: unset !important;
-  position: relative;
-}
-
-.blog-section {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 40px 0;
-  background: #fafafa;
-}
-
-.blog-grid-warp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.blog-grid {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 70px;
-  text-align: center;
-}
-
-.bi-tag {
-  display: inline-block;
-  background: #f5f5f5;
-  color: #333;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  padding: 10px 22px;
-  border-radius: 30px;
-  margin: 40px 0;
-  user-select: none;
-}
-
-/* ✅ FIX: Re-enable scroll and swipe */
-.blog-item {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  touch-action: pan-y pinch-zoom; /* allow vertical scrolling & pinch */
-  -ms-touch-action: pan-y pinch-zoom;
-}
-
-/* ✅ Allow iframe touches but prevent scroll-blocking */
-.blog-item iframe {
-  display: block;
-  width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 10px;
-  pointer-events: auto;
-  touch-action: manipulation;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .blog-item iframe {
-    height: 500px;
+  /* Optional: nice clean background & spacing */
+  .blog-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
   }
 
-  .bi-tag {
-    margin: 30px 0;
+  /* Fix scrolling on mobile Safari/Chrome */
+  body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
-}
+
+
+
+  
