@@ -1877,3 +1877,87 @@ only screen and (min-width: 992px) and (max-width: 1200px),
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
   }
+
+
+
+  .blog-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 0;
+  }
+
+  .blog-grid-warp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .blog-grid {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 80px; /* adds big space for swipe */
+    text-align: center;
+  }
+
+  .bi-tag {
+    display: inline-block;
+    background: #f5f5f5;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-top: 40px;     /* space above tag */
+    margin-bottom: 40px;  /* space below tag */
+    cursor: default;
+    user-select: none;
+  }
+
+  .blog-item iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .blog-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  /* Optional extra swipe space after each reel */
+  .blog-grid::after {
+    content: "";
+    display: block;
+    height: 50px; /* blank touch area */
+    width: 100%;
+  }
+
+
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+	 }
+
+
+	 .bi-text {
+    text-align: center;
+  }
+
+  /* Keep reels spaced apart for swipe area */
+  .blog-grid {
+    margin-bottom: 50px;
+  }
