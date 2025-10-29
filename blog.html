@@ -15,6 +15,94 @@
   <link rel="stylesheet" href="css/fresco.css"/>
   <link rel="stylesheet" href="css/owl.carousel.min.css"/>
   <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    /* --- Mobile & Desktop scroll + touch fix --- */
+    html, body {
+      height: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nice-scroll {
+      width: 100%;
+      overflow: visible !important;
+      position: relative;
+      touch-action: pan-y pinch-zoom;
+    }
+
+    .blog-section {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    .blog-grid-warp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .blog-grid {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 70px;
+      text-align: center;
+      touch-action: pan-y pinch-zoom;
+    }
+
+    /* make space between reels touch-friendly */
+    .bi-tag {
+      display: inline-block;
+      background: #f5f5f5;
+      color: #333;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      padding: 10px 22px;
+      border-radius: 30px;
+      margin: 40px 0;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .blog-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      touch-action: pan-y pinch-zoom;
+    }
+
+    /* allow scrolling & touch inside reels without blocking */
+    .blog-item iframe {
+      display: block;
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+      pointer-events: auto;
+      touch-action: manipulation;
+    }
+
+    .bi-text {
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .blog-item iframe {
+        height: 500px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Page Preloader -->
@@ -64,7 +152,6 @@
   <section class="blog-section">
     <div class="nice-scroll">
       <div class="blog-grid-warp">
-        <div class="blog-grid-sizer"></div>
 
         <!-- Reel 1 -->
         <div class="blog-grid">
@@ -102,19 +189,19 @@
           </div>
         </div>
 
-		<!-- Reel 4 -->
+        <!-- Reel 4 -->
         <div class="blog-grid">
           <div class="blog-item">
             <iframe width="100%" height="600" src="https://www.instagram.com/reel/DQLlaTRkfqp/embed" frameborder="0" allowfullscreen></iframe>
-            <div class="bi-tag">Instagramssss</div>
+            <div class="bi-tag">Instagram</div> 
             <div class="bi-text">
               <div class="bi-date">October 2025 | NDIA</div>
-              <h3><a href="https://www.instagram.com/reel/DQLlaTRkfqp/">View on Instagram</a></h3>  DPd5gYHCU2O
+              <h3><a href="https://www.instagram.com/reel/DQLlaTRkfqp/">View on Instagram</a></h3>
             </div>
           </div>
         </div>
 
-		<!-- Reel 5 -->
+        <!-- Reel 5 -->
         <div class="blog-grid">
           <div class="blog-item">
             <iframe width="100%" height="600" src="https://www.instagram.com/reel/DPd5gYHCU2O/embed" frameborder="0" allowfullscreen></iframe>
