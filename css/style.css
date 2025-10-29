@@ -1963,3 +1963,23 @@ body {
     margin: 0 auto;
   }
 }
+
+
+
+
+
+
+/* Allow touch scrolling even when iframes are on screen */
+.blog-section {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+.blog-grid iframe {
+  pointer-events: none; /* prevents iframe from blocking swipe */
+}
+
+.blog-grid iframe:hover,
+.blog-grid iframe:focus {
+  pointer-events: auto; /* re-enable interaction when tapped */
+}
