@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/style.css"/>
 
   <style>
-    /* --- Mobile & Desktop scroll + touch fix --- */
+    /* ✅ Global scroll fix for mobile + desktop */
     html, body {
       height: auto;
       overflow-x: hidden;
@@ -25,6 +25,23 @@
       -webkit-overflow-scrolling: touch;
       margin: 0;
       padding: 0;
+      background: #fff; /* restore white base */
+    }
+
+    /* ✅ Sidebar background fix only for blog page */
+    .side-menu-wrapper {
+      background: #fff;
+      z-index: 1000;
+    }
+
+    /* ✅ Blog section layout */
+    .blog-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      padding: 40px 0;
+      background: #fafafa;
     }
 
     .nice-scroll {
@@ -32,13 +49,6 @@
       overflow: visible !important;
       position: relative;
       touch-action: pan-y pinch-zoom;
-    }
-
-    .blog-section {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      padding: 40px 0;
     }
 
     .blog-grid-warp {
@@ -59,7 +69,7 @@
       touch-action: pan-y pinch-zoom;
     }
 
-    /* make space between reels touch-friendly */
+    /* --- Title between reels (clickable space-friendly) --- */
     .bi-tag {
       display: inline-block;
       background: #f5f5f5;
@@ -74,6 +84,7 @@
       pointer-events: none;
     }
 
+    /* --- Reel container --- */
     .blog-item {
       background: #fff;
       border-radius: 10px;
@@ -82,7 +93,6 @@
       touch-action: pan-y pinch-zoom;
     }
 
-    /* allow scrolling & touch inside reels without blocking */
     .blog-item iframe {
       display: block;
       width: 100%;
@@ -156,7 +166,7 @@
         <!-- Reel 1 -->
         <div class="blog-grid">
           <div class="blog-item">
-            <iframe width="100%" height="600" src="https://www.instagram.com/reel/DNA_7KGvm0e/embed" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.instagram.com/reel/DNA_7KGvm0e/embed" allowfullscreen></iframe>
             <div class="bi-tag">Instagram</div>
             <div class="bi-text">
               <div class="bi-date">October 2025 | NDIA</div>
@@ -168,7 +178,7 @@
         <!-- Reel 2 -->
         <div class="blog-grid">
           <div class="blog-item">
-            <iframe width="100%" height="600" src="https://www.instagram.com/reel/DLpO74wyNBG/embed" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.instagram.com/reel/DLpO74wyNBG/embed" allowfullscreen></iframe>
             <div class="bi-tag">Instagram</div>
             <div class="bi-text">
               <div class="bi-date">October 2025 | NDIA</div>
@@ -180,7 +190,7 @@
         <!-- Reel 3 -->
         <div class="blog-grid">
           <div class="blog-item">
-            <iframe width="100%" height="600" src="https://www.instagram.com/reel/C2xKhpqPO1k/embed" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.instagram.com/reel/C2xKhpqPO1k/embed" allowfullscreen></iframe>
             <div class="bi-tag">Instagram</div>
             <div class="bi-text">
               <div class="bi-date">October 2025 | NDIA</div>
@@ -192,7 +202,7 @@
         <!-- Reel 4 -->
         <div class="blog-grid">
           <div class="blog-item">
-            <iframe width="100%" height="600" src="https://www.instagram.com/reel/DQLlaTRkfqp/embed" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.instagram.com/reel/DQLlaTRkfqp/embed" allowfullscreen></iframe>
             <div class="bi-tag">Instagram</div> 
             <div class="bi-text">
               <div class="bi-date">October 2025 | NDIA</div>
@@ -204,7 +214,7 @@
         <!-- Reel 5 -->
         <div class="blog-grid">
           <div class="blog-item">
-            <iframe width="100%" height="600" src="https://www.instagram.com/reel/DPd5gYHCU2O/embed" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.instagram.com/reel/DPd5gYHCU2O/embed" allowfullscreen></iframe>
             <div class="bi-tag">Instagram</div>
             <div class="bi-text">
               <div class="bi-date">October 2025 | NDIA</div>
