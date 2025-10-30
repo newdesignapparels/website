@@ -2112,5 +2112,34 @@ only screen and (min-width: 992px) and (max-width: 1200px),
 
 
 
+/* Keyframes for text animation */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Default state (visible but ready for animation) */
+.hero-mobile-text {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease;
+}
+
+/* Active animation */
+.hero-mobile-text.animate {
+  animation: slideUpFade 0.8s ease both;
+}
+
+
+
+
+
+
 
 
