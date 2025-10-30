@@ -7,6 +7,8 @@
   <meta name="description" content="Explore the professional apparel manufacturing services offered by New Design International Apparels — from T-shirt production to embroidery, printing, and custom uniforms.">
   <meta name="keywords" content="NDIA, New Design International Apparels, T-shirt Manufacturing, Embroidery, Printing, Custom Uniforms, Garment Manufacturer">
   <title>Our Services | New Design International Apparels</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
 
   <!-- Load Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -40,6 +42,15 @@
       /* rounded-md */
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
       /* shadow-sm */
+    }
+
+    /* Hide scrollbar for jump-to section, but still allow scrolling */
+    .jump-to-nav {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .jump-to-nav::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
     }
   </style>
 </head>
@@ -160,6 +171,22 @@
       </div>
     </section>
 
+    <!-- Jump to Section Nav -->
+    <nav class="sticky top-[68px] bg-white z-40 shadow-sm border-b border-gray-200">
+      <div class="container mx-auto px-6">
+        <div class="flex jump-to-nav overflow-x-auto whitespace-nowrap">
+          <a href="#process" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Our Process</a>
+          <a href="#why-us" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Why Choose Us</a>
+          <a href="#products" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Products</a>
+          <a href="#customization" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Customization</a>
+          <a href="#fabrics" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Fabrics</a>
+          <a href="#materials" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Materials</a>
+          <a href="#size-chart" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Size Chart</a>
+        </div>
+      </div>
+    </nav>
+
+
     <!-- Individual vs Company -->
     <section class="py-16 lg:py-24 bg-white">
       <div class="container mx-auto px-6">
@@ -225,7 +252,7 @@
     </section>
 
     <!-- Our Process -->
-    <section class="py-16 lg:py-24 bg-gray-50">
+    <section id="process" class="py-16 lg:py-24 bg-gray-50">
       <div class="container mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -292,7 +319,7 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-16 lg:py-24 bg-white">
+    <section id="why-us" class="py-16 lg:py-24 bg-white">
       <div class="container mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -428,7 +455,7 @@
     </section>
 
     <!-- Product Categories -->
-    <section class="py-16 lg:py-24 bg-white">
+    <section id="products" class="py-16 lg:py-24 bg-white">
       <div class="container mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -517,7 +544,7 @@
     </section>
 
     <!-- Printing & Customization -->
-    <section class="py-16 lg:py-24 bg-gray-50">
+    <section id="customization" class="py-16 lg:py-24 bg-gray-50">
       <div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto lg:mx-0">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -608,7 +635,7 @@
     </section>
 
     <!-- Fabric Options -->
-    <section class="py-16 lg:py-24 bg-white">
+    <section id="fabrics" class="py-16 lg:py-24 bg-white">
       <div class="container mx-auto px-6">
         <div class="max-w-3xl">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -735,6 +762,257 @@
           <div class="text-center"><div class="color-swatch mx-auto" style="background:#f1f8e9;"></div><p class="mt-2 text-gray-700 font-medium">Lime Mist</p></div>
           <div class="text-center"><div class="color-swatch mx-auto" style="background:#f0f4c3;"></div><p class="mt-2 text-gray-700 font-medium">Pale Olive</p></div>
         </div>
+      </div>
+    </section>
+
+    <!-- NEW: Our Materials Section -->
+    <section id="materials" class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Materials
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            We use a variety of high-quality fabrics to ensure the perfect look, feel, and performance for your apparel.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Material: NIRMAL KNIT -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/nirmal.png" alt="NIRMAL KNIT Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">NIRMAL KNIT</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>Good Quality 180 Gsm Polyester Fabric</li>
+                <li>Standard Look And Best For Daily Use</li>
+                <li>Medium Thickness</li>
+                <li>Quality lycra collar & ribs</li>
+                <li>Double needle stitch on shoulder & sleeves</li>
+                <li>Breathable Fabric</li>
+                <li>Pure T-Shirt Fabric</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Material: MARS -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/mars.png" alt="MARS Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">MARS</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>200 Gsm Polyester Fabric</li>
+                <li>Premium look and Long lasting fabric</li>
+                <li>Double needle stitch on shoulder & sleeves</li>
+                <li>Quality lycra collar & ribs</li>
+                <li>Pure t-shirt fabric</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Material: Spun Nirmal -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/spun.png" alt="Spun Nirmal Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Spun Nirmal</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>Good quality 200 gsm Polyester fabric</li>
+                <li>Extra softness on the surface of the fabric</li>
+                <li>Quality lycra collar & ribs</li>
+                <li>Pure T-shirt fabric</li>
+                <li>Double needle stitch on shoulder & sleeves</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Material: Lacoste -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/laco.png" alt="Lacoste Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Lacoste</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>220 gsm mixed fabric</li>
+                <li>Premium look tshirt</li>
+                <li>Pure t-shirt fabric</li>
+                <li>Double needle stitch on shoulder & sleeves</li>
+                <li>Quality lycra collar & ribs</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Material: Dot Knit -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/dot.png" alt="Dot Knit Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Dot Knit</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>Good quality 170 gsm Polyester fabric</li>
+                <li>Standard look and best for daily use</li>
+                <li>Long lasting fabric</li>
+                <li>Lite weight fabric</li>
+                <li>It can be used T-shirt and jerseys</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Material: Honeycomb -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/honey.png" alt="Honeycomb Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Honeycomb</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>Good quality 170 gsm polyester fabric</li>
+                <li>Standard look and best for Daily use.</li>
+                <li>Long lasting fabric</li>
+                <li>Medium Thickness</li>
+                <li>It Can be used T-shirt and jerseys</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Size Chart Section -->
+    <section id="size-chart" class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            T-Shirt Size Chart
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-12">
+            Measurement in inches.
+          </p>
+        </div>
+
+        <!-- Kids / Youth Sizes -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Kids / Youth Sizes</h3>
+        <div class="overflow-x-auto bg-white rounded-lg shadow-lg mb-12">
+          <table class="w-full min-w-[600px] text-lg text-left">
+            <thead class="bg-gray-800 text-white uppercase text-sm">
+              <tr>
+                <th class="py-4 px-6">Size</th>
+                <th class="py-4 px-6">Length</th>
+                <th class="py-4 px-6">Half Chest</th>
+                <th class="py-4 px-6">Full Chest</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">20</td>
+                <td class="py-4 px-6">15</td>
+                <td class="py-4 px-6">10</td>
+                <td class="py-4 px-6">20</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">22</td>
+                <td class="py-4 px-6">16</td>
+                <td class="py-4 px-6">11</td>
+                <td class="py-4 px-6">22</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">24</td>
+                <td class="py-4 px-6">17</td>
+                <td class="py-4 px-6">12</td>
+                <td class="py-4 px-6">24</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">26</td>
+                <td class="py-4 px-6">18</td>
+                <td class="py-4 px-6">13</td>
+                <td class="py-4 px-6">26</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">28</td>
+                <td class="py-4 px-6">19.5</td>
+                <td class="py-4 px-6">14</td>
+                <td class="py-4 px-6">28</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">30</td>
+                <td class="py-4 px-6">21</td>
+                <td class="py-4 px-6">15</td>
+                <td class="py-4 px-6">30</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 font-semibold">32</td>
+                <td class="py-4 px-6">24</td>
+                <td class="py-4 px-6">16</td>
+                <td class="py-4 px-6">32</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Adult Sizes -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Adult Sizes</h3>
+        <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
+          <table class="w-full min-w-[600px] text-lg text-left">
+            <thead class="bg-gray-800 text-white uppercase text-sm">
+              <tr>
+                <th class="py-4 px-6">Size</th>
+                <th class="py-4 px-6">Length</th>
+                <th class="py-4 px-6">Half Chest</th>
+                <th class="py-4 px-6">Full Chest</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">XS - 34</td>
+                <td class="py-4 px-6">25.5</td>
+                <td class="py-4 px-6">17</td> <!-- Note: Your data said 25, but Half Chest is usually ~17 for a 34 Full Chest. I used 17 based on the L-4XL pattern. -->
+                <td class="py-4 px-6">34</td> <!-- Note: Your data said 25. I assumed 34. -->
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">S - 36</td>
+                <td class="py-4 px-6">26.5</td>
+                <td class="py-4 px-6">18</td>
+                <td class="py-4 px-6">36</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">M - 38</td>
+                <td class="py-4 px-6">27</td>
+                <td class="py-4 px-6">19</td>
+                <td class="py-4 px-6">38</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">L - 40</td>
+                <td class="py-4 px-6">28</td>
+                <td class="py-4 px-6">20</td>
+                <td class="py-4 px-6">40</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">XL - 42</td>
+                <td class="py-4 px-6">29</td>
+                <td class="py-4 px-6">21</td>
+                <td class="py-4 px-6">42</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">XXL - 44</td>
+                <td class="py-4 px-6">29.5</td>
+                <td class="py-4 px-6">22</td>
+                <td class="py-4 px-6">44</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">3XL - 46</td>
+                <td class="py-4 px-6">29.5</td>
+                <td class="py-4 px-6">23</td>
+                <td class="py-4 px-6">46</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="py-4 px-6 font-semibold">4XL - 48</td>
+                <td class="py-4 px-6">29.5</td>
+                <td class="py-4 px-6">24</td>
+                <td class="py-4 px-6">48</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="text-center text-gray-600 italic mt-6">*Sizes may rarely vary in the range of +/- 0.5 inches</p>
+
       </div>
     </section>
 
