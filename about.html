@@ -23,6 +23,88 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+
+<style>
+/* General spacing & typography fixes */
+.about-section {
+  padding: 60px 0;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #f05941;
+}
+
+/* Responsive image + text (Welcome Message) */
+@media (max-width: 991px) {
+  .about-section .row.align-items-center {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .about-section .row.align-items-center .col-lg-3,
+  .about-section .row.align-items-center .col-lg-9 {
+    max-width: 100%;
+    flex: 100%;
+  }
+
+  .about-section .row.align-items-center img {
+    width: 220px !important;
+    height: 220px !important;
+    border: 6px solid #f05941;
+    margin: 0 auto 20px auto !important;
+  }
+
+  .about-section .about-text {
+    padding-left: 0 !important;
+    text-align: center;
+  }
+}
+
+/* Vision & Mission section */
+section[style*="background:#1f1717"] {
+  padding: 60px 20px !important;
+  margin-top: 0 !important;
+}
+
+/* Timeline section fix */
+section[style*="background:#fff"] {
+  padding: 60px 20px !important;
+}
+
+@media (max-width: 768px) {
+  section[style*="background:#fff"] .container {
+    margin-left: 10px !important;
+  }
+
+  section[style*="background:#fff"] div[style*="border-left"] {
+    border-left: 3px solid #f05941;
+    padding-left: 25px !important;
+  }
+
+  section[style*="background:#fff"] div[style*="position:absolute; left:-85px"] {
+    left: -65px !important;
+    font-size: 14px !important;
+    min-width: 60px !important;
+    padding: 6px 10px !important;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body>
@@ -316,18 +398,7 @@
         </p>
       </div>
 
-      <!-- Center Milestone Divider -->
-      <div style="text-align:center; margin:80px 0; position:relative;">
-        <div style="display:inline-block; background:#f05941; color:#fff; padding:12px 25px; 
-                    border-radius:30px; font-weight:700; font-size:20px;">
-          ✦ Milestone ✦
-        </div>
-        <p style="text-align:center; font-size:17px; color:#333; max-width:700px; margin:15px auto 0;">
-          Celebrating years of innovation, growth, and strong partnerships that define our success.
-        </p>
-      </div>
-
-      <!-- 2022 -->
+            <!-- 2022 -->
       <div style="position:relative; margin-bottom:50px;">
         <div style="position:absolute; left:-85px; top:0; background:#f05941; color:#fff;
                     font-weight:600; padding:8px 18px; border-radius:50px; min-width:75px; text-align:center;">
