@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="New Design International Apparels - Custom T-Shirts, Uniforms, and Workwear" />
+  <meta name="keywords" content="T-Shirts, Uniforms, Apparels, Custom Printing, NDIA" />
+  <title>New Design International Apparels</title>
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icon Fonts (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Desktop Hero Accordion */
+    .hero-accordion-item {
+      flex-grow: 1;
+      transition: flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-accordion-item.active {
+      flex-grow: 10;
+    }
+    
+    .hero-accordion-item .hero-text {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease-out 0.2s, transform 0.3s ease-out 0.2s;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    }
+
+    .hero-accordion-item.active .hero-text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Mobile Hero Slider */
+    .hero-slider-track {
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-slider-item {
+      flex-shrink: 0;
+      width: 100%;
+      position: relative;
+    }
+    
+    .hero-mobile-text {
+       background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+       padding-bottom: 5.5rem; /* Increased padding to avoid dot overlap */
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 
+    Mobile Off-canvas Menu 
+    (Hidden by default, shown by 'transform: translateX(0)')
+  -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
+    <!-- Menu Header -->
+    <div class="flex justify-between items-center mb-10">
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+      <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
+        <!-- Close Icon (X) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a href="index.html" class="font-semibold text-blue-600">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+      <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+      <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+      <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Footer Socials -->
+    <div class="absolute bottom-6 left-6">
+      <div class="flex space-x-5 mb-4 text-lg">
+        <!-- Social Icons (Font Awesome) -->
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="fa fa-youtube-play"></i> <!-- Changed to fa-youtube-play for consistency -->
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="copyright-text text-sm text-gray-500">
+        <p>© <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Overlay for mobile menu (when open) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
+
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="font-semibold text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+        <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+        <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+        <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Social Icons -->
+      <div class="hidden md:flex space-x-5 text-xl">
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
+        <!-- Menu Icon (Hamburger) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <!-- 
+      Hero Section: Desktop Accordion 
+      (Hidden on mobile, flex on md screens and up)
+    -->
+    <section id="hero-accordion" class="hidden md:flex w-full h-[calc(100vh-68px)] max-h-[900px]">
+      
+      <!-- Item 1 -->
+      <div class="hero-accordion-item active" style="background-image: url('img/products/1.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
+          <h2 class="text-4xl font-bold mb-2">Round Neck T-Shirts</h2>
+          <p class="text-lg max-w-lg">Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="hero-accordion-item" style="background-image: url('img/products/2.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
+          <h2 class="text-4xl font-bold mb-2">Collar / Polo T-Shirts</h2>
+          <p class="text-lg max-w-lg">Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="hero-accordion-item" style="background-image: url('img/products/3.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span class="block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full">SPORTSWEAR</span>
+          <h2 class="text-4xl font-bold mb-2">Sublimation Jerseys</h2>
+          <p class="text-lg max-w-lg">High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
+        </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="hero-accordion-item" style="background-image: url('img/products/4.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span class="block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full">BOTTOM WEAR</span>
+          <h2 class="text-4xl font-bold mb-2">Track Pants & Shorts</h2>
+          <p class="text-lg max-w-lg">Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
+        </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="hero-accordion-item" style="background-image: url('img/products/5.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span class="block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full">UNIFORMS</span>
+          <h2 class="text-4xl font-bold mb-2">School, Corporate & Hospitality Wear</h2>
+          <p class="text-lg max-w-lg">Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
+        </div>
+      </div>
+      <!-- Item 6 -->
+      <div class="hero-accordion-item" style="background-image: url('img/products/6.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span class="block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full">CHEF & INDUSTRIAL</span>
+          <h2 class="text-4xl font-bold mb-2">Chef Coats & Workwear</h2>
+          <p class="text-lg max-w-lg">Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      Hero Section: Mobile Slider
+      (Visible on mobile, hidden on md screens and up)
+    -->
+    <section id="hero-slider" class="md:hidden w-full h-[calc(100vh-68px)] max-h-[900px] overflow-hidden relative bg-gray-900 text-white">
+      <!-- Slider Track -->
+      <div class="hero-slider-track flex h-full">
+
+        <!-- Slide 1 -->
+        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/1.jpg'); background-size: cover; background-position: center;">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+            <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
+            <h2 class="text-3xl font-bold mb-2">Round Neck T-Shirts</h2>
+            <p>Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/2.jpg'); background-size: cover; background-position: center;">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+            <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
+            <h2 class="text-3xl font-bold mb-2">Collar / Polo T-Shirts</h2>
+            <p>Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/3.jpg'); background-size: cover; background-position: center;">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+            <span class="block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full">SPORTSWEAR</span>
+            <h2 class="text-3xl font-bold mb-2">Sublimation Jerseys</h2>
+            <p>High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/4.jpg'); background-size: cover; background-position: center;">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+            <span class="block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full">BOTTOM WEAR</span>
+            <h2 class="text-3xl font-bold mb-2">Track Pants & Shorts</h2>
+            <p>Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
+          </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/5.jpg'); background-size: cover; background-position: center;">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+            <span class="block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full">UNIFORMS</span>
+            <h2 class="text-3xl font-bold mb-2">School, Corporate & Hospitality Wear</h2>
+            <p>Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
+          </div>
+        </div>
+        <!-- Slide 6 -->
+        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/6.jpg'); background-size: cover; background-position: center;">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+            <span class="block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full">CHEF & INDUSTRIAL</span>
+            <h2 class="text-3xl font-bold mb-2">Chef Coats & Workwear</h2>
+            <p>Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slider Dots -->
+      <div id="slider-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
+        <!-- Dots will be generated by JS -->
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="text-sm font-semibold text-blue-600 uppercase">Welcome to NDIA</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Quality. Customization. Comfort.</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              We specialize in manufacturing premium-quality
+              <strong class="text-gray-900">custom T-shirts, uniforms, and sportswear</strong>.
+              From round-neck and polo T-shirts to sublimation jerseys and hospitality wear — we craft every piece with
+              <strong class="text-gray-900">comfort, durability, and your brand identity</strong> in mind.
+            </p>
+            <a href="about.html" class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors">
+              Read Our Story
+            </a>
+          </div>
+          <div>
+            <img src="img/about.jpg" alt="About New Design International Apparels" class="rounded-lg shadow-xl w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Services</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+          We provide end-to-end solutions, from a single custom piece to full-scale production runs, all handled in-house.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Service 1 -->
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom Printing</h3>
+            <p class="text-gray-700">High-detail DTF, vibrant Sublimation, and durable Screen Printing for any design.</p>
+          </div>
+          <!-- Service 2 -->
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0021.5 5.5V3.935m-18 0A2.5 2.5 0 015.5 1.5h13A2.5 2.5 0 0121.5 3.935m-18 0v.009A2.5 2.5 0 005.5 6.5h13A2.5 2.5 0 0021.5 3.945V3.935" /></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Embroidery</h3>
+            <p class="text-gray-700">Premium 3D stitching for logos and names on polos, chef coats, and caps.</p>
+          </div>
+          <!-- Service 3 -->
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Bulk Manufacturing</h3>
+            <p class="text-gray-700">Large-scale production for corporate uniforms, school events, and private labels.</p>
+          </div>
+        </div>
+        <a href="services.html" class="inline-block bg-blue-600 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors mt-12">
+          Explore All Services
+        </a>
+      </div>
+    </section>
+
+    <!-- Gallery Preview Section -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">From Our Gallery</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+          A glimpse into the quality and variety of our work.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg">
+            <img src="img/gallery/roundneck1.jpg" alt="Round Neck T-Shirt" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg">
+            <img src="img/gallery/jersey1.jpg" alt="Sports Jersey" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg">
+            <img src="img/gallery/chef1.jpg" alt="Chef Coat" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg">
+            <img src="img/gallery/corporate1.jpg" alt="Corporate Uniform" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+        </div>
+        <a href="gallery.html" class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors mt-12">
+          View Full Gallery
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- About -->
+        <div>
+          <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
+          <p class="text-gray-400">
+            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with comfort, durability, and your brand identity in mind.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="gallery.html" class="hover:text-white">Gallery</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="clients.html" class="hover:text-white">Clients</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
+            <a href="blog.html" class="hover:text-white">Blog</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex space-x-5 text-xl">
+            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
+              <i class="fa fa-youtube-play"></i>
+            </a>
+            <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // --- Mobile Menu ---
+      const openMenuBtn = document.getElementById("open-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      function openMenu() {
+        mobileMenu.style.transform = "translateX(0)";
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.style.transform = "translateX(-100%)";
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+
+      
+      // --- Desktop Hero Accordion ---
+      const accordionItems = document.querySelectorAll(".hero-accordion-item");
+      
+      if (accordionItems.length > 0) {
+        accordionItems.forEach(item => {
+          item.addEventListener("mouseenter", () => {
+            // Remove 'active' from all items
+            accordionItems.forEach(i => i.classList.remove("active"));
+            // Add 'active' to the hovered item
+            item.classList.add("active");
+          });
+        });
+      }
+
+      
+      // --- Mobile Hero Slider ---
+      const track = document.querySelector(".hero-slider-track");
+      if (track) {
+        const slides = Array.from(track.children);
+        const dotsContainer = document.getElementById("slider-dots");
+        let currentSlide = 0;
+        let slideInterval;
+
+        if (slides.length > 0) {
+          // Create dots
+          slides.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.classList.add("h-2", "w-2", "rounded-full", "transition-colors");
+            dot.classList.add(index === 0 ? "bg-white" : "bg-white/50");
+            dot.addEventListener("click", () => {
+              goToSlide(index);
+              resetInterval();
+            });
+            dotsContainer.appendChild(dot);
+          });
+
+          const dots = Array.from(dotsContainer.children);
+
+          function goToSlide(slideIndex) {
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+              dot.classList.toggle("bg-white", index === slideIndex);
+              dot.classList.toggle("bg-white/50", index !== slideIndex);
+            });
+            currentSlide = slideIndex;
+          }
+
+          function nextSlide() {
+            const nextSlideIndex = (currentSlide + 1) % slides.length;
+            goToSlide(nextSlideIndex);
+          }
+
+          function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
+          }
+
+          function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+          }
+
+          startInterval();
+        }
+      }
+
+    });
+  </script>
+
+</body>
+
+</html>
+

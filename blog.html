@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog & News from New Design International Apparels - Industry tips, company updates, and more.">
+  <meta name="keywords" content="NDIA, Blog, News, Apparel Tips, T-shirt Printing, Custom Uniforms">
+  <title>Blog | New Design International Apparels</title>
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 
+    Mobile Off-canvas Menu 
+  -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
+    <!-- Menu Header -->
+    <div class="flex justify-between items-center mb-10">
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+      <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
+        <!-- Close Icon (X) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+      <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+      <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+      <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Footer Socials -->
+    <div class="absolute bottom-6 left-6">
+      <div class="flex space-x-4 mb-4">
+        <!-- Social Icons (SVGs) -->
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.06-.95 9-5.15 9-9.85z"></path></svg></a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.7 2 8.3 2.1 7.1 2.1c-1.2 0-2 .3-2.7 .6c-.8 .3-1.4 .7-2 1.3c-.6.6-1 1.2-1.3 2C.4 7.1.3 7.9.3 9.1C.2 10.3.2 10.7.2 14s0 3.7.1 4.9c0 1.2.3 2 .6 2.7c.3.8 .7 1.4 1.3 2c.6.6 1.2 1 2 1.3c.7.3 1.5.6 2.7.6c1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.2 0 2-.3 2.7-.6c.8-.3 1.4-.7 2-1.3c.6-.6 1-1.2 1.3-2c.3-.7.6-1.5.6-2.7c.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c0-1.2-.3-2-.6-2.7c-.3-.8-.7-1.4-1.3-2c-.6-.6-1.2-1-2-1.3c-.7-.3-1.5-.6-2.7-.6C15.7 2.1 15.3 2 12 2zm0 2c3.2 0 3.6 0 4.8.1c1.1 0 1.7.2 2.1.4c.4.2.7.4 1 .7c.3.3.5.6.7 1c.2.4.4 1 .4 2.1c.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c0 1.1-.2 1.7-.4 2.1c-.2.4-.4.7-.7 1c-.3.3-.6.5-1 .7c-.4.2-1 .4-2.1.4c-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.1 0-1.7-.2-2.1-.4c-.4-.2-.7-.4-1-.7c-.3-.3-.5-.6-.7-1c-.2-.4-.4-1-.4-2.1c-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c0-1.1.2-1.7.4-2.1c.2-.4.4-.7.7-1c.3-.3.6-.5 1-.7c.4-.2 1-.4 2.1-.4C8.4 4.1 8.8 4 12 4zm0 4.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5s4.5-2 4.5-4.5s-2-4.5-4.5-4.5zM12 15c-1.7 0-3-1.3-3-3s1.3-3 3-3s3 1.3 3 3s-1.3 3-3 3zm4.8-5.8c-.6 0-1 .4-1 1s.4 1 1 1s1-.4 1-1s-.4-1-1-1z"></path></svg></a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2c-.2-.9-.9-1.5-1.7-1.7C20.3 4 12 4 12 4s-8.3 0-9.8.5c-.8.2-1.5.8-1.7 1.7C.5 7.7 0 10.3 0 12s.5 4.3 1 5.8c.2.9.9 1.5 1.7 1.7C4.3 20 12 20 12 20s8.3 0 9.8-.5c.8-.2 1.5-.8 1.7-1.7c.5-1.5 1-4.1 1-5.8s-.5-4.3-1-5.8zm-11 9.3V8.5l6 3.5-6 3.5z"></path></svg></a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12c0 2.1.7 4.1 1.9 5.7L2 22l4.3-1.8C7.9 21.3 9.9 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.8 0-3.6-.6-5-1.7l-.4-.2-3.7 1.5 1.5-3.6-.3-.4C3.6 15.6 3 13.8 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9zm4.4-6.8c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1-.2.2-.6.7-.7.9-.1.1-.3.1-.5.1-.2 0-.4-.1-.8-.2c-.4-.1-1.5-..5-2.8-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.6.1-.1.2-.2.4-.4.1-.1.2-.2.3-.4.1-.1.1-.2 0-.3c-.1-.1-.6-1.3-.8-1.8-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-1 1.7-.3.9-.3 1.8 0 2.8.3.9 1.8 2.9 4.3 5 2.8 2.3 3.7 3 4.4 3.3.7.3 1.3.2 1.8.1.5-.1 1.3-.5 1.5-1 .2-.4.2-.8.1-1s-.2-.2-.4-.3z"></path></svg></a>
+      </div>
+      <div class="copyright-text text-sm text-gray-500">
+        <p>© <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile menu (when open) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
+
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+        <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+        <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+        <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Social Icons -->
+      <div class="hidden md:flex space-x-4">
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.06-.95 9-5.15 9-9.85z"></path></svg></a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.7 2 8.3 2.1 7.1 2.1c-1.2 0-2 .3-2.7 .6c-.8 .3-1.4 .7-2 1.3c-.6.6-1 1.2-1.3 2C.4 7.1.3 7.9.3 9.1C.2 10.3.2 10.7.2 14s0 3.7.1 4.9c0 1.2.3 2 .6 2.7c.3.8 .7 1.4 1.3 2c.6.6 1.2 1 2 1.3c.7.3 1.5.6 2.7.6c1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.2 0 2-.3 2.7-.6c.8-.3 1.4-.7 2-1.3c.6-.6 1-1.2 1.3-2c.3-.7.6-1.5.6-2.7c.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c0-1.2-.3-2-.6-2.7c-.3-.8-.7-1.4-1.3-2c-.6-.6-1.2-1-2-1.3c-.7-.3-1.5-.6-2.7-.6C15.7 2.1 15.3 2 12 2zm0 2c3.2 0 3.6 0 4.8.1c1.1 0 1.7.2 2.1.4c.4.2.7.4 1 .7c.3.3.5.6.7 1c.2.4.4 1 .4 2.1c.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c0 1.1-.2 1.7-.4 2.1c-.2.4-.4.7-.7 1c-.3.3-.6.5-1 .7c-.4.2-1 .4-2.1.4c-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.1 0-1.7-.2-2.1-.4c-.4-.2-.7-.4-1-.7c-.3-.3-.5-.6-.7-1c-.2-.4-.4-1-.4-2.1c-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c0-1.1.2-1.7.4-2.1c.2-.4.4-.7.7-1c.3-.3.6-.5 1-.7c.4-.2 1-.4 2.1-.4C8.4 4.1 8.8 4 12 4zm0 4.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5s4.5-2 4.5-4.5s-2-4.5-4.5-4.5zM12 15c-1.7 0-3-1.3-3-3s1.3-3 3-3s3 1.3 3 3s-1.3 3-3 3zm4.8-5.8c-.6 0-1 .4-1 1s.4 1 1 1s1-.4 1-1s-.4-1-1-1z"></path></svg></a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12c0 2.1.7 4.1 1.9 5.7L2 22l4.3-1.8C7.9 21.3 9.9 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.8 0-3.6-.6-5-1.7l-.4-.2-3.7 1.5 1.5-3.6-.3-.4C3.6 15.6 3 13.8 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9zm4.4-6.8c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1-.2.2-.6.7-.7.9-.1.1-.3.1-.5.1-.2 0-.4-.1-.8-.2c-.4-.1-1.5-..5-2.8-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.6.1-.1.2-.2.4-.4.1-.1.2-.2.3-.4.1-.1.1-.2 0-.3c-.1-.1-.6-1.3-.8-1.8-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-1 1.7-.3.9-.3 1.8 0 2.8.3.9 1.8 2.9 4.3 5 2.8 2.3 3.7 3 4.4 3.3.7.3 1.3.2 1.8.1.5-.1 1.3-.5 1.5-1 .2-.4.2-.8.1-1s-.2-.2-.4-.3z"></path></svg></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
+        <!-- Menu Icon (Hamburger) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Page Header -->
+    <section class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold">Our Blog & News</h1>
+        <p class="text-lg text-gray-300 mt-4">Industry insights, company updates, and apparel tips.</p>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+
+          <!-- Blog Post 1 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="blog-post-1.html" class="block">
+              <img src="https://placehold.co/600x400/f97316/white?text=Printing+Tips" alt="Blog Post Image" class="w-full h-48 object-cover">
+            </a>
+            <div class="p-6 flex-grow">
+              <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-4">Industry Tips</span>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                <a href="blog-post-1.html" class="hover:text-blue-600">DTF vs. Screen Printing: Which is Right for You?</a>
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Choosing the right printing method is key. We break down the pros and cons of DTF and screen printing for your next project.
+              </p>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="blog-post-1.html" class="font-semibold text-blue-600 hover:text-blue-700">Read More &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Blog Post 2 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="blog-post-2.html" class="block">
+              <img src="https://placehold.co/600x400/3b82f6/white?text=Company+News" alt="Blog Post Image" class="w-full h-48 object-cover">
+            </a>
+            <div class="p-6 flex-grow">
+              <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-4">Company News</span>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                <a href="blog-post-2.html" class="hover:text-blue-600">NDIA Expands Operations to Bangalore</a>
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                We are excited to announce our new branch in Bangalore, bringing our quality and service closer to our clients in Karnataka.
+              </p>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="blog-post-2.html" class="font-semibold text-blue-600 hover:text-blue-700">Read More &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Blog Post 3 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="blog-post-3.html" class="block">
+              <img src="https://placehold.co/600x400/10b981/white?text=Fabric+Guide" alt="Blog Post Image" class="w-full h-48 object-cover">
+            </a>
+            <div class="p-6 flex-grow">
+              <span class="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full uppercase mb-4">Apparel Guide</span>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                <a href="blog-post-3.html" class="hover:text-blue-600">5 Tips for Designing the Perfect Team Jersey</a>
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                From choosing the right fabric (like Dry-Fit) to picking colors that pop, here are our top tips for creating a jersey your team will love.
+              </p>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="blog-post-3.html" class="font-semibold text-blue-600 hover:text-blue-700">Read More &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- About -->
+        <div>
+          <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
+          <p class="text-gray-400">
+            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with comfort, durability, and your brand identity in mind.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="gallery.html" class="hover:text-white">Gallery</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="clients.html" class="hover:text-white">Clients</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
+            <a href="blog.html" class="hover:text-white">Blog</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.06-.95 9-5.15 9-9.85z"></path></svg></a>
+            <a href="httpsAs you requested, I'll update the navigation menus in `contact.html` to include all the new pages: "Clients," "FAQ," and "Blog."
+
+This will be the final file update to make your entire site's navigation consistent.
+
+Here is the updated `contact.html` file.
+.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.7 2 8.3 2.1 7.1 2.1c-1.2 0-2 .3-2.7 .6c-.8 .3-1.4 .7-2 1.3c-.6.6-1 1.2-1.3 2C.4 7.1.3 7.9.3 9.1C.2 10.3.2 10.7.2 14s0 3.7.1 4.9c0 1.2.3 2 .6 2.7c.3.8 .7 1.4 1.3 2c.6.6 1.2 1 2 1.3c.7.3 1.5.6 2.7.6c1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.2 0 2-.3 2.7-.6c.8-.3 1.4-.7 2-1.3c.6-.6 1-1.2 1.3-2c.3-.7.6-1.5.6-2.7c.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c0-1.2-.3-2-.6-2.7c-.3-.8-.7-1.4-1.3-2c-.6-.6-1.2-1-2-1.3c-.7-.3-1.5-.6-2.7-.6C15.7 2.1 15.3 2 12 2zm0 2c3.2 0 3.6 0 4.8.1c1.1 0 1.7.2 2.1.4c.4.2.7.4 1 .7c.3.3.5.6.7 1c.2.4.4 1 .4 2.1c.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c0 1.1-.2 1.7-.4 2.1c-.2.4-.4.7-.7 1c-.3.3-.6.5-1 .7c-.4.2-1 .4-2.1.4c-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.1 0-1.7-.2-2.1-.4c-.4-.2-.7-.4-1-.7c-.3-.3-.5-.6-.7-1c-.2-.4-.4-1-.4-2.1c-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c0-1.1.2-1.7.4-2.1c.2-.4.4-.7.7-1c.3-.3.6-.5 1-.7c.4-.2 1-.4 2.1-.4C8.4 4.1 8.8 4 12 4zm0 4.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5s4.5-2 4.5-4.5s-2-4.5-4.5-4.5zM12 15c-1.7 0-3-1.3-3-3s1.3-3 3-3s3 1.3 3 3s-1.3 3-3 3zm4.8-5.8c-.6 0-1 .4-1 1s.4 1 1 1s1-.4 1-1s-.4-1-1-1z"></path></svg></a>
+            <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2c-.2-.9-.9-1.5-1.7-1.7C20.3 4 12 4 12 4s-8.3 0-9.8.5c-.8.2-1.5.8-1.7 1.7C.5 7.7 0 10.3 0 12s.5 4.3 1 5.8c.2.9.9 1.5 1.7 1.7C4.3 20 12 20 12 20s8.3 0 9.8-.5c.8-.2 1.5-.8 1.7-1.7c.5-1.5 1-4.1 1-5.8s-.5-4.3-1-5.8zm-11 9.3V8.5l6 3.5-6 3.5z"></path></svg></a>
+            <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12c0 2.1.7 4.1 1.9 5.7L2 22l4.3-1.8C7.9 21.3 9.9 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.8 0-3.6-.6-5-1.7l-.4-.2-3.7 1.5 1.5-3.6-.3-.4C3.6 15.6 3 13.8 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9zm4.4-6.8c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1-.2.2-.6.7-.7.9-.1.1-.3.1-.5.1-.2 0-.4-.1-.8-.2c-.4-.1-1.5-..5-2.8-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.6.1-.1.2-.2.4-.4.1-.1.2-.2.3-.4.1-.1.1-.2 0-.3c-.1-.1-.6-1.3-.8-1.8-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-1 1.7-.3.9-.3 1.8 0 2.8.3.9 1.8 2.9 4.3 5 2.8 2.3 3.7 3 4.4 3.3.7.3 1.3.2 1.8.1.5-.1 1.3-.5 1.5-1 .2-.4.2-.8.1-1s-.2-.2-.4-.3z"></path></svg></a>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // --- Mobile Menu ---
+      const openMenuBtn = document.getElementById("open-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      function openMenu() {
+        mobileMenu.style.transform = "translateX(0)";
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.style.transform = "translateX(-100%)";
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+
+    });
+  </script>
+
+</body>
+
+</html>
+
