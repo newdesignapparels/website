@@ -2092,6 +2092,20 @@ only screen and (min-width: 992px) and (max-width: 1200px),
 
 
 
+/* Remove dark dimming effect from mobile hero images */
+@media (max-width: 768px) {
+  .hero-item::after {
+    display: none !important;
+  }
+
+  .hero-item {
+    filter: brightness(1) !important;
+  }
+
+  .hero-item .hero-mobile-text {
+    background: rgba(0, 0, 0, 0.55); /* keep text readable */
+  }
+}
 
 
 
