@@ -16,7 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Icon Fonts (Font Awesome) -->
+  <!-- Icon Fonts (Themify and Font Awesome) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
@@ -62,7 +63,7 @@
     
     .hero-mobile-text {
        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-       padding-bottom: 5.5rem; /* Increased padding to avoid dot overlap */
+       /* padding-bottom removed, Tailwind class pb-24 used instead */
     }
 
     /* Mobile Menu Transition */
@@ -107,15 +108,15 @@
     <!-- Footer Socials -->
     <div class="absolute bottom-6 left-6">
       <div class="flex space-x-5 mb-4 text-lg">
-        <!-- Social Icons (Font Awesome) -->
+        <!-- Social Icons (Original) -->
         <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
-          <i class="fa fa-facebook"></i>
+          <i class="ti-facebook"></i>
         </a>
         <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
-          <i class="fa fa-instagram"></i>
+          <i class="ti-instagram"></i>
         </a>
         <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
-          <i class="fa fa-youtube-play"></i> <!-- Changed to fa-youtube-play for consistency -->
+          <i class="ti-youtube"></i>
         </a>
         <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
           <i class="fa fa-whatsapp"></i>
@@ -154,13 +155,13 @@
       <!-- Desktop Social Icons -->
       <div class="hidden md:flex space-x-5 text-xl">
         <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
-          <i class="fa fa-facebook"></i>
+          <i class="ti-facebook"></i>
         </a>
         <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
-          <i class="fa fa-instagram"></i>
+          <i class="ti-instagram"></i>
         </a>
         <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
-          <i class="fa fa-youtube-play"></i>
+          <i class="ti-youtube"></i>
         </a>
         <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
           <i class="fa fa-whatsapp"></i>
@@ -245,7 +246,7 @@
 
         <!-- Slide 1 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/1.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
             <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
             <h2 class="text-3xl font-bold mb-2">Round Neck T-Shirts</h2>
             <p>Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
@@ -253,7 +254,7 @@
         </div>
         <!-- Slide 2 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/2.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
             <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
             <h2 class="text-3xl font-bold mb-2">Collar / Polo T-Shirts</h2>
             <p>Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
@@ -261,7 +262,7 @@
         </div>
         <!-- Slide 3 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/3.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
             <span class="block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full">SPORTSWEAR</span>
             <h2 class="text-3xl font-bold mb-2">Sublimation Jerseys</h2>
             <p>High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
@@ -269,7 +270,7 @@
         </div>
         <!-- Slide 4 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/4.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
             <span class="block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full">BOTTOM WEAR</span>
             <h2 class="text-3xl font-bold mb-2">Track Pants & Shorts</h2>
             <p>Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
@@ -277,7 +278,7 @@
         </div>
         <!-- Slide 5 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/5.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
             <span class="block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full">UNIFORMS</span>
             <h2 class="text-3xl font-bold mb-2">School, Corporate & Hospitality Wear</h2>
             <p>Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
@@ -285,7 +286,7 @@
         </div>
         <!-- Slide 6 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/6.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full p-8">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
             <span class="block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full">CHEF & INDUSTRIAL</span>
             <h2 class="text-3xl font-bold mb-2">Chef Coats & Workwear</h2>
             <p>Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
@@ -423,13 +424,13 @@
           <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
           <div class="flex space-x-5 text-xl">
             <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook">
-              <i class="fa fa-facebook"></i>
+              <i class="ti-facebook"></i>
             </a>
             <a href="https://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram">
-              <i class="fa fa-instagram"></i>
+              <i class="ti-instagram"></i>
             </a>
             <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
-              <i class="fa fa-youtube-play"></i>
+              <i class="ti-youtube"></i>
             </a>
             <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp">
               <i class="fa fa-whatsapp"></i>
@@ -488,12 +489,16 @@
 
       
       // --- Mobile Hero Slider ---
+      const slider = document.getElementById("hero-slider");
       const track = document.querySelector(".hero-slider-track");
-      if (track) {
+
+      if (slider && track) {
         const slides = Array.from(track.children);
         const dotsContainer = document.getElementById("slider-dots");
         let currentSlide = 0;
         let slideInterval;
+        let startX = 0;
+        let endX = 0;
 
         if (slides.length > 0) {
           // Create dots
@@ -511,6 +516,13 @@
           const dots = Array.from(dotsContainer.children);
 
           function goToSlide(slideIndex) {
+            // Clamp slideIndex
+            if (slideIndex < 0) {
+              slideIndex = slides.length - 1;
+            } else if (slideIndex >= slides.length) {
+              slideIndex = 0;
+            }
+
             track.style.transform = `translateX(-${slideIndex * 100}%)`;
             dots.forEach((dot, index) => {
               dot.classList.toggle("bg-white", index === slideIndex);
@@ -523,6 +535,11 @@
             const nextSlideIndex = (currentSlide + 1) % slides.length;
             goToSlide(nextSlideIndex);
           }
+          
+          function prevSlide() {
+            const prevSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(prevSlideIndex);
+          }
 
           function startInterval() {
             slideInterval = setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
@@ -533,7 +550,38 @@
             startInterval();
           }
 
-          startInterval();
+          // --- Touch Swipe Logic ---
+          slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            clearInterval(slideInterval); // Pause auto-slide on touch
+          }, { passive: true });
+
+          slider.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+          }, { passive: true });
+
+          slider.addEventListener('touchend', () => {
+            if (startX === 0 || endX === 0) {
+              startInterval(); // Resume auto-slide if it was just a tap
+              return; 
+            }
+            
+            const diff = startX - endX;
+            if (Math.abs(diff) > 50) { // 50px threshold for a swipe
+              if (diff > 0) {
+                // Swiped left
+                nextSlide();
+              } else {
+                // Swiped right
+                prevSlide();
+              }
+            }
+            startX = 0;
+            endX = 0;
+            startInterval(); // Resume auto-slide
+          });
+
+          startInterval(); // Start auto-slide on load
         }
       }
 
