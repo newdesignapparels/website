@@ -41,14 +41,15 @@
     
     .hero-accordion-item .hero-text {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.3s ease-out 0.2s, transform 0.3s ease-out 0.2s;
+      visibility: hidden; /* Hide by default */
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+      /* transform is now handled by child animations */
     }
 
     .hero-accordion-item.active .hero-text {
       opacity: 1;
-      transform: translateY(0);
+      visibility: visible; /* Show when active */
     }
     
     /* Mobile Hero Slider */
@@ -70,6 +71,38 @@
     /* Mobile Menu Transition */
     #mobile-menu {
       transition: transform 0.3s ease-in-out;
+    }
+
+    /* --- NEW ANIMATION STYLES --- */
+    
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Base animation utility (hidden by default) */
+    .will-animate {
+      opacity: 0;
+    }
+    
+    /* Class to trigger animation */
+    .animate-fade-in-up {
+      animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Delay utilities */
+    .animation-delay-200 {
+      animation-delay: 0.2s;
+    }
+    .animation-delay-300 {
+      animation-delay: 0.3s;
     }
   </style>
 </head>
@@ -190,49 +223,49 @@
       <!-- Item 1 -->
       <div class="hero-accordion-item active" style="background-image: url('img/products/1.jpg'); background-size: cover; background-position: center;">
         <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
-          <h2 class="text-4xl font-bold mb-2">Round Neck T-Shirts</h2>
-          <p class="text-lg max-w-lg">Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
+          <span class="hero-item-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Round Neck T-Shirts</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
         </div>
       </div>
       <!-- Item 2 -->
       <div class="hero-accordion-item" style="background-image: url('img/products/2.jpg'); background-size: cover; background-position: center;">
         <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
-          <h2 class="text-4xl font-bold mb-2">Collar / Polo T-Shirts</h2>
-          <p class="text-lg max-w-lg">Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
+          <span class="hero-item-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Collar / Polo T-Shirts</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
         </div>
       </div>
       <!-- Item 3 -->
       <div class="hero-accordion-item" style="background-image: url('img/products/3.jpg'); background-size: cover; background-position: center;">
         <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full">SPORTSWEAR</span>
-          <h2 class="text-4xl font-bold mb-2">Sublimation Jerseys</h2>
-          <p class="text-lg max-w-lg">High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
+          <span class="hero-item-tag block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">SPORTSWEAR</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Sublimation Jerseys</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
         </div>
       </div>
       <!-- Item 4 -->
       <div class="hero-accordion-item" style="background-image: url('img/products/4.jpg'); background-size: cover; background-position: center;">
         <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full">BOTTOM WEAR</span>
-          <h2 class="text-4xl font-bold mb-2">Track Pants & Shorts</h2>
-          <p class="text-lg max-w-lg">Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
+          <span class="hero-item-tag block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">BOTTOM WEAR</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Track Pants & Shorts</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
         </div>
       </div>
       <!-- Item 5 -->
       <div class="hero-accordion-item" style="background-image: url('img/products/5.jpg'); background-size: cover; background-position: center;">
         <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full">UNIFORMS</span>
-          <h2 class="text-4xl font-bold mb-2">School, Corporate & Hospitality Wear</h2>
-          <p class="text-lg max-w-lg">Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
+          <span class="hero-item-tag block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">UNIFORMS</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">School, Corporate & Hospitality Wear</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
         </div>
       </div>
       <!-- Item 6 -->
       <div class="hero-accordion-item" style="background-image: url('img/products/6.jpg'); background-size: cover; background-position: center;">
         <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full">CHEF & INDUSTRIAL</span>
-          <h2 class="text-4xl font-bold mb-2">Chef Coats & Workwear</h2>
-          <p class="text-lg max-w-lg">Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
+          <span class="hero-item-tag block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full will-animate">CHEF & INDUSTRIAL</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Chef Coats & Workwear</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
         </div>
       </div>
     </section>
@@ -248,49 +281,49 @@
         <!-- Slide 1 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/1.jpg'); background-size: cover; background-position: center;">
           <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
-            <h2 class="text-3xl font-bold mb-2">Round Neck T-Shirts</h2>
-            <p>Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
+            <span class="hero-slide-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Round Neck T-Shirts</h2>
+            <p class="hero-slide-desc will-animate">Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
           </div>
         </div>
         <!-- Slide 2 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/2.jpg'); background-size: cover; background-position: center;">
           <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full">T-SHIRTS</span>
-            <h2 class="text-3xl font-bold mb-2">Collar / Polo T-Shirts</h2>
-            <p>Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
+            <span class="hero-slide-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Collar / Polo T-Shirts</h2>
+            <p class="hero-slide-desc will-animate">Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
           </div>
         </div>
         <!-- Slide 3 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/3.jpg'); background-size: cover; background-position: center;">
           <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full">SPORTSWEAR</span>
-            <h2 class="text-3xl font-bold mb-2">Sublimation Jerseys</h2>
-            <p>High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
+            <span class="hero-slide-tag block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">SPORTSWEAR</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Sublimation Jerseys</h2>
+            <p class="hero-slide-desc will-animate">High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
           </div>
         </div>
         <!-- Slide 4 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/4.jpg'); background-size: cover; background-position: center;">
           <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full">BOTTOM WEAR</span>
-            <h2 class="text-3xl font-bold mb-2">Track Pants & Shorts</h2>
-            <p>Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
+            <span class="hero-slide-tag block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">BOTTOM WEAR</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Track Pants & Shorts</h2>
+            <p class="hero-slide-desc will-animate">Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
           </div>
         </div>
         <!-- Slide 5 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/5.jpg'); background-size: cover; background-position: center;">
           <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full">UNIFORMS</span>
-            <h2 class="text-3xl font-bold mb-2">School, Corporate & Hospitality Wear</h2>
-            <p>Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
+            <span class="hero-slide-tag block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">UNIFORMS</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">School, Corporate & Hospitality Wear</h2>
+            <p class="hero-slide-desc will-animate">Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
           </div>
         </div>
         <!-- Slide 6 -->
         <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/6.jpg'); background-size: cover; background-position: center;">
           <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full">CHEF & INDUSTRIAL</span>
-            <h2 class="text-3xl font-bold mb-2">Chef Coats & Workwear</h2>
-            <p>Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
+            <span class="hero-slide-tag block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full will-animate">CHEF & INDUSTRIAL</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Chef Coats & Workwear</h2>
+            <p class="hero-slide-desc will-animate">Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
           </div>
         </div>
       </div>
@@ -372,17 +405,17 @@
           A glimpse into the quality and variety of our work.
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg">
-            <img src="img/gallery/roundneck1.jpg" alt="Round Neck T-Shirt" class="w-full aspect-[9/16] md:aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300">
+          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
+            <img src="img/gallery/roundneck1.jpg" alt="Round Neck T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
           </a>
-          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg">
-            <img src="img/gallery/jersey1.jpg" alt="Sports Jersey" class="w-full aspect-[9/16] md:aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300">
+          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
+            <img src="img/gallery/jersey1.jpg" alt="Sports Jersey" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
           </a>
-          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg">
-            <img src="img/gallery/chef1.jpg" alt="Chef Coat" class="w-full aspect-[9/16] md:aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300">
+          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
+            <img src="img/gallery/chef1.jpg" alt="Chef Coat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
           </a>
-          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg">
-            <img src="img/gallery/corporate1.jpg" alt="Corporate Uniform" class="w-full aspect-[9/16] md:aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300">
+          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
+            <img src="img/gallery/corporate1.jpg" alt="Corporate Uniform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
           </a>
         </div>
         <a href="gallery.html" class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors mt-12">
@@ -414,7 +447,7 @@
             <a href="gallery.html" class="hover:text-white">Gallery</a>
             <a href="services.html" class="hover:text-white">Services</a>
             <a href="clients.html" class="hover:text-white">Clients</a>
-            <a href="faq.html" classa="hover:text-white">FAQ</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
             <a href="blog.html" class="hover:text-white">Blog</a>
             <a href="contact.html" class="hover:text-white">Contact</a>
           </nav>
@@ -443,7 +476,7 @@
       
       <!-- Copyright -->
       <div class="mt-8 pt-8 border-t border-gray-700 text-center">
-        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> Example of a 4:3 aspect ratio image. <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
+        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
@@ -477,13 +510,42 @@
       // --- Desktop Hero Accordion ---
       const accordionItems = document.querySelectorAll(".hero-accordion-item");
       
+      // Function to apply animation to a single item's children
+      function animateAccordionItem(item) {
+        const tag = item.querySelector(".hero-item-tag");
+        const title = item.querySelector(".hero-item-title");
+        const desc = item.querySelector(".hero-item-desc");
+        
+        tag.classList.add("animate-fade-in-up");
+        title.classList.add("animate-fade-in-up", "animation-delay-200");
+        desc.classList.add("animate-fade-in-up", "animation-delay-300");
+      }
+
+      // Function to remove animation from a single item's children
+      function resetAccordionItem(item) {
+        const els = item.querySelectorAll(".hero-item-tag, .hero-item-title, .hero-item-desc");
+        els.forEach(el => {
+          el.classList.remove("animate-fade-in-up", "animation-delay-200", "animation-delay-300");
+        });
+      }
+
       if (accordionItems.length > 0) {
+        // Animate the first active item on load
+        animateAccordionItem(document.querySelector(".hero-accordion-item.active"));
+
         accordionItems.forEach(item => {
           item.addEventListener("mouseenter", () => {
-            // Remove 'active' from all items
-            accordionItems.forEach(i => i.classList.remove("active"));
-            // Add 'active' to the hovered item
+            if (item.classList.contains("active")) return; // Don't re-animate if already active
+
+            // Reset all items
+            accordionItems.forEach(i => {
+              i.classList.remove("active");
+              resetAccordionItem(i);
+            });
+            
+            // Add 'active' to the hovered item and animate it
             item.classList.add("active");
+            animateAccordionItem(item);
           });
         });
       }
@@ -500,6 +562,26 @@
         let slideInterval;
         let startX = 0;
         let endX = 0;
+
+        // Function to apply animation to a single slide's children
+        function animateSlide(slide) {
+          const tag = slide.querySelector(".hero-slide-tag");
+          const title = slide.querySelector(".hero-slide-title");
+          const desc = slide.querySelector(".hero-slide-desc");
+
+          tag.classList.add("animate-fade-in-up");
+          title.classList.add("animate-fade-in-up", "animation-delay-200");
+          desc.classList.add("animate-fade-in-up", "animation-delay-300");
+        }
+
+        // Function to remove animation from a single slide's children
+        function resetSlide(slide) {
+          const els = slide.querySelectorAll(".hero-slide-tag, .hero-slide-title, .hero-slide-desc");
+          els.forEach(el => {
+            el.classList.remove("animate-fade-in-up", "animation-delay-200", "animation-delay-300");
+          });
+        }
+
 
         if (slides.length > 0) {
           // Create dots
@@ -523,13 +605,24 @@
             } else if (slideIndex >= slides.length) {
               slideIndex = 0;
             }
+            
+            if (slideIndex === currentSlide && document.querySelector('.animate-fade-in-up')) return; // Do nothing if it's the same slide and already animated
 
             track.style.transform = `translateX(-${slideIndex * 100}%)`;
-            dots.forEach((dot, index) => {
-              dot.classList.toggle("bg-white", index === slideIndex);
-              dot.classList.toggle("bg-white/50", index !== slideIndex);
-            });
+            
+            // Reset old slide
+            resetSlide(slides[currentSlide]);
+            
+            // Animate new slide
+            animateSlide(slides[slideIndex]);
+
             currentSlide = slideIndex;
+
+            // Update dots
+            dots.forEach((dot, index) => {
+              dot.classList.toggle("bg-white", index === currentSlide);
+              dot.classList.toggle("bg-white/50", index !== currentSlide);
+            });
           }
 
           function nextSlide() {
@@ -581,7 +674,9 @@
             endX = 0;
             startInterval(); // Resume auto-slide
           });
-
+          
+          // Animate the first slide on load
+          animateSlide(slides[0]);
           startInterval(); // Start auto-slide on load
         }
       }
