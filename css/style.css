@@ -361,7 +361,8 @@ ol {
 }
 
 .site-logo {
-	background: #000000;
+	background: #0f0f0f;
+	height: 90px; /* ✅ same as .menu-close */
 	width: calc(100% - 90px);
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -377,6 +378,7 @@ ol {
 	-ms-flex-align: center;
 	align-items: center;
 }
+ 
 
 .main-menu {
 	height: calc(100% - 160px);
