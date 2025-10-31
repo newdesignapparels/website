@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our apparel gallery — T-Shirts, Jerseys, Uniforms, Chef Coats, and more by New Design International Apparels.">
+  <meta name="keywords" content="T-shirts, Jerseys, Chef Coats, Corporate Uniforms, School Uniforms, Apparel Manufacturer, NDIA, Clothing, Workwear, Custom Printing">
+  <title>Gallery | New Design International Apparels</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icon Fonts (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Gallery Item Hover Effect */
+    .gallery-item img {
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.8);
+    }
+    
+    .gallery-item .overlay {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+
+    /* Gallery Filter Animation States */
+    .gallery-item {
+      /* Add base transition */
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .gallery-item-out {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    
+    /* Gallery Filter Button Styles */
+    .gallery-filter-btn {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border: 2px solid #e5e7eb; /* gray-200 */
+      border-radius: 9999px; /* rounded-full */
+      font-weight: 600; /* font-semibold */
+      color: #374151; /* gray-700 */
+      background-color: white;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    /* Hover for INACTIVE buttons */
+    .gallery-filter-btn:not(.active):hover {
+      border-color: #f05941;
+      color: #f05941;
+    }
+    /* Active filter button style */
+    .gallery-filter-btn.active {
+      background-color: #f05941; /* Use your brand's orange */
+      color: white;
+      border-color: #f05941;
+    }
+    /* Hover for ACTIVE button */
+    .gallery-filter-btn.active:hover {
+      background-color: #d94c36; /* Darker orange */
+      border-color: #d94c36;
+    }
+
+    /* Lightbox styles */
+    #lightbox {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 
+    Mobile Off-canvas Menu 
+    (Hidden by default, shown by 'transform: translateX(0)')
+  -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
+    <!-- Menu Header -->
+    <div class="flex justify-between items-center mb-10">
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+      <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
+        <!-- Close Icon (X) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="gallery.html" class="font-semibold text-blue-600">Gallery</a>
+      <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+      <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+      <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Footer Socials -->
+    <div class="absolute bottom-6 left-6">
+      <div class="flex space-x-5 mb-4 text-lg">
+        <!-- Social Icons (Font Awesome) -->
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="copyright-text text-sm text-gray-500">
+        <p>© <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile menu (when open) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
+
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="gallery.html" class="font-semibold text-blue-600">Gallery</a>
+        <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+        <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+        <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Social Icons -->
+      <div class="hidden md:flex space-x-5 text-xl">
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
+        <!-- Menu Icon (Hamburger) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Page Header -->
+    <section class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold">Our Product Gallery</h1>
+        <p class="text-lg text-gray-300 mt-4">Explore our work: T-Shirts, Jerseys, Uniforms, and more.</p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        
+        <!-- Filter Buttons -->
+        <div id="gallery-filters" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+          <button class="gallery-filter-btn active" data-filter="all">All</button>
+          <button class="gallery-filter-btn" data-filter="tshirts">T-Shirts</button>
+          <button class="gallery-filter-btn" data-filter="jersey">Jersey</button>
+          <button class="gallery-filter-btn" data-filter="chef">Chef Coats</button>
+          <button class="gallery-filter-btn" data-filter="uniforms">Corporate Uniforms</button>
+          <button class="gallery-filter-btn" data-filter="school">School Uniforms</button>
+          <button class="gallery-filter-btn" data-filter="medical">Nurse & Doctor Coats</button>
+          <button class="gallery-filter-btn" data-filter="others">Others</button>
+        </div>
+        
+        <!-- Gallery Grid -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          
+          <!-- Round Neck T-Shirt -->
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/roundneck1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/roundneck1.jpg" alt="Round Neck T-Shirt 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/roundneck2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/roundneck2.jpg" alt="Round Neck T-Shirt 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/roundneck3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/roundneck3.jpg" alt="Round Neck T-Shirt 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/roundneck4.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/roundneck4.jpg" alt="Round Neck T-Shirt 4" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/roundneck5.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/roundneck5.jpg" alt="Round Neck T-Shirt 5" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Collar T-Shirt -->
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/collar1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/collar1.jpg" alt="Collar T-Shirt 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/collar2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/collar2.jpg" alt="Collar T-Shirt 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/collar3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/collar3.jpg" alt="Collar T-Shirt 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/collar4.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/collar4.jpg" alt="Collar T-Shirt 4" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/collar5.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/collar5.jpg" alt="Collar T-Shirt 5" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/collar6.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/collar6.jpg" alt="Collar T-Shirt 6" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/collar7.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/collar7.jpg" alt="Collar T-Shirt 7" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item tshirts">
+            <a href="img/gallery/collar8.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/collar8.jpg" alt="Collar T-Shirt 8" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+
+          <!-- Jersey -->
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey1.jpg" alt="Sports Jersey 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey2.jpg" alt="Sports Jersey 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey3.jpg" alt="Sports Jersey 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey4.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey4.jpg" alt="Sports Jersey 4" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey5.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey5.jpg" alt="Sports Jersey 5" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey6.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey6.jpg" alt="Sports Jersey 6" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey7.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey7.jpg" alt="Sports Jersey 7" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey8.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey8.jpg" alt="Sports Jersey 8" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey9.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey9.jpg" alt="Sports Jersey 9" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey10.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey10.jpg" alt="Sports Jersey 10" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey11.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey11.jpg" alt="Sports Jersey 11" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey12.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey12.jpg" alt="Sports Jersey 12" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey13.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey13.jpg" alt="Sports Jersey 13" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey14.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey14.jpg" alt="Sports Jersey 14" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey15.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey15.jpg" alt="Sports Jersey 15" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item jersey">
+            <a href="img/gallery/jersey16.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/jersey16.jpg" alt="Sports Jersey 16" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Chef Coats -->
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef1.jpg" alt="Chef Coat 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef2.jpg" alt="Chef Coat 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef3.jpg" alt="Chef Coat 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef4.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef4.jpg" alt="Chef Coat 4" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef5.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef5.jpg" alt="Chef Coat 5" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef6.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef6.jpg" alt="Chef Coat 6" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef7.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef7.jpg" alt="Chef Coat 7" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef8.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef8.jpg" alt="Chef Coat 8" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef9.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef9.jpg" alt="Chef Coat 9" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef10.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef10.jpg" alt="Chef Coat 10" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef11.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef11.jpg" alt="Chef Coat 11" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef12.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef12.jpg" alt="Chef Coat 12" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef13.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef13.jpg" alt="Chef Coat 13" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef14.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef14.jpg" alt="Chef Coat 14" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef15.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef15.jpg" alt="Chef Coat 15" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef16.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef16.jpg" alt="Chef Coat 16" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef17.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef17.jpg" alt="Chef Coat 17" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef18.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef18.jpg" alt="Chef Coat 18" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item chef">
+            <a href="img/gallery/chef19.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/chef19.jpg" alt="Chef Coat 19" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Nurse Coat -->
+          <div class="gallery-item medical">
+            <a href="img/gallery/nurse1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/nurse1.jpg" alt="Nurse Coat 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item medical">
+            <a href="img/gallery/nurse2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/nurse2.jpg" alt="Nurse Coat 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item medical">
+            <a href="img/gallery/nurse3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/nurse3.jpg" alt="Nurse Coat 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item medical">
+            <a href="img/gallery/nurse4.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/nurse4.jpg" alt="Nurse Coat 4" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item medical">
+            <a href="img/gallery/nurse5.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/nurse5.jpg" alt="Nurse Coat 5" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item medical">
+            <a href="img/gallery/nurse6.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/nurse6.jpg" alt="Nurse Coat 6" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item medical">
+            <a href="img/gallery/nurse7.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/nurse7.jpg" alt="Nurse Coat 7" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Doctor Coat -->
+          <div class="gallery-item medical">
+            <a href="img/gallery/doctor1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/doctor1.jpg" alt="Doctor Coat 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item medical">
+            <a href="img/gallery/doctor2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/doctor2.jpg" alt="Doctor Coat 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item medical">
+            <a href="img/gallery/doctor3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/doctor3.jpg" alt="Doctor Coat 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Corporate Uniform -->
+          <div class="gallery-item uniforms">
+            <a href="img/gallery/corporate1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/corporate1.jpg" alt="Corporate Uniform 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item uniforms">
+            <a href="img/gallery/corporate2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/corporate2.jpg" alt="Corporate Uniform 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item uniforms">
+            <a href="img/gallery/corporate3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/corporate3.jpg" alt="Corporate Uniform 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item uniforms">
+            <a href="img/gallery/corporate4.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/corporate4.jpg" alt="Corporate Uniform 4" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- School Uniform -->
+          <div class="gallery-item school">
+            <a href="img/gallery/school1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/school1.jpg" alt="School Uniform 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item school">
+            <a href="img/gallery/school2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/school2.jpg" alt="School Uniform 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item school">
+            <a href="img/gallery/school3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/school3.jpg" alt="School Uniform 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Others -->
+          <div class="gallery-item others">
+            <a href="img/gallery/other1.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/other1.jpg" alt="Custom Apparel 1" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item others">
+            <a href="img/gallery/other2.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/other2.jpg" alt="Custom Apparel 2" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item others">
+            <a href="img/gallery/other3.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/other3.jpg" alt="Custom Apparel 3" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item others">
+            <a href="img/gallery/other4.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/other4.jpg" alt="Custom Apparel 4" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item others">
+            <a href="img/gallery/other5.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/other5.jpg" alt="Custom Apparel 5" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item others">
+            <a href="img/gallery/other6.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/other6.jpg" alt="Custom Apparel 6" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item others">
+            <a href="img/gallery/other7.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/other7.jpg" alt="Custom Apparel 7" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item others">
+            <a href="img/gallery/other8.jpg" class="lightbox-trigger group block rounded-lg overflow-hidden relative shadow-md">
+              <img src="img/gallery/other8.jpg" alt="Custom Apparel 8" class="w-full h-64 object-cover">
+              <div class="overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 mt-16 lg:mt-24">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- About -->
+        <div>
+          <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
+          <p class="text-gray-400">
+            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with comfort, durability, and your brand identity in mind.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="gallery.html" class="hover:text-white">Gallery</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="clients.html" class="hover:text-white">Clients</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
+            <a href="blog.html" class="hover:text-white">Blog</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex space-x-5 text-xl">
+            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
+              <i class="fa fa-youtube-play"></i>
+            </a>
+            <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 z-[100] hidden items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-gray-300">
+      <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <img id="lightbox-image" src="" alt="Gallery Image" class="max-w-full max-h-[90vh] rounded-lg">
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // --- Mobile Menu ---
+      const openMenuBtn = document.getElementById("open-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      function openMenu() {
+        mobileMenu.style.transform = "translateX(0)";
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.style.transform = "translateX(-100%)";
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+
+
+      // --- Gallery Filtering (Isotope replacement) ---
+      const filterButtons = document.querySelectorAll(".gallery-filter-btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const filter = button.getAttribute("data-filter");
+
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          // Filter items with animation
+          galleryItems.forEach(item => {
+            const shouldShow = filter === "all" || item.classList.contains(filter);
+
+            if (shouldShow) {
+              // Item should be visible
+              if (item.classList.contains('hidden')) {
+                // Item is currently hidden, animate it IN
+                item.classList.remove('hidden'); // Make it take space
+                item.classList.add('gallery-item-out'); // Set initial animation state (invisible)
+                
+                // Force reflow
+                void item.offsetWidth; 
+                
+                // Animate in
+                item.classList.remove('gallery-item-out');
+              }
+            } else {
+              // Item should be hidden
+              if (!item.classList.contains('hidden')) {
+                // Item is visible, animate it OUT
+                item.classList.add('gallery-item-out'); // Animate out
+                
+                // After animation, hide it
+                setTimeout(() => {
+                    item.classList.add('hidden');
+                }, 300); // Must match CSS transition duration
+              }
+            }
+          });
+        });
+      });
+
+      // --- Lightbox (Fresco replacement) ---
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxClose = document.getElementById("lightbox-close");
+      const lightboxTriggers = document.querySelectorAll(".lightbox-trigger");
+
+      function openLightbox(e) {
+        e.preventDefault();
+        const imageUrl = e.currentTarget.href;
+        lightboxImage.src = imageUrl;
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        lightboxImage.src = ""; // Clear image
+        document.body.style.overflow = "";
+      }
+
+      lightboxTriggers.forEach(trigger => {
+        trigger.addEventListener("click", openLightbox);
+      });
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (e) => {
+        // Close if clicking on the background overlay
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>
+

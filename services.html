@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the professional apparel manufacturing services offered by New Design International Apparels — from T-shirt production to embroidery, printing, and custom uniforms.">
+  <meta name="keywords" content="NDIA, New Design International Apparels, T-shirt Manufacturing, Embroidery, Printing, Custom Uniforms, Garment Manufacturer">
+  <title>Our Services | New Design International Apparels</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icon Fonts (Themify and Font Awesome) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Custom color swatches */
+    .color-swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: 0.375rem;
+      /* rounded-md */
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      /* shadow-sm */
+    }
+
+    /* Hide scrollbar for jump-to section, but still allow scrolling */
+    .jump-to-nav {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .jump-to-nav::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 
+    Mobile Off-canvas Menu 
+    (Hidden by default, shown by 'transform: translateX(0)')
+  -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
+    <!-- Menu Header -->
+    <div class="flex justify-between items-center mb-10">
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+      <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
+        <!-- Close Icon (X) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+      <a href="services.html" class="font-semibold text-blue-600">Services</a>
+      <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+      <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+      <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Footer Socials -->
+    <div class="absolute bottom-6 left-6">
+      <div class="flex space-x-5 mb-4 text-lg">
+        <!-- Social Icons (Original) -->
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="copyright-text text-sm text-gray-500">
+        <p>© <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile menu (when open) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
+
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+        <a href="services.html" class="font-semibold text-blue-600">Services</a>
+        <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+        <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+        <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Social Icons -->
+      <div class="hidden md:flex space-x-5 text-xl">
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
+        <!-- Menu Icon (Hamburger) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Page Header -->
+    <section class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold">Our Services</h1>
+        <p class="text-lg text-gray-300 mt-4">End-to-end solutions for all your apparel needs.</p>
+      </div>
+    </section>
+
+    <!-- Jump to Section Nav -->
+    <nav class="sticky top-[68px] bg-white z-40 shadow-sm border-b border-gray-200">
+      <div class="container mx-auto px-6">
+        <div class="flex jump-to-nav overflow-x-auto whitespace-nowrap">
+          <a href="#process" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Our Process</a>
+          <a href="#why-us" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Why Choose Us</a>
+          <a href="#products" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Products</a>
+          <a href="#customization" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Customization</a>
+          <a href="#fabrics" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Fabrics</a>
+          <a href="#materials" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Materials</a>
+          <a href="#size-chart" class="inline-block font-semibold text-gray-600 hover:text-orange-500 hover:border-orange-500 border-b-2 border-transparent py-3 px-4 transition-colors">Size Chart</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Individual vs Company -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-4">
+            Services For Everyone
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-12">
+            We provide end-to-end apparel manufacturing solutions for individuals and companies — from custom T-shirts to large-scale branded production, with complete in-house quality control.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          <!-- Individual -->
+          <div class="bg-gray-50 rounded-lg p-8 shadow">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6">Individual</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Custom T-Shirts & Caps – Personal designs, events, or gifting</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Single/Low Quantity Orders – With personalized prints</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Name/Logo Embroidery – Perfect for teams, clubs, or occasions</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Express Production & Delivery – Fast turnaround for urgent needs</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Company -->
+          <div class="bg-gray-50 rounded-lg p-8 shadow">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6">Company</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Bulk Apparel Manufacturing – T-shirts, shirts, and caps at scale</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Corporate & Promotional Clothing – Branded merchandise, uniforms</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Full Customization – DTF, sublimation, screen printing, embroidery</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Private Label Production – Your brand, our quality</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Design-to-Delivery Service – Everything under one roof</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section id="process" class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Process
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            We handle every step of the apparel journey — all under one roof. This gives us better control, faster delivery, and consistent quality.
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto space-y-12">
+          <!-- Step 1 -->
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Designing</h4>
+              <p class="text-lg text-gray-700">We collaborate with clients to turn ideas into wearable designs — from concept sketches to detailed digital mockups.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0021.5 5.5V3.935m-18 0A2.5 2.5 0 015.5 1.5h13A2.5 2.5 0 0121.5 3.935m-18 0v.009A2.5 2.5 0 005.5 6.5h13A2.5 2.5 0 0021.5 3.945V3.935" /></svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Fabric Selection</h4>
+              <p class="text-lg text-gray-700">We source imported fabrics from Ludhiana, ensuring softness, durability, and high value for every garment.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Cutting & Stitching</h4>
+              <p class="text-lg text-gray-700">Garments are precisely cut and stitched by skilled professionals using modern, high-speed machinery.</p>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Printing & Embroidery</h4>
+              <p class="text-lg text-gray-700">Choose from DTF, sublimation, screen printing, or embroidery — customized to reflect your brand or personal style.</p>
+            </div>
+          </div>
+          <!-- Step 5 -->
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </div>
+            <div>
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Finishing & Dispatch</h4>
+              <p class="text-lg text-gray-700">Every product is quality-checked, ironed, packed, and dispatched — ready for delivery across India or overseas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Why Choose Us
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            At New Design International Apparels, we do more than manufacture clothes — we create solutions. Here’s what sets us apart.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+          <!-- Point 1 -->
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6-4l.293-.293a1 1 0 011.414 0l.434.434a1 1 0 001.414 0l.434-.434a1 1 0 011.414 0l.293.293m-9.051 0a1 1 0 001.414 0l.434-.434a1 1 0 011.414 0l.434.434a1 1 0 001.414 0l.434-.434a1 1 0 011.414 0l.293.293" /></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-1">Complete In-House Production</h4>
+              <p class="text-lg text-gray-700">Every stage — from design to dispatch — is handled internally for total control and consistent quality.</p>
+            </div>
+          </div>
+          <!-- Point 2 -->
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-1">Imported Fabrics, Affordable Rates</h4>
+              <p class="text-lg text-gray-700">We use premium materials from Ludhiana and beyond — ensuring comfort, durability, and cost-effectiveness.</p>
+            </div>
+          </div>
+          <!-- Point 3 -->
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-1">Six Manufacturing Units</h4>
+              <p class="text-lg text-gray-700">Strategically located across Kerala and Tamil Nadu — giving us large-scale capacity and flexible timelines.</p>
+            </div>
+          </div>
+          <!-- Point 4 -->
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-1">Customization Expertise</h4>
+              <p class="text-lg text-gray-700">DTF, sublimation, screen printing, and embroidery — all handled by experts for precise and vibrant results.</p>
+            </div>
+          </div>
+          <!-- Point 5 -->
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0021.5 5.5V3.935m-18 0A2.5 2.5 0 015.5 1.5h13A2.5 2.5 0 0121.5 3.935m-18 0v.009A2.5 2.5 0 005.5 6.5h13A2.5 2.5 0 0021.5 3.945V3.935z" /></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-1">Global Reach, Local Trust</h4>
+              <p class="text-lg text-gray-700">Supplying across GCC, Europe, and Africa — while maintaining the reliability and warmth of a local brand.</p>
+            </div>
+          </div>
+          <!-- Point 6 -->
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m12 0a2 2 0 100-4m0 4a2 2 0 110-4m-6 4v-2m0 4h.01M18 12h-2.25M6 12H3.75m12.75 6H18m-4.5-4.5v-2m0 4h.01M10.5 12h-2.25m10.5 6H18" /></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-1">Flexible Orders</h4>
+              <p class="text-lg text-gray-700">From single personalized pieces to large-scale production runs — we adapt to your order size and needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Reach -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Global Reach
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            At <strong>New Design International Apparels</strong>, we proudly serve customers beyond borders — delivering quality apparel with Indian craftsmanship to clients across the world.
+          </p>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+          <!-- Regions -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="text-center md:text-left">
+              <h4 class="text-xl font-bold text-orange-500 mb-2">GCC Countries</h4>
+              <p class="text-lg text-gray-700">UAE, Saudi Arabia, Oman, Qatar, Kuwait, Bahrain</p>
+            </div>
+            <div class="text-center md:text-left">
+              <h4 class="text-xl font-bold text-orange-500 mb-2">European Markets</h4>
+              <p class="text-lg text-gray-700">Germany, France, Netherlands, UK, and more</p>
+            </div>
+            <div class="text-center md:text-left">
+              <h4 class="text-xl font-bold text-orange-500 mb-2">African Countries</h4>
+              <p class="text-lg text-gray-700">Kenya, Nigeria, South Africa, and surrounding regions</p>
+            </div>
+          </div>
+          
+          <!-- Trust Points -->
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Global Clients Trust Us:</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Reliable export process with clear timelines</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">International-quality standards at competitive rates</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Flexible order volumes — from small batches to bulk production</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Experience with private label and branded orders</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-lg text-gray-700">Secure packing and on-time international shipping</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section id="products" class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Product Categories
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            We specialize in high-quality, customizable garments — crafted for individuals, teams, and global brands.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto space-y-12">
+          <!-- T-Shirts -->
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <img src="img/icons/tshirt.png" alt="T-Shirts" class="w-full sm:w-44 h-44 object-cover rounded-lg shadow-md flex-shrink-0">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">T-Shirts</h3>
+              <p class="text-lg text-gray-700 mb-2">Round Neck | V-Neck | Polo | Oversized</p>
+              <p class="text-lg text-gray-700 mb-2">Cotton, Poly-Cotton, Dry-Fit options</p>
+              <p class="text-lg text-gray-700 mb-2">Ideal for casual wear, uniforms, events, and merchandise</p>
+              <p class="text-lg text-gray-700">Customizable with DTF, sublimation, screen printing, or embroidery</p>
+            </div>
+          </div>
+          <!-- Shirts -->
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <img src="img/icons/shirt.png" alt="Shirts" class="w-full sm:w-44 h-44 object-cover rounded-lg shadow-md flex-shrink-0">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Shirts</h3>
+              <p class="text-lg text-gray-700 mb-2">Formal | Semi-Formal | Casual</p>
+              <p class="text-lg text-gray-700 mb-2">Available in cotton, linen, and blend fabrics</p>
+              <p class="text-lg text-gray-700 mb-2">Custom stitching, button styles, and branding options</p>
+              <p class="text-lg text-gray-700">Great for office wear, branding, or uniforms</p>
+            </div>
+          </div>
+          <!-- Chef Coats -->
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <img src="img/icons/chef.png" alt="Chef Coats" class="w-full sm:w-44 h-44 object-cover rounded-lg shadow-md flex-shrink-0">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Chef Coats & Hospitality Wear</h3>
+              <p class="text-lg text-gray-700 mb-2">Premium-quality chef coats with durable stitching</p>
+              <p class="text-lg text-gray-700 mb-2">Available in various fits, colors, and logo embroidery</p>
+              <p class="text-lg text-gray-700">Suitable for restaurants, hotels, and catering staff</p>
+            </div>
+          </div>
+          <!-- Medical Uniforms -->
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <img src="img/icons/nurse.png" alt="Medical Uniforms" class="w-full sm:w-44 h-44 object-cover rounded-lg shadow-md flex-shrink-0">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Medical Uniforms (Doctor/Nurse Wear)</h3>
+              <p class="text-lg text-gray-700 mb-2">Comfortable scrubs and coats for medical professionals</p>
+              <p class="text-lg text-gray-700 mb-2">Breathable, easy-wash materials in multiple sizes and colors</p>
+              <p class="text-lg text-gray-700">Custom name/logo embroidery available</p>
+            </div>
+          </div>
+          <!-- Pants & Shorts -->
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <img src="img/icons/pants.png" alt="Pants & Shorts" class="w-full sm:w-44 h-44 object-cover rounded-lg shadow-md flex-shrink-0">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Pants & Shorts</h3>
+              <p class="text-lg text-gray-700 mb-2">Joggers | Formal Pants | Casual Shorts | Uniform Trousers</p>
+              <p class="text-lg text-gray-700 mb-2">Available in cotton, twill, polyester blends</p>
+              <p class="text-lg text-gray-700">Ideal for uniforms, sports, casual, or workwear</p>
+            </div>
+          </div>
+          <!-- Jerseys -->
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <img src="img/icons/jersey.png" alt="Jerseys" class="w-full sm:w-44 h-44 object-cover rounded-lg shadow-md flex-shrink-0">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Jerseys (Sportswear)</h3>
+              <p class="text-lg text-gray-700 mb-2">Team jerseys for cricket, football, badminton, etc.</p>
+              <p class="text-lg text-gray-700 mb-2">Dry-fit performance fabrics</p>
+              <p class="text-lg text-gray-700">Fully customizable with player names, numbers, and logos</p>
+            </div>
+          </div>
+          <!-- Caps -->
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <img src="img/icons/caps.png" alt="Caps" class="w-full sm:w-44 h-44 object-cover rounded-lg shadow-md flex-shrink-0">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Caps</h3>
+              <p class="text-lg text-gray-700 mb-2">Baseball | Trucker | Snapback | Bucket</p>
+              <p class="text-lg text-gray-700 mb-2">Adjustable sizes, multi-color options</p>
+              <p class="text-lg text-gray-700">Custom printing and embroidery available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Printing & Customization -->
+    <section id="customization" class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto lg:mx-0">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Printing & Customization
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            We specialize in turning your ideas into wearable reality. Whether it's a logo, name, or full artwork, we offer multiple customization methods to match your fabric, budget, and style.
+          </p>
+        </div>
+        
+        <div class="space-y-16">
+          <!-- DTF -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <h3 class="text-3xl font-bold text-orange-500 mb-4">DTF Printing (Direct-to-Film)</h3>
+              <ul class="space-y-3 text-lg text-gray-700 list-disc list-inside">
+                <li>High-detail, full-color printing</li>
+                <li>Works on cotton, polyester, and blends</li>
+                <li>Ideal for logos, branding, and photo prints</li>
+                <li>Durable and stretch-friendly</li>
+              </ul>
+            </div>
+            <div class="flex justify-center">
+              <img src="img/icons/dtf.png" alt="DTF Printing" class="rounded-lg shadow-xl w-full max-w-md">
+            </div>
+          </div>
+          <!-- Sublimation -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="lg:order-last">
+              <h3 class="text-3xl font-bold text-orange-500 mb-4">Sublimation Printing</h3>
+              <ul class="space-y-3 text-lg text-gray-700 list-disc list-inside">
+                <li>Vibrant, long-lasting prints</li>
+                <li>Best on white/light polyester fabrics</li>
+                <li>Used for sportswear, jerseys, and uniforms</li>
+                <li>Won't crack, peel, or fade easily</li>
+              </ul>
+            </div>
+            <div class="flex justify-center">
+              <img src="img/icons/sublimation.png" alt="Sublimation Printing" class="rounded-lg shadow-xl w-full max-w-md">
+            </div>
+          </div>
+          <!-- Screen Printing -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <h3 class="text-3xl font-bold text-orange-500 mb-4">Screen Printing</h3>
+              <ul class="space-y-3 text-lg text-gray-700 list-disc list-inside">
+                <li>Cost-effective for bulk orders</li>
+                <li>Sharp and solid colors</li>
+                <li>Ideal for simple designs and promotional wear</li>
+                <li>Long-lasting and washable</li>
+              </ul>
+            </div>
+            <div class="flex justify-center">
+              <img src="img/icons/screen.png" alt="Screen Printing" class="rounded-lg shadow-xl w-full max-w-md">
+            </div>
+          </div>
+          <!-- Embroidery -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="lg:order-last">
+              <h3 class="text-3xl font-bold text-orange-500 mb-4">Embroidery</h3>
+              <ul class="space-y-3 text-lg text-gray-700 list-disc list-inside">
+                <li>3D stitch design for a premium look</li>
+                <li>Used for logos, initials, names</li>
+                <li>Great on caps, uniforms, chef coats, shirts</li>
+                <li>Adds texture, durability, and professionalism</li>
+              </ul>
+            </div>
+            <div class="flex justify-center">
+              <img src="img/icons/embroidery.png" alt="Embroidery" class="rounded-lg shadow-xl w-full max-w-md">
+            </div>
+          </div>
+          <!-- Labeling -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <h3 class="text-3xl font-bold text-orange-500 mb-4">Labeling & Tag Options</h3>
+              <ul class="space-y-3 text-lg text-gray-700 list-disc list-inside">
+                <li>Private label stitching</li>
+                <li>Inside neck labels, wash care tags</li>
+                <li>Custom size/brand tags for retail-ready products</li>
+              </ul>
+            </div>
+            <div class="flex justify-center">
+              <img src="img/icons/labels.png" alt="Labeling & Tag Options" class="rounded-lg shadow-xl w-full max-w-md">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fabric Options -->
+    <section id="fabrics" class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Fabric & Color Options
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            The right fabric defines how a garment feels, performs, and lasts. We offer a curated selection to bring your designs to life.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-12">
+          <!-- Cotton -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <img src="img/icons/cotton.jpg" alt="Cotton Fabric" class="w-full h-48 md:h-full object-cover rounded-lg shadow-lg">
+            <div class="md:col-span-2">
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Cotton</h4>
+              <p class="text-lg text-gray-700">Soft, breathable, and skin-friendly — perfect for all-day comfort in hot and humid climates. Cotton provides a natural feel and excellent air circulation, making it ideal for everyday wear, uniforms, and casual T-shirts. Available in multiple GSM weights and finishes.</p>
+            </div>
+          </div>
+          <!-- Polyester -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <img src="img/icons/poly.jpg" alt="Polyester Fabric" class="w-full h-48 md:h-full object-cover rounded-lg shadow-lg">
+            <div class="md:col-span-2">
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Polyester</h4>
+              <p class="text-lg text-gray-700">Lightweight, durable, and quick-drying — polyester is ideal for activewear. It retains shape even after multiple washes and resists shrinking or wrinkling. Commonly used in sublimation printing for vibrant, long-lasting colors.</p>
+            </div>
+          </div>
+          <!-- Cotton-Poly Blend -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <img src="img/icons/cottonblend.jpg" alt="Cotton Poly Blend" class="w-full h-48 md:h-full object-cover rounded-lg shadow-lg">
+            <div class="md:col-span-2">
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Cotton-Poly Blend</h4>
+              <p class="text-lg text-gray-700">A perfect balance of softness and strength. Blended fabrics offer the natural comfort of cotton with the resilience and wrinkle resistance of polyester. Ideal for workwear and uniforms where comfort and low maintenance matter.</p>
+            </div>
+          </div>
+          <!-- Dry-Fit -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <img src="img/icons/dry.jpeg" alt="Dry Fit Fabric" class="w-full h-48 md:h-full object-cover rounded-lg shadow-lg">
+            <div class="md:col-span-2">
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Dry-Fit</h4>
+              <p class="text-lg text-gray-700">Engineered for sports, Dry-Fit fabric wicks away sweat and allows for maximum flexibility. Its stretchable fibers ensure unrestricted movement, while maintaining a cool and lightweight feel — perfect for athletic jerseys and fitness wear.</p>
+            </div>
+          </div>
+          <!-- Twill / Poplin / Canvas -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <img src="img/icons/twill.png" alt="Twill Fabric" class="w-full h-48 md:h-full object-cover rounded-lg shadow-lg">
+            <div class="md:col-span-2">
+              <h4 class="text-2xl font-bold text-gray-900 mb-2">Twill / Poplin / Canvas</h4>
+              <p class="text-lg text-gray-700">Durable, structured, and built to last — these woven fabrics are commonly used for pants, chef coats, and industrial workwear. Twill offers a distinctive diagonal weave, Poplin brings a smooth texture, and Canvas ensures rugged durability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Availability -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Color Availability
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            We offer a wide selection of premium colors — from bold, rich tones to soft, subtle shades. All colors can be customized for your apparel to match your brand or personal style.
+          </p>
+        </div>
+
+        <!-- Dark Shades -->
+        <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Dark Shades</h3>
+        <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-x-4 gap-y-8 max-w-6xl mx-auto mb-16">
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#000;"></div><p class="mt-2 text-gray-700 font-medium">Black</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#1c1c1c;"></div><p class="mt-2 text-gray-700 font-medium">Charcoal</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#2e2e2e;"></div><p class="mt-2 text-gray-700 font-medium">Graphite</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#3e2723;"></div><p class="mt-2 text-gray-700 font-medium">Dark Brown</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#212121;"></div><p class="mt-2 text-gray-700 font-medium">Jet Black</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#263238;"></div><p class="mt-2 text-gray-700 font-medium">Steel Grey</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#4e342e;"></div><p class="mt-2 text-gray-700 font-medium">Mocha</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#6d4c41;"></div><p class="mt-2 text-gray-700 font-medium">Chocolate</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#37474f;"></div><p class="mt-2 text-gray-700 font-medium">Smoke Grey</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#0d47a1;"></div><p class="mt-2 text-gray-700 font-medium">Navy Blue</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#1a237e;"></div><p class="mt-2 text-gray-700 font-medium">Royal Navy</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#311b92;"></div><p class="mt-2 text-gray-700 font-medium">Deep Violet</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#4a148c;"></div><p class="mt-2 text-gray-700 font-medium">Purple Haze</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#880e4f;"></div><p class="mt-2 text-gray-700 font-medium">Wine Red</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#b71c1c;"></div><p class="mt-2 text-gray-700 font-medium">Maroon</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#bf360c;"></div><p class="mt-2 text-gray-700 font-medium">Rust Orange</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#3e2723;"></div><p class="mt-2 text-gray-700 font-medium">Coffee</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#1b5e20;"></div><p class="mt-2 text-gray-700 font-medium">Forest Green</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#004d40;"></div><p class="mt-2 text-gray-700 font-medium">Teal</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#01579b;"></div><p class="mt-2 text-gray-700 font-medium">Deep Blue</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#006064;"></div><p class="mt-2 text-gray-700 font-medium">Dark Cyan</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#263238;"></div><p class="mt-2 text-gray-700 font-medium">Carbon</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#5d4037;"></div><p class="mt-2 text-gray-700 font-medium">Walnut</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#4a148c;"></div><p class="mt-2 text-gray-700 font-medium">Plum</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#311b92;"></div><p class="mt-2 text-gray-700 font-medium">Indigo</p></div>
+        </div>
+
+        <!-- Light Shades -->
+        <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Light Shades</h3>
+        <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-x-4 gap-y-8 max-w-6xl mx-auto">
+          <div class="text-center"><div class="color-swatch mx-auto border border-gray-200" style="background:#ffffff;"></div><p class="mt-2 text-gray-700 font-medium">White</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#f5f5f5;"></div><p class="mt-2 text-gray-700 font-medium">Off White</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#eceff1;"></div><p class="mt-2 text-gray-700 font-medium">Light Grey</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#fafafa;"></div><p class="mt-2 text-gray-700 font-medium">Ivory</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#e0e0e0;"></div><p class="mt-2 text-gray-700 font-medium">Silver</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#ffe0b2;"></div><p class="mt-2 text-gray-700 font-medium">Peach</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#ffccbc;"></div><p class="mt-2 text-gray-700 font-medium">Blush</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#fff9c4;"></div><p class="mt-2 text-gray-700 font-medium">Pale Yellow</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#fff3e0;"></div><p class="mt-2 text-gray-700 font-medium">Cream</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#f1f8e9;"></div><p class="mt-2 text-gray-700 font-medium">Mint</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#e8f5e9;"></div><p class="mt-2 text-gray-700 font-medium">Soft Green</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#e3f2fd;"></div><p class="mt-2 text-gray-700 font-medium">Sky Blue</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#bbdefb;"></div><p class="mt-2 text-gray-700 font-medium">Baby Blue</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#e1bee7;"></div><p class="mt-2 text-gray-700 font-medium">Lavender</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#fce4ec;"></div><p class="mt-2 text-gray-700 font-medium">Light Pink</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#fffde7;"></div><p class="mt-2 text-gray-700 font-medium">Lemon</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#f9fbe7;"></div><p class="mt-2 text-gray-700 font-medium">Pastel Yellow</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#c8e6c9;"></div><p class="mt-2 text-gray-700 font-medium">Light Mint</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#f3e5f5;"></div><p class="mt-2 text-gray-700 font-medium">Soft Purple</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#e0f7fa;"></div><p class="mt-2 text-gray-700 font-medium">Light Cyan</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#fbe9e7;"></div><p class="mt-2 text-gray-700 font-medium">Rose Beige</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#fce4ec;"></div><p class="mt-2 text-gray-700 font-medium">Baby Pink</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#fff8e1;"></div><p class="mt-2 text-gray-700 font-medium">Butter Cream</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#f1f8e9;"></div><p class="mt-2 text-gray-700 font-medium">Lime Mist</p></div>
+          <div class="text-center"><div class="color-swatch mx-auto" style="background:#f0f4c3;"></div><p class="mt-2 text-gray-700 font-medium">Pale Olive</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Our Materials Section -->
+    <section id="materials" class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Materials
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            We use a variety of high-quality fabrics to ensure the perfect look, feel, and performance for your apparel.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Material: NIRMAL KNIT -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/nirmal.png" alt="NIRMAL KNIT Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">NIRMAL KNIT</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>Good Quality 180 Gsm Polyester Fabric</li>
+                <li>Standard Look And Best For Daily Use</li>
+                <li>Medium Thickness</li>
+                <li>Quality lycra collar & ribs</li>
+                <li>Double needle stitch on shoulder & sleeves</li>
+                <li>Breathable Fabric</li>
+                <li>Pure T-Shirt Fabric</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Material: MARS -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/mars.png" alt="MARS Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">MARS</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>200 Gsm Polyester Fabric</li>
+                <li>Premium look and Long lasting fabric</li>
+                <li>Double needle stitch on shoulder & sleeves</li>
+                <li>Quality lycra collar & ribs</li>
+                <li>Pure t-shirt fabric</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Material: Spun Nirmal -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/spun.png" alt="Spun Nirmal Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Spun Nirmal</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>Good quality 200 gsm Polyester fabric</li>
+                <li>Extra softness on the surface of the fabric</li>
+                <li>Quality lycra collar & ribs</li>
+                <li>Pure T-shirt fabric</li>
+                <li>Double needle stitch on shoulder & sleeves</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Material: Lacoste -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/laco.png" alt="Lacoste Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Lacoste</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>220 gsm mixed fabric</li>
+                <li>Premium look tshirt</li>
+                <li>Pure t-shirt fabric</li>
+                <li>Double needle stitch on shoulder & sleeves</li>
+                <li>Quality lycra collar & ribs</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Material: Dot Knit -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/dot.png" alt="Dot Knit Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Dot Knit</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>Good quality 170 gsm Polyester fabric</li>
+                <li>Standard look and best for daily use</li>
+                <li>Long lasting fabric</li>
+                <li>Lite weight fabric</li>
+                <li>It can be used T-shirt and jerseys</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Material: Honeycomb -->
+          <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+            <img src="img/materials/honey.png" alt="Honeycomb Fabric" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Honeycomb</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                <li>Good quality 170 gsm polyester fabric</li>
+                <li>Standard look and best for Daily use.</li>
+                <li>Long lasting fabric</li>
+                <li>Medium Thickness</li>
+                <li>It Can be used T-shirt and jerseys</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Size Chart Section -->
+    <section id="size-chart" class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            T-Shirt Size Chart
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-12">
+            Measurement in inches.
+          </p>
+        </div>
+
+        <!-- Kids / Youth Sizes -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Kids / Youth Sizes</h3>
+        <div class="overflow-x-auto bg-white rounded-lg shadow-lg mb-12">
+          <table class="w-full min-w-[600px] text-lg text-left">
+            <thead class="bg-gray-800 text-white uppercase text-sm">
+              <tr>
+                <th class="py-4 px-6">Size</th>
+                <th class="py-4 px-6">Length</th>
+                <th class="py-4 px-6">Half Chest</th>
+                <th class="py-4 px-6">Full Chest</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">20</td>
+                <td class="py-4 px-6">15</td>
+                <td class="py-4 px-6">10</td>
+                <td class="py-4 px-6">20</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">22</td>
+                <td class="py-4 px-6">16</td>
+                <td class="py-4 px-6">11</td>
+                <td class="py-4 px-6">22</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">24</td>
+                <td class="py-4 px-6">17</td>
+                <td class="py-4 px-6">12</td>
+                <td class="py-4 px-6">24</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">26</td>
+                <td class="py-4 px-6">18</td>
+                <td class="py-4 px-6">13</td>
+                <td class="py-4 px-6">26</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">28</td>
+                <td class="py-4 px-6">19.5</td>
+                <td class="py-4 px-6">14</td>
+                <td class="py-4 px-6">28</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">30</td>
+                <td class="py-4 px-6">21</td>
+                <td class="py-4 px-6">15</td>
+                <td class="py-4 px-6">30</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 font-semibold">32</td>
+                <td class="py-4 px-6">24</td>
+                <td class="py-4 px-6">16</td>
+                <td class="py-4 px-6">32</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Adult Sizes -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Adult Sizes</h3>
+        <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
+          <table class="w-full min-w-[600px] text-lg text-left">
+            <thead class="bg-gray-800 text-white uppercase text-sm">
+              <tr>
+                <th class="py-4 px-6">Size</th>
+                <th class="py-4 px-6">Length</th>
+                <th class="py-4 px-6">Half Chest</th>
+                <th class="py-4 px-6">Full Chest</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">XS - 34</td>
+                <td class="py-4 px-6">25.5</td>
+                <td class="py-4 px-6">17</td> <!-- Note: Your data said 25, but Half Chest is usually ~17 for a 34 Full Chest. I used 17 based on the L-4XL pattern. -->
+                <td class="py-4 px-6">34</td> <!-- Note: Your data said 25. I assumed 34. -->
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">S - 36</td>
+                <td class="py-4 px-6">26.5</td>
+                <td class="py-4 px-6">18</td>
+                <td class="py-4 px-6">36</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">M - 38</td>
+                <td class="py-4 px-6">27</td>
+                <td class="py-4 px-6">19</td>
+                <td class="py-4 px-6">38</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">L - 40</td>
+                <td class="py-4 px-6">28</td>
+                <td class="py-4 px-6">20</td>
+                <td class="py-4 px-6">40</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">XL - 42</td>
+                <td class="py-4 px-6">29</td>
+                <td class="py-4 px-6">21</td>
+                <td class="py-4 px-6">42</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="py-4 px-6 font-semibold">XXL - 44</td>
+                <td class="py-4 px-6">29.5</td>
+                <td class="py-4 px-6">22</td>
+                <td class="py-4 px-6">44</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-4 px-6 font-semibold">3XL - 46</td>
+                <td class="py-4 px-6">29.5</td>
+                <td class="py-4 px-6">23</td>
+                <td class="py-4 px-6">46</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="py-4 px-6 font-semibold">4XL - 48</td>
+                <td class="py-4 px-6">29.5</td>
+                <td class="py-4 px-6">24</td>
+                <td class="py-4 px-6">48</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="text-center text-gray-600 italic mt-6">*Sizes may rarely vary in the range of +/- 0.5 inches</p>
+
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 lg:py-24 bg-blue-600 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
+        <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+          Let's create something amazing together. Our team is ready to help you with everything from design to delivery. Contact us today for a free quote.
+        </p>
+        <a href="contact.html" class="inline-block bg-white text-blue-600 text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
+          Get a Free Quote
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- About -->
+        <div>
+          <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
+          <p class="text-gray-400">
+            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with comfort, durability, and your brand identity in mind.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="gallery.html" class="hover:text-white">Gallery</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="clients.html" class="hover:text-white">Clients</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
+            <a href="blog.html" class="hover:text-white">Blog</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex space-x-5 text-xl">
+            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook">
+              <i class="ti-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram">
+              <i class="ti-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
+              <i class="ti-youtube"></i>
+            </a>
+            <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // --- Mobile Menu ---
+      const openMenuBtn = document.getElementById("open-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      function openMenu() {
+        mobileMenu.style.transform = "translateX(0)";
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.style.transform = "translateX(-100%)";
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+
+    });
+  </script>
+
+</body>
+
+</html>
+

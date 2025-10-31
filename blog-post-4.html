@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO meta tags will be updated by JavaScript -->
+  <meta name="description" content="Loading content...">
+  <meta name="keywords" content="NDIA, Blog, T-shirt Printing, Custom Uniforms">
+  <title>Loading... | NDIA Blog</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icon Fonts (Themify and Font Awesome) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Blog content styling */
+    .blog-content h3 {
+      font-size: 1.5rem; /* text-2xl */
+      font-weight: 700; /* font-bold */
+      color: #1f2937; /* text-gray-900 */
+      margin-top: 2rem; /* mt-8 */
+      margin-bottom: 1rem; /* mb-4 */
+    }
+    .blog-content p {
+      font-size: 1.125rem; /* text-lg */
+      line-height: 1.75; /* leading-relaxed */
+      color: #374151; /* text-gray-700 */
+      margin-bottom: 1.5rem; /* mb-6 */
+    }
+    .blog-content ul {
+      list-style-type: disc;
+      padding-left: 1.5rem; /* pl-6 */
+      margin-bottom: 1.5rem; /* mb-6 */
+      font-size: 1.125rem; /* text-lg */
+      color: #374151; /* text-gray-700 */
+    }
+    .blog-content li {
+      margin-bottom: 0.5rem; /* mb-2 */
+    }
+    .blog-content strong {
+      font-weight: 600; /* font-semibold */
+      color: #111827; /* text-gray-900 */
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 
+    Mobile Off-canvas Menu 
+  -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
+    <!-- Menu Header -->
+    <div class="flex justify-between items-center mb-10">
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+      <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
+        <!-- Close Icon (X) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+      <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+      <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+      <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Footer Socials -->
+    <div class="absolute bottom-6 left-6">
+      <div class="flex space-x-5 mb-4 text-lg">
+        <!-- Social Icons (Original) -->
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="copyright-text text-sm text-gray-500">
+        <p>© <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile menu (when open) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
+
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+        <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+        <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+        <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Social Icons -->
+      <div class="hidden md:flex space-x-5 text-xl">
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
+        <!-- Menu Icon (Hamburger) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Article Header -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div id="article-header" class="text-center">
+          <span id="article-category" class="inline-block bg-gray-100 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full uppercase mb-4">Loading...</span>
+          <h1 id="article-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Loading Article...
+          </h1>
+          <p id="article-date" class="text-lg text-gray-600">...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Image -->
+    <div class="container mx-auto px-6 max-w-5xl -mt-16 z-10 relative">
+      <img id="article-image" src="https://placehold.co/1200x600/f3f4f6/a8a29e?text=Loading+Image..." alt="Blog post image" class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-2xl">
+    </div>
+
+    <!-- Article Content -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div id="article-content" class="container mx-auto px-6 max-w-3xl blog-content">
+        <p>Loading content, please wait...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- About -->
+        <div>
+          <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
+          <p class="text-gray-400">
+            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with comfort, durability, and your brand identity in mind.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="gallery.html" class="hover:text-white">Gallery</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="clients.html" class="hover:text-white">Clients</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
+            <a href="blog.html" class="hover:text-white">Blog</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex space-x-5 text-xl">
+            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook">
+              <i class="ti-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram">
+              <i class="ti-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
+              <i class="ti-youtube"></i>
+            </a>
+            <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // --- Mobile Menu ---
+      const openMenuBtn = document.getElementById("open-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      function openMenu() {
+        mobileMenu.style.transform = "translateX(0)";
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.style.transform = "translateX(-100%)";
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+
+    });
+  </script>
+
+  <!-- NEW SCRIPT FOR DYNAMIC POST CONTENT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // ---!!! YOUR LIVE GOOGLE SHEET URL !!!---
+      const BLOG_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT5QReODL5C679GUtPHC26ENqTkD_Lhe1wP-k4NSQIGmsYukkQE3epOr4Il0VBZQ-pdP-JdDpwKQR8I/pub?gid=1935086505&single=true&output=csv';
+      
+      // Get elements to update
+      const articleHeader = document.getElementById('article-header');
+      const articleCategory = document.getElementById('article-category');
+      const articleTitle = document.getElementById('article-title');
+      const articleDate = document.getElementById('article-date');
+      const articleImage = document.getElementById('article-image');
+      const articleContent = document.getElementById('article-content');
+      
+      const defaultPlaceholder = 'https://placehold.co/1200x600/f97316/white?text=NDIA';
+
+      // Function to parse CSV text into an array of objects
+      function parseCSV(text) {
+        const lines = text.trim().split('\n');
+        const headers = lines.shift().split(',').map(h => h.trim()); // Headers: Category,Title,Description,ImageUrl,LinkUrl,Date,Content
+        const data = [];
+        for (let i = 0; i < lines.length; i++) {
+          const values = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/); // Handle commas in content
+          
+          let entry = {};
+          entry['Category'] = values[0]?.trim().replace(/"/g, '') || 'News';
+          entry['Title'] = values[1]?.trim().replace(/"/g, '') || 'Blog Post Title';
+          entry['Description'] = values[2]?.trim().replace(/"/g, '') || '...';
+          entry['ImageUrl'] = values[3]?.trim().replace(/"/g, '') || '';
+          entry['LinkUrl'] = values[4]?.trim().replace(/"/g, '') || '#';
+          entry['Date'] = values[5]?.trim().replace(/"/g, '') || '';
+          
+          // Handle quotes and newlines in Content
+          let content = values[6] || ''; // Get new Content, default to empty string
+          if (content.startsWith('"') && content.endsWith('"')) {
+            content = content.substring(1, content.length - 1);
+          }
+          entry['Content'] = content.replace(/""/g, '"'); // Handle escaped quotes
+          
+          data.push(entry);
+        }
+        return data;
+      }
+
+      // Main function to load and display the specific post
+      async function loadPost() {
+        try {
+          const cacheBusterUrl = BLOG_CSV_URL + '&t=' + Date.now();
+          const response = await fetch(cacheBusterUrl);
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+          const csvText = await response.text();
+          let allPosts = parseCSV(csvText);
+
+          // --- Sort by date to find the newest post ---
+          allPosts.sort((a, b) => {
+            const dateA = new Date(a.Date);
+            const dateB = new Date(b.Date);
+            const validA = !isNaN(dateA);
+            const validB = !isNaN(dateB);
+
+            if (validA && !validB) return -1; 
+            if (!validA && validB) return 1;
+            if (!validA && !validB) return 0; 
+            return dateB - dateA; // Sort newest to oldest
+          });
+
+          // --- MODIFIED LOGIC ---
+          // Get the fourth post (index 3) from the sorted list
+          const post = allPosts[3];
+
+          if (!post) {
+            articleTitle.textContent = "Post Not Found";
+            articleContent.innerHTML = `<p>Sorry, we couldn't find a fourth blog post. Please check your Google Sheet to make sure at least four posts exist.</p>`;
+            return;
+          }
+
+          // --- Populate the Page ---
+          
+          // Update Title & Meta
+          document.title = `${post.Title} | NDIA Blog`;
+          document.querySelector('meta[name="description"]').setAttribute("content", post.Description);
+
+          // Update Header
+          articleCategory.textContent = post.Category;
+          articleTitle.textContent = post.Title;
+          articleDate.textContent = post.Date ? `Posted on ${post.Date}` : '';
+          
+          // Set category color
+          const category = post.Category.toLowerCase();
+          if (category.includes('news')) {
+            articleCategory.className = 'inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full uppercase mb-4';
+          } else if (category.includes('guide')) {
+            articleCategory.className = 'inline-block bg-emerald-100 text-emerald-700 text-sm font-semibold px-3 py-1 rounded-full uppercase mb-4';
+          } else {
+             articleCategory.className = 'inline-block bg-orange-100 text-orange-700 text-sm font-semibold px-3 py-1 rounded-full uppercase mb-4';
+          }
+
+          // Update Image
+          articleImage.src = post.ImageUrl || defaultPlaceholder;
+          articleImage.alt = post.Title;
+          articleImage.onerror = () => {
+            articleImage.src = defaultPlaceholder;
+          };
+          
+          // --- UPDATED CONTENT LOGIC ---
+          // Use the full Content if available, otherwise fall back to the Description
+          let contentToRender = post.Content;
+          
+          // Check if Content is missing
+          if (!contentToRender || contentToRender.trim() === "") {
+            contentToRender = post.Description; // Fallback to Description
+          }
+
+          // Update Content
+          const paragraphs = contentToRender.split(/\r?\n/); // Split by newlines
+          articleContent.innerHTML = paragraphs
+            .filter(p => p.trim() !== '') // Remove empty lines
+            .map(p => `<p>${p}</p>`)      // Wrap in <p> tag
+            .join('');
+            
+          // Final check if BOTH were empty
+          if (articleContent.innerHTML.trim() === "") {
+             articleContent.innerHTML = `<p>Content is coming soon for this article. Please check back later.</p>`;
+          }
+
+        } catch (e) {
+          console.error("Failed to load post content:", e);
+          articleTitle.textContent = "Error";
+          articleContent.innerHTML = `<p>Failed to load article content. Please check the Google Sheet URL and make sure it's published as a CSV.</p>`;
+        }
+      }
+      
+      // Run the function
+      loadPost();
+      
+    });
+  </script>
+
+</body>
+
+</html>
+

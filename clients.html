@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Clients of New Design International Apparels - Kairali TMT, Kenza TMT, and more.">
+  <meta name="keywords" content="NDIA, New Design International Apparels, Clients, Partners, T-shirt Manufacturing, Custom Uniforms">
+  <title>Our Clients | New Design International Apparels</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icon Fonts (Themify and Font Awesome) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 
+    Mobile Off-canvas Menu 
+    (Hidden by default, shown by 'transform: translateX(0)')
+  -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
+    <!-- Menu Header -->
+    <div class="flex justify-between items-center mb-10">
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+      <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
+        <!-- Close Icon (X) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="gallery.html" class.="text-gray-700 hover:text-blue-600">Gallery</a>
+      <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="clients.html" class="font-semibold text-blue-600">Clients</a>
+      <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+      <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Footer Socials -->
+    <div class="absolute bottom-6 left-6">
+      <div class="flex space-x-5 mb-4 text-lg">
+        <!-- Social Icons (Original) -->
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="copyright-text text-sm text-gray-500">
+        <p>© <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile menu (when open) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
+
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+        <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a href="clients.html" class="font-semibold text-blue-600">Clients</a>
+        <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+        <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Social Icons -->
+      <div class="hidden md:flex space-x-5 text-xl">
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
+        <!-- Menu Icon (Hamburger) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Page Header -->
+    <section class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold">Our Valued Clients</h1>
+        <p class="text-lg text-gray-300 mt-4">We're proud to partner with businesses of all sizes.</p>
+      </div>
+    </section>
+
+    <!-- Client Logo Grid -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Trusted By
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-16">
+            We are proud to have partnered with a diverse range of companies, delivering quality apparel that meets their unique branding and uniform needs.
+          </p>
+        </div>
+
+        <!-- Logo Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center max-w-7xl mx-auto">
+          
+          <!-- Client Logo 1 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/clients/kairalitmt.png" alt="Kairali TMT Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Kairali+TMT'; this.onerror=null;">
+          </div>
+          
+          <!-- Client Logo 2 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/clients/kenza.png" alt="Kenza TMT Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Kenza+TMT'; this.onerror=null;">
+          </div>
+
+          <!-- Client Logo 3 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/clients/aquastar.png" alt="Aqua Star Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Aqua+Star'; this.onerror=null;">
+          </div>
+
+          <!-- Client Logo 4 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/clients/euroguard.png" alt="Euroguard Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Euroguard'; this.onerror=null;">
+          </div>
+
+          <!-- Client Logo 5 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/clients/image.png" alt="Image Mobiles Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Image+Mobiles'; this.onerror=null;">
+          </div>
+
+          <!-- Placeholder 6 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/clients/myg.png" alt="MyG Future" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=MyG+Future'; this.onerror=null;">
+          </div>
+          
+          <!-- Placeholder 7 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/logos/client7.png" alt="Client Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Client+Logo'; this.onerror=null;">
+          </div>
+
+          <!-- Placeholder 8 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/logos/client8.png" alt="Client Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Client+Logo'; this.onerror=null;">
+          </div>
+
+          <!-- Placeholder 9 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/logos/client9.png" alt="Client Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Client+Logo'; this.onerror=null;">
+          </div>
+
+          <!-- Placeholder 10 -->
+          <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow h-32">
+            <img src="img/logos/client10.png" alt="Client Logo" class="max-h-20 w-auto" onerror="this.src='https://placehold.co/200x100/f3f4f6/6b7280?text=Client+Logo'; this.onerror=null;">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Call to Action Section -->
+    <section class="py-16 lg:py-24 bg-blue-600 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Become Our Next Valued Client</h2>
+        <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+          We're ready to bring your brand to life with high-quality custom apparel. Contact us today to discuss your project.
+        </p>
+        <a href="contact.html" class="inline-block bg-white text-blue-600 text-lg font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
+          Get in Touch
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- About -->
+        <div>
+          <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
+          <p class="text-gray-400">
+            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with comfort, durability, and your brand identity in mind.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="gallery.html" class="hover:text-white">Gallery</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="clients.html" class="hover:text-white">Clients</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
+            <a href="blog.html" class="hover:text-white">Blog</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex space-x-5 text-xl">
+            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook">
+              <i class="ti-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram">
+              <i class="ti-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
+              <i class="ti-youtube"></i>
+            </a>
+            <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // --- Mobile Menu ---
+      const openMenuBtn = document.getElementById("open-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      function openMenu() {
+        mobileMenu.style.transform = "translateX(0)";
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.style.transform = "translateX(-100%)";
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+
+    });
+  </script>
+
+</body>
+
+</html>
+

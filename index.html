@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="New Design International Apparels - Custom T-Shirts, Uniforms, and Workwear" />
+  <meta name="keywords" content="T-Shirts, Uniforms, Apparels, Custom Printing, NDIA" />
+  <title>New Design International Apparels</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icon Fonts (Themify and Font Awesome) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Desktop Hero Accordion */
+    .hero-accordion-item {
+      flex-grow: 1;
+      transition: flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-accordion-item.active {
+      flex-grow: 10;
+    }
+
+    .hero-accordion-item .hero-text {
+      opacity: 0;
+      visibility: hidden;
+      /* Hide by default */
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+      /* transform is now handled by child animations */
+    }
+
+    .hero-accordion-item.active .hero-text {
+      opacity: 1;
+      visibility: visible;
+      /* Show when active */
+    }
+
+    /* Mobile Hero Slider */
+    .hero-slider-track {
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-slider-item {
+      flex-shrink: 0;
+      width: 100%;
+      position: relative;
+    }
+
+    .hero-mobile-text {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+      /* padding-bottom handled by pb-24 class */
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* --- ANIMATION STYLES --- */
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .will-animate {
+      opacity: 0;
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animation-delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .animation-delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    /* Stats Bar Chart Styling */
+    .bar-chart-item {
+      transition: width 1s ease-out;
+      background-color: #f97316;
+      /* orange-500 */
+      height: 100%;
+    }
+    
+    /* --- NEW ODOMETER STYLES --- */
+    .odometer-container {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      line-height: 1; /* Aligns digits */
+    }
+    
+    .digit-reel {
+      height: 1em; /* Matches the font size */
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .digit-reel-container {
+      display: flex; /* Aligns 0-9 vertically */
+      flex-direction: column;
+      transition: transform 2.5s cubic-bezier(0.19, 1, 0.22, 1); /* Smooth elastic transition */
+    }
+
+    .digit {
+      height: 1em; /* Matches the font size */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .comma-separator {
+      height: 1em;
+      display: flex;
+      align-items: flex-end; /* Aligns comma to the bottom */
+    }
+    /* --- END ODOMETER STYLES --- */
+    
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 
+    Mobile Off-canvas Menu 
+    (Hidden by default, shown by 'transform: translateX(0)')
+  -->
+  <div id="mobile-menu"
+    class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
+    <!-- Menu Header -->
+    <div class="flex justify-between items-center mb-10">
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+      <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
+        <!-- Close Icon (X) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a href="index.html" class="font-semibold text-blue-600">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+      <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+      <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+      <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Footer Socials -->
+    <div class="absolute bottom-6 left-6">
+      <div class="flex space-x-5 mb-4 text-lg">
+        <!-- Social Icons (Themify/FA) -->
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600"
+          title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="copyright-text text-sm text-gray-500">
+        <p>©
+          <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile menu (when open) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
+
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="font-semibold text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+        <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+        <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+        <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Social Icons -->
+      <div class="hidden md:flex space-x-5 text-xl">
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600"
+          title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
+        <!-- Menu Icon (Hamburger) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <!-- 
+      Hero Section: Desktop Accordion 
+      (Hidden on mobile, flex on md screens and up)
+    -->
+    <section id="hero-accordion" class="hidden md:flex w-full h-[calc(100vh-68px)] max-h-[900px]">
+
+      <!-- Item 1 -->
+      <div class="hero-accordion-item active" data-desktop-img="img/products/1.jpg">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span
+            class="hero-item-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Round Neck T-Shirts</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Soft, breathable cotton and polyester blends —
+            available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="hero-accordion-item" data-desktop-img="img/products/2.jpg">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span
+            class="hero-item-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Collar / Polo T-Shirts</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Premium polo styles in pique, honeycomb, and dry-fit
+            materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="hero-accordion-item" data-desktop-img="img/products/3.jpg">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span
+            class="hero-item-tag block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">SPORTSWEAR</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Sublimation Jerseys</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">High-quality dry-fit jerseys with full-color
+            sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
+        </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="hero-accordion-item" data-desktop-img="img/products/4.jpg">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span
+            class="hero-item-tag block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">BOTTOM
+            WEAR</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Track Pants & Shorts</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Stretchable cotton and dry-fit fabrics — designed for
+            activewear and comfort, customizable with your team or brand logo.</p>
+        </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="hero-accordion-item" data-desktop-img="img/products/5.jpg">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span
+            class="hero-item-tag block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">UNIFORMS</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">School, Corporate & Hospitality Wear</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Durable, professional uniforms for schools, offices,
+            and hotels — available in custom colors, materials, and logo branding options.</p>
+        </div>
+      </div>
+      <!-- Item 6 -->
+      <div class="hero-accordion-item" data-desktop-img="img/products/6.jpg">
+        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
+          <span
+            class="hero-item-tag block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full will-animate">CHEF
+            & INDUSTRIAL</span>
+          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Chef Coats & Workwear</h2>
+          <p class="hero-item-desc text-lg max-w-lg will-animate">Heat-resistant and long-lasting fabrics built for
+            kitchen and industrial environments — stylishly branded with embroidery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      Hero Section: Mobile Slider
+      (Visible on mobile, hidden on md screens and up)
+    -->
+    <section id="hero-slider"
+      class="md:hidden w-full h-[calc(100vh-68px)] max-h-[900px] overflow-hidden relative bg-gray-900 text-white">
+      <!-- Slider Track -->
+      <div class="hero-slider-track flex h-full">
+
+        <!-- Slide 1 -->
+        <div class="hero-slider-item h-full" data-mobile-img="img/products/mobile/1.jpg">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
+            <span
+              class="hero-slide-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Round Neck T-Shirts</h2>
+            <p class="hero-slide-desc will-animate">Soft, breathable cotton and polyester blends — available in multiple
+              fabrics, colors, and fits, customizable with your logo or text.</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slider-item" data-mobile-img="img/products/mobile/2.jpg">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
+            <span
+              class="hero-slide-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Collar / Polo T-Shirts</h2>
+            <p class="hero-slide-desc will-animate">Premium polo styles in pique, honeycomb, and dry-fit materials —
+              ideal for staff uniforms, events, and promotions with embroidery or print.</p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slider-item" data-mobile-img="img/products/mobile/3.jpg">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
+            <span
+              class="hero-slide-tag block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">SPORTSWEAR</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Sublimation Jerseys</h2>
+            <p class="hero-slide-desc will-animate">High-quality dry-fit jerseys with full-color sublimation — perfect
+              for sports teams and branding, customizable with any design or pattern.</p>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="hero-slider-item" data-mobile-img="img/products/mobile/4.jpg">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
+            <span
+              class="hero-slide-tag block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">BOTTOM
+              WEAR</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Track Pants & Shorts</h2>
+            <p class="hero-slide-desc will-animate">Stretchable cotton and dry-fit fabrics — designed for activewear and
+              comfort, customizable with your team or brand logo.</p>
+          </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="hero-slider-item" data-mobile-img="img/products/mobile/5.jpg">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
+            <span
+              class="hero-slide-tag block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">UNIFORMS</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">School, Corporate & Hospitality Wear</h2>
+            <p class="hero-slide-desc will-animate">Durable, professional uniforms for schools, offices, and hotels —
+              available in custom colors, materials, and logo branding options.</p>
+          </div>
+        </div>
+        <!-- Slide 6 -->
+        <div class="hero-slider-item" data-mobile-img="img/products/mobile/6.jpg">
+          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
+            <span
+              class="hero-slide-tag block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full will-animate">CHEF
+              & INDUSTRIAL</span>
+            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Chef Coats & Workwear</h2>
+            <p class="hero-slide-desc will-animate">Heat-resistant and long-lasting fabrics built for kitchen and
+              industrial environments — stylishly branded with embroidery.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Dots -->
+      <div id="slider-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
+        <!-- Dots will be generated by JS -->
+      </div>
+    </section>
+
+
+    <!-- --- LIVE STATISTICS SECTION --- -->
+    <section id="stats" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Our Impact in Numbers</h2>
+
+        <!-- Metrics Cards -->
+        <div id="metrics-cards" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <p class="text-sm font-semibold text-orange-500 uppercase">Total Apparel Delivered</p>
+            <!-- Odometer container for 'delivered' -->
+            <div id="stat-delivered" class="odometer-container text-5xl font-extrabold text-gray-900 mt-2">...</div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <p class="text-sm font-semibold text-blue-600 uppercase">Happy Customers</p>
+            <!-- Odometer container for 'customers' -->
+            <div id="stat-customers" class="odometer-container text-5xl font-extrabold text-gray-900 mt-2">...</div>
+          </div>
+        </div>
+
+        <!-- Product Breakdown Chart -->
+        <div class="max-w-5xl mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-md">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-3">Product Volume Breakdown (Units)</h3>
+          <div id="chart-container" class="space-y-5">
+            <!-- Dynamic bars will be inserted here -->
+          </div>
+        </div>
+
+        <p id="stats-loading-error" class="text-center text-red-500 mt-4 hidden">
+          Error loading statistics. Please check the data source URL.
+        </p>
+      </div>
+    </section>
+    <!-- --- END NEW LIVE STATISTICS SECTION --- -->
+
+
+    <!-- Welcome Section -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="text-sm font-semibold text-blue-600 uppercase">Welcome to NDIA</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Quality. Customization. Comfort.</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              We specialize in manufacturing premium-quality
+              <strong class="text-gray-900">custom T-shirts, uniforms, and sportswear</strong>.
+              From round-neck and polo T-shirts to sublimation jerseys and hospitality wear — we craft every piece with
+              <strong class="text-gray-900">comfort, durability, and your brand identity</strong> in mind.
+            </p>
+            <a href="about.html"
+              class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors">
+              Read Our Story
+            </a>
+          </div>
+          <div>
+            <img src="img/about.jpg" alt="About New Design International Apparels"
+              class="rounded-lg shadow-xl w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Services</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+          We provide end-to-end solutions, from a single custom piece to full-scale production runs, all handled
+          in-house.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Service 1 -->
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom Printing</h3>
+            <p class="text-gray-700">High-detail DTF, vibrant Sublimation, and durable Screen Printing for any design.
+            </p>
+          </div>
+          <!-- Service 2 -->
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0021.5 5.5V3.935m-18 0A2.5 2.5 0 015.5 1.5h13A2.5 2.5 0 0121.5 3.935m-18 0v.009A2.5 2.5 0 005.5 6.5h13A2.5 2.5 0 0021.5 3.945V3.935" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Embroidery</h3>
+            <p class="text-gray-700">Premium 3D stitching for logos and names on polos, chef coats, and caps.</p>
+          </div>
+          <!-- Service 3 -->
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Bulk Manufacturing</h3>
+            <p class="text-gray-700">Large-scale production for corporate uniforms, school events, and private labels.
+            </p>
+          </div>
+        </div>
+        <a href="services.html"
+          class="inline-block bg-blue-600 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors mt-12">
+          Explore All Services
+        </a>
+      </div>
+    </section>
+
+    <!-- Gallery Preview Section -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">From Our Gallery</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+          A glimpse into the quality and variety of our work.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="gallery.html"
+            class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
+            <img src="img/gallery/roundneck1.jpg" alt="Round Neck T-Shirt"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+          <a href="gallery.html"
+            class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
+            <img src="img/gallery/jersey1.jpg" alt="Sports Jersey"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+          <a href="gallery.html"
+            class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
+            <img src="img/gallery/chef1.jpg" alt="Chef Coat"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+          <a href="gallery.html"
+            class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
+            <img src="img/gallery/corporate1.jpg" alt="Corporate Uniform"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+        </div>
+        <a href="gallery.html"
+          class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors mt-12">
+          View Full Gallery
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- About -->
+        <div>
+          <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
+          <p class="text-gray-400">
+            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with
+            comfort, durability, and your brand identity in mind.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="gallery.html" class="hover:text-white">Gallery</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="clients.html" class="hover:text-white">Clients</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
+            <a href="blog.html" class="hover:text-white">Blog</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex space-x-5 text-xl">
+            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500"
+              title="Facebook">
+              <i class="ti-facebook"></i>
+            </a>
+            <a href="httpsm://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500"
+              title="Instagram">
+              <i class="ti-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
+              <i class="ti-youtube"></i>
+            </a>
+            <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">©
+          <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>.
+          All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 
+    ============================================
+    MAIN JAVASCRIPT FOR ALL PAGE FUNCTIONALITY
+    (This single script block now contains ALL JavaScript)
+    ============================================
+  -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // --- 1. MOBILE MENU ---
+      const openMenuBtn = document.getElementById("open-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      function openMenu() {
+        mobileMenu.style.transform = "translateX(0)";
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.style.transform = "translateX(-100%)";
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+
+
+      // --- 2. LIVE DATA & STATS ---
+
+      const LIVE_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT5QReODL5C679GUtPHC26ENqTkD_Lhe1wP-k4NSQIGmsYukkQE3epOr4Il0VBZQ-pdP-JdDpwKQR8I/pub?output=csv';
+      const statsCardDelivered = document.getElementById('stat-delivered');
+      const statsCardCustomers = document.getElementById('stat-customers');
+      const chartContainer = document.getElementById('chart-container');
+      const errorDisplay = document.getElementById('stats-loading-error');
+      
+      let globalDeliveredValue = 0;
+      let globalCustomersValue = 0;
+
+      function formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+      
+      function parseNumber(str) {
+        return parseInt(String(str).replace(/,/g, '')) || 0;
+      }
+
+      // Count Up Animation (for bar chart)
+      function animateCountUp(element, finalValue, duration = 1500) {
+        let start = 0;
+        let startTime = null;
+
+        function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const progress = Math.min(timeElapsed / duration, 1);
+          
+          let currentValue = Math.floor(progress * (finalValue - start)) + start;
+          element.textContent = formatNumber(currentValue);
+
+          if (progress < 1) {
+            requestAnimationFrame(animation);
+          } else {
+             element.textContent = formatNumber(finalValue); // Ensure it ends on the exact value
+          }
+        }
+        requestAnimationFrame(animation);
+      }
+
+      // Odometer Animation (for main stat cards)
+      function animateOdometer(element, finalValue) {
+        let finalValueStr = formatNumber(finalValue);
+        element.innerHTML = ''; // Clear the "..."
+
+        Array.from(finalValueStr).forEach(char => {
+          if (char === ',') {
+            const comma = document.createElement('span');
+            comma.className = 'comma-separator';
+            comma.textContent = ',';
+            element.appendChild(comma);
+          } else {
+            const reel = document.createElement('div');
+            reel.className = 'digit-reel';
+            
+            const reelContainer = document.createElement('div');
+            reelContainer.className = 'digit-reel-container';
+            
+            for (let i = 0; i <= 9; i++) {
+              const digit = document.createElement('div');
+              digit.className = 'digit';
+              digit.textContent = i;
+              reelContainer.appendChild(digit);
+            }
+            reel.appendChild(reelContainer);
+            element.appendChild(reel);
+
+            const digitValue = parseInt(char);
+            const yOffset = -digitValue * 1; // 1em
+            
+            setTimeout(() => {
+                // *** FIX APPLIED HERE ***
+                // Transform the inner container, not the outer clipping div
+                reelContainer.style.transform = `translateY(${yOffset}em)`;
+            }, 100); 
+          }
+        });
+      }
+
+      // "Live" Ticker Function for main stats
+      function startLiveTicker() {
+          // Ticker for Delivered items (+1 every 15 seconds)
+          setInterval(() => {
+              if (globalDeliveredValue > 0) {
+                globalDeliveredValue += 1;
+                // Re-run the odometer animation with the new value
+                animateOdometer(statsCardDelivered, globalDeliveredValue);
+              }
+          }, 15000); // 15 seconds
+          
+          // Ticker for Customers (+1 every 60 seconds)
+          setInterval(() => {
+              if (globalCustomersValue > 0) {
+                globalCustomersValue += 1;
+                // Re-run the odometer animation with the new value
+                animateOdometer(statsCardCustomers, globalCustomersValue);
+              }
+          }, 60000); // 60 seconds (1 minute)
+      }
+
+      // Parse CSV text into an array of objects
+      function parseCSV(text) {
+        const lines = text.trim().split('\n');
+        const data = [];
+        for (let i = 1; i < lines.length; i++) {
+          const columns = lines[i].split(',');
+          if (columns.length >= 2) {
+            const metric = columns[0].trim();
+            const value = columns[1].trim();
+            if (metric && value) {
+              data.push({ metric, value: parseInt(value.replace(/,/g, '')) });
+            }
+          }
+        }
+        return data;
+      }
+
+      // Render the bar chart
+      function renderChart(productData) {
+        if (!productData.length) {
+          chartContainer.innerHTML = '<p class="text-center text-gray-500">No product volume data available.</p>';
+          return;
+        }
+
+        const maxVolume = productData.reduce((max, item) => Math.max(max, item.value), 0);
+        chartContainer.innerHTML = ""; // Clear existing content
+
+        productData.forEach(item => {
+          const percentage = (item.value / maxVolume) * 100;
+          const itemID = item.metric.replace(/[\s/&]+/g, '-'); // Sanitize ID
+          
+          const barWrapper = document.createElement("div");
+          barWrapper.className = "flex flex-col";
+          
+          barWrapper.innerHTML = `
+            <div class="flex justify-between items-center mb-1 text-sm md:text-base font-medium">
+              <span class="text-gray-700">${item.metric}</span>
+              <span id="value-${itemID}" class="text-gray-900 font-semibold">0</span>
+            </div>
+            <div class="h-3 bg-gray-200 rounded-full overflow-hidden">
+              <div id="bar-${itemID}" class="bar-chart-item rounded-full" style="width: 0%;"></div>
+            </div>
+          `;
+          chartContainer.appendChild(barWrapper);
+
+          setTimeout(() => {
+            const bar = document.getElementById(`bar-${itemID}`);
+            if (bar) bar.style.width = `${percentage}%`;
+          }, 100);
+          
+          const valueLabel = document.getElementById(`value-${itemID}`);
+          if(valueLabel) {
+            animateCountUp(valueLabel, item.value, 1500); 
+          }
+        });
+      }
+
+      // Main function to load and display all statistics
+      async function loadStats() {
+        try {
+          const cacheBusterUrl = LIVE_CSV_URL + '&t=' + Date.now();
+          const response = await fetch(cacheBusterUrl);
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+          const csvText = await response.text();
+          const data = parseCSV(csvText);
+
+          if (!data || data.length < 2) {
+            errorDisplay.classList.remove('hidden');
+            errorDisplay.textContent = 'Error: Data sheet is empty or malformed.';
+            return;
+          }
+
+          const metrics = data.slice(0, 2);
+          const productData = data.slice(2);
+
+          const delivered = metrics.find(d => d.metric.toLowerCase().includes("delivered"));
+          const customers = metrics.find(d => d.metric.toLowerCase().includes("happy"));
+
+          if (statsCardDelivered && delivered) {
+            globalDeliveredValue = delivered.value;
+            animateOdometer(statsCardDelivered, globalDeliveredValue);
+          }
+          
+          if (statsCardCustomers && customers) {
+            globalCustomersValue = customers.value;
+            animateOdometer(statsCardCustomers, globalCustomersValue);
+          }
+          
+          // Start the "live" tickers after initial animation
+          startLiveTicker(); 
+
+          renderChart(productData);
+          errorDisplay.classList.add('hidden'); 
+
+        } catch (e) {
+          console.error("Failed to load or parse statistics:", e);
+          if (errorDisplay) {
+            errorDisplay.classList.remove('hidden');
+            errorDisplay.textContent = 'Failed to load statistics. Please check the console for details.';
+          }
+        }
+      }
+      
+      // --- 3. HERO SECTION IMAGE & ANIMATION LOGIC ---
+
+      const accordionItems = document.querySelectorAll(".hero-accordion-item");
+      const slider = document.getElementById("hero-slider");
+      const track = document.querySelector(".hero-slider-track");
+
+      function setHeroImageSources() {
+        // Desktop Accordion Images
+        accordionItems.forEach(item => {
+          const imgUrl = item.getAttribute('data-desktop-img');
+          if (imgUrl) {
+            item.style.backgroundImage = `url('${imgUrl}')`;
+            item.style.backgroundSize = 'cover';
+            item.style.backgroundPosition = 'center';
+          }
+        });
+
+        // Mobile Slider Images
+        if (slider && track) {
+          Array.from(track.children).forEach(slide => {
+            const mobileImgUrl = slide.getAttribute('data-mobile-img');
+            if (mobileImgUrl) {
+              slide.style.backgroundImage = `url('${mobileImgUrl}')`;
+              slide.style.backgroundSize = 'cover';
+              slide.style.backgroundPosition = 'center';
+            }
+          });
+        }
+      }
+
+      function animateAccordionItem(item) {
+        const tag = item.querySelector(".hero-item-tag");
+        const title = item.querySelector(".hero-item-title");
+        const desc = item.querySelector(".hero-item-desc");
+
+        tag.classList.add("animate-fade-in-up");
+        title.classList.add("animate-fade-in-up", "animation-delay-200");
+        desc.classList.add("animate-fade-in-up", "animation-delay-300");
+      }
+
+      function resetAccordionItem(item) {
+        const els = item.querySelectorAll(".hero-item-tag, .hero-item-title, .hero-item-desc");
+        els.forEach(el => {
+          el.classList.remove("animate-fade-in-up", "animation-delay-200", "animation-delay-300");
+        });
+      }
+
+      function animateSlide(slide) {
+        const tag = slide.querySelector(".hero-slide-tag");
+        const title = slide.querySelector(".hero-slide-title");
+        const desc = slide.querySelector(".hero-slide-desc");
+
+        tag.classList.add("animate-fade-in-up");
+        title.classList.add("animate-fade-in-up", "animation-delay-200");
+        desc.classList.add("animate-fade-in-up", "animation-delay-300");
+      }
+
+      function resetSlide(slide) {
+        const els = slide.querySelectorAll(".hero-slide-tag, .hero-slide-title, .hero-slide-desc");
+        els.forEach(el => {
+          el.classList.remove("animate-fade-in-up", "animation-delay-200", "animation-delay-300");
+        });
+      }
+
+      if (accordionItems.length > 0) {
+        animateAccordionItem(document.querySelector(".hero-accordion-item.active"));
+        accordionItems.forEach(item => {
+          item.addEventListener("mouseenter", () => {
+            if (item.classList.contains("active")) return;
+            accordionItems.forEach(i => {
+              i.classList.remove("active");
+              resetAccordionItem(i);
+            });
+            item.classList.add("active");
+            animateAccordionItem(item);
+          });
+        });
+      }
+
+      if (slider && track) {
+        const slides = Array.from(track.children);
+        const dotsContainer = document.getElementById("slider-dots");
+        let currentSlide = 0;
+        let slideInterval;
+        let startX = 0;
+        let endX = 0;
+
+        if (slides.length > 0) {
+          slides.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.classList.add("h-2", "w-2", "rounded-full", "transition-colors");
+            dot.classList.add(index === 0 ? "bg-white" : "bg-white/50");
+            dot.addEventListener("click", () => {
+              goToSlide(index);
+              resetInterval();
+            });
+            dotsContainer.appendChild(dot);
+          });
+
+          const dots = Array.from(dotsContainer.children);
+
+          function goToSlide(slideIndex) {
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex === currentSlide && document.querySelector('.animate-fade-in-up')) return;
+
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+            resetSlide(slides[currentSlide]);
+            animateSlide(slides[slideIndex]);
+            currentSlide = slideIndex;
+
+            dots.forEach((dot, index) => {
+              dot.classList.toggle("bg-white", index === currentSlide);
+              dot.classList.toggle("bg-white/50", index !== currentSlide);
+            });
+          }
+
+          function nextSlide() {
+            goToSlide((currentSlide + 1) % slides.length);
+          }
+
+          function prevSlide() {
+            goToSlide((currentSlide - 1 + slides.length) % slides.length);
+          }
+
+          function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+          }
+
+          function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+          }
+
+          slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            clearInterval(slideInterval);
+          }, { passive: true });
+
+          slider.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+          }, { passive: true });
+
+          slider.addEventListener('touchend', () => {
+            if (startX === 0 || endX === 0) {
+              startInterval();
+              return;
+            }
+            const diff = startX - endX;
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) nextSlide();
+              else prevSlide();
+            }
+            startX = 0;
+            endX = 0;
+            startInterval();
+          });
+
+          animateSlide(slides[0]);
+          startInterval();
+        }
+      }
+
+      // --- RUN ALL INITIAL FUNCTIONS ---
+      setHeroImageSources();
+      loadStats(); // Load stats on page load
+      window.addEventListener('resize', setHeroImageSources);
+
+    });
+  </script>
+
+</body>
+
+</html>
+

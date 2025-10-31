@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog & News from New Design International Apparels - Industry tips, company updates, and more.">
+  <meta name="keywords" content="NDIA, Blog, News, Apparel Tips, T-shirt Printing, Custom Uniforms">
+  <title>Blog | New Design International Apparels</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icon Fonts (Themify and Font Awesome) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 
+    Mobile Off-canvas Menu 
+  -->
+  <div id="mobile-menu"
+    class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
+    <!-- Menu Header -->
+    <div class="flex justify-between items-center mb-10">
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+      <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
+        <!-- Close Icon (X) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+      <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+      <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+      <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+
+    <!-- Footer Socials -->
+    <div class="absolute bottom-6 left-6">
+      <div class="flex space-x-5 mb-4 text-lg">
+        <!-- Social Icons (Original) -->
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600"
+          title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="copyright-text text-sm text-gray-500">
+        <p>©
+          <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile menu (when open) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
+
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="block">
+        <img src="img/logo.png" alt="NDIA Logo" class="h-10" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-blue-600">Gallery</a>
+        <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a href="clients.html" class="text-gray-700 hover:text-blue-600">Clients</a>
+        <a href="faq.html" class="text-gray-700 hover:text-blue-600">FAQ</a>
+        <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
+        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Desktop Social Icons -->
+      <div class="hidden md:flex space-x-5 text-xl">
+        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
+          <i class="ti-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600"
+          title="Instagram">
+          <i class="ti-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
+          <i class="ti-youtube"></i>
+        </a>
+        <a href="https://wa.me/919447622848" class="text-gray-500 hover:text-green-500" title="WhatsApp">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
+        <!-- Menu Icon (Hamburger) -->
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Page Header -->
+    <section class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold">Our Blog & News</h1>
+        <p class="text-lg text-gray-300 mt-4">Industry insights, company updates, and apparel tips.</p>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <!-- Dynamic Grid Container -->
+        <div id="blog-post-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          <!-- Loading placeholder -->
+          <p id="blog-loading" class="text-lg text-gray-600 col-span-full text-center">Loading posts...</p>
+        </div>
+        
+        <!-- Error Message -->
+        <p id="blog-loading-error" class="text-center text-red-500 mt-8 hidden col-span-full">
+          Failed to load blog posts. Please try again later.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- About -->
+        <div>
+          <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
+          <p class="text-gray-400">
+            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with comfort, durability, and your brand identity in mind.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="gallery.html" class="hover:text-white">Gallery</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="clients.html" class="hover:text-white">Clients</a>
+            <a href="faq.html" class="hover:text-white">FAQ</a>
+            <a href="blog.html" class="hover:text-white">Blog</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex space-x-5 text-xl">
+            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook">
+              <i class="ti-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram">
+              <i class="ti-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
+              <i class="ti-youtube"></i>
+            </a>
+            <a href="https://wa.me/919447622848" class="text-gray-400 hover:text-green-500" title="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // --- Mobile Menu ---
+      const openMenuBtn = document.getElementById("open-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      function openMenu() {
+        mobileMenu.style.transform = "translateX(0)";
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.style.transform = "translateX(-100%)";
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+
+    });
+  </script>
+  
+  <!-- NEW SCRIPT FOR BLOG POSTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // ---!!! YOUR LIVE GOOGLE SHEET URL IS PASTED HERE !!!---
+      const BLOG_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT5QReODL5C679GUtPHC26ENqTkD_Lhe1wP-k4NSQIGmsYukkQE3epOr4Il0VBZQ-pdP-JdDpwKQR8I/pub?gid=1935086505&single=true&output=csv';
+      
+      const grid = document.getElementById('blog-post-grid');
+      const loading = document.getElementById('blog-loading');
+      const errorDisplay = document.getElementById('blog-loading-error');
+
+      // Define random colors for categories
+      const categoryColors = [
+        'bg-orange-100 text-orange-700',
+        'bg-blue-100 text-blue-700',
+        'bg-emerald-100 text-emerald-700',
+        'bg-pink-100 text-pink-700',
+        'bg-purple-100 text-purple-700',
+        'bg-red-100 text-red-700',
+        'bg-yellow-100 text-yellow-700',
+        'bg-indigo-100 text-indigo-700'
+      ];
+
+      // Function to parse CSV text into an array of objects
+      function parseCSV(text) {
+        const lines = text.trim().split('\n');
+        const headers = lines.shift().split(',').map(h => h.trim()); // Headers: Category,Title,Description,ImageUrl,LinkUrl,Date
+        const data = [];
+        for (let i = 0; i < lines.length; i++) {
+          // This regex handles commas inside of quoted fields
+          const values = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+          
+          let entry = {};
+          entry['Category'] = values[0]?.trim().replace(/"/g, '') || 'News';
+          entry['Title'] = values[1]?.trim().replace(/"/g, '') || 'Blog Post Title';
+          entry['Description'] = values[2]?.trim().replace(/"/g, '') || '...';
+          entry['ImageUrl'] = values[3]?.trim().replace(/"/g, '') || ''; // Use empty string if no image
+          entry['LinkUrl'] = values[4]?.trim().replace(/"/g, '') || '#';
+          entry['Date'] = values[5]?.trim().replace(/"/g, '') || ''; // Use empty string if no date
+          data.push(entry);
+        }
+        return data;
+      }
+      
+      // Function to create a single blog post card
+      function createPostCard(post, index) {
+        // Get a random color from the array
+        const randomColor = categoryColors[Math.floor(Math.random() * categoryColors.length)];
+        
+        // Hide date element if post.Date is empty
+        const dateDisplay = post.Date ? `<span class="text-xs text-gray-500 font-medium">${post.Date}</span>` : '';
+        
+        // Set placeholder if ImageUrl is empty
+        const imageUrl = post.ImageUrl || 'https://placehold.co/600x400/f97316/white?text=NDIA';
+        
+        // --- NEW: Create link based on index ---
+        // index 0 -> blog-post-1.html
+        // index 1 -> blog-post-2.html
+        // ...
+        const linkUrl = `blog-post-${index + 1}.html`;
+
+        return `
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <a href="${linkUrl}" class="block">
+              <!-- Updated onerror placeholder -->
+              <img src="${imageUrl}" alt="${post.Title}" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/f97316/white?text=NDIA'; this.onerror=null;">
+            </a>
+            <div class="p-6 flex-grow">
+              <!-- Updated section with Category and Date -->
+              <div class="flex justify-between items-center mb-3">
+                <span class="inline-block ${randomColor} text-xs font-semibold px-2 py-1 rounded-full uppercase">${post.Category}</span>
+                ${dateDisplay}
+              </div>
+              
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                <a href="${linkUrl}" class="hover:text-blue-600">${post.Title}</a>
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                ${post.Description}
+              </p>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="${linkUrl}" class="font-semibold text-blue-600 hover:text-blue-700">Read More &rarr;</a>
+            </div>
+          </div>
+        `;
+      }
+
+      // Main function to load and display blog posts
+      async function loadBlogPosts() {
+        if (!BLOG_CSV_URL || BLOG_CSV_URL === 'YOUR_NEW_GOOGLE_SHEET_CSV_URL_HERE') {
+            loading.textContent = 'Please update the BLOG_CSV_URL in blog.html to load posts.';
+            return;
+        }
+        
+        try {
+          // *** THIS IS THE FIX: 'cacheBusterUrl' was misspelled ***
+          const cacheBusterUrl = BLOG_CSV_URL + '&t=' + Date.now();
+          const response = await fetch(cacheBusterUrl); 
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+          const csvText = await response.text();
+          let posts = parseCSV(csvText);
+
+          // --- Sort by date ---
+          posts.sort((a, b) => {
+            const dateA = new Date(a.Date);
+            const dateB = new Date(b.Date);
+            const validA = !isNaN(dateA);
+            const validB = !isNaN(dateB);
+
+            if (validA && !validB) return -1; 
+            if (!validA && validB) return 1;
+            if (!validA && !validB) return 0; 
+            return dateB - dateA; // Sort newest to oldest
+          });
+          
+          // Get up to 6 posts *after* sorting
+          const recentPosts = posts.slice(0, 6); 
+
+          if (recentPosts.length === 0) {
+            loading.textContent = 'No blog posts found.';
+            return;
+          }
+
+          // Clear loading text
+          if (loading) {
+            loading.remove();
+          }
+          
+          // --- MODIFIED: Pass the index to createPostCard ---
+          recentPosts.forEach((post, index) => {
+            grid.innerHTML += createPostCard(post, index);
+          });
+
+        } catch (e) {
+          console.error("Failed to load or parse blog posts:", e);
+          if(loading) loading.remove();
+          errorDisplay.classList.remove('hidden');
+        }
+      }
+      
+      // Run the function
+      loadBlogPosts();
+      
+    });
+  </script>
+
+</body>
+
+</html>
+
