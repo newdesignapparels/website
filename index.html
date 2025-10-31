@@ -38,18 +38,11 @@
     .hero-accordion-item.active {
       flex-grow: 10;
     }
-<<<<<<< HEAD
 
     .hero-accordion-item .hero-text {
       opacity: 0;
       visibility: hidden;
       /* Hide by default */
-=======
-    
-    .hero-accordion-item .hero-text {
-      opacity: 0;
-      visibility: hidden; /* Hide by default */
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       transition: opacity 0.2s ease-in-out, visibility 0.2s;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
       /* transform is now handled by child animations */
@@ -57,16 +50,10 @@
 
     .hero-accordion-item.active .hero-text {
       opacity: 1;
-<<<<<<< HEAD
       visibility: visible;
       /* Show when active */
     }
 
-=======
-      visibility: visible; /* Show when active */
-    }
-    
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
     /* Mobile Hero Slider */
     .hero-slider-track {
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,17 +64,10 @@
       width: 100%;
       position: relative;
     }
-<<<<<<< HEAD
 
     .hero-mobile-text {
       background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
       /* padding-bottom handled by pb-24 class */
-=======
-    
-    .hero-mobile-text {
-       background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-       /* padding-bottom removed, Tailwind class pb-24 used instead */
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
     }
 
     /* Mobile Menu Transition */
@@ -95,48 +75,28 @@
       transition: transform 0.3s ease-in-out;
     }
 
-<<<<<<< HEAD
     /* --- ANIMATION STYLES --- */
 
-=======
-    /* --- NEW ANIMATION STYLES --- */
-    
-    /* Animation Keyframes */
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
     @keyframes fadeInUp {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
-<<<<<<< HEAD
 
-=======
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-<<<<<<< HEAD
 
     .will-animate {
       opacity: 0;
     }
 
-=======
-    
-    /* Base animation utility (hidden by default) */
-    .will-animate {
-      opacity: 0;
-    }
-    
-    /* Class to trigger animation */
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
     .animate-fade-in-up {
       animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 
-<<<<<<< HEAD
     .animation-delay-200 {
       animation-delay: 0.2s;
     }
@@ -187,15 +147,6 @@
     }
     /* --- END ODOMETER STYLES --- */
     
-=======
-    /* Delay utilities */
-    .animation-delay-200 {
-      animation-delay: 0.2s;
-    }
-    .animation-delay-300 {
-      animation-delay: 0.3s;
-    }
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
   </style>
 </head>
 
@@ -205,12 +156,8 @@
     Mobile Off-canvas Menu 
     (Hidden by default, shown by 'transform: translateX(0)')
   -->
-<<<<<<< HEAD
   <div id="mobile-menu"
     class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
-=======
-  <div id="mobile-menu" class="fixed top-0 left-0 w-80 h-full bg-white z-[99] shadow-xl p-6 transform -translate-x-full">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
     <!-- Menu Header -->
     <div class="flex justify-between items-center mb-10">
       <a href="index.html" class="block">
@@ -218,12 +165,8 @@
       </a>
       <button id="close-menu-btn" class="text-gray-600 hover:text-gray-900">
         <!-- Close Icon (X) -->
-<<<<<<< HEAD
         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
           stroke="currentColor">
-=======
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
@@ -244,20 +187,12 @@
     <!-- Footer Socials -->
     <div class="absolute bottom-6 left-6">
       <div class="flex space-x-5 mb-4 text-lg">
-<<<<<<< HEAD
         <!-- Social Icons (Themify/FA) -->
         <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
           <i class="ti-facebook"></i>
         </a>
         <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600"
           title="Instagram">
-=======
-        <!-- Social Icons (Original) -->
-        <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
-          <i class="ti-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           <i class="ti-instagram"></i>
         </a>
         <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
@@ -268,7 +203,6 @@
         </a>
       </div>
       <div class="copyright-text text-sm text-gray-500">
-<<<<<<< HEAD
         <p>©
           <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.
         </p>
@@ -276,13 +210,6 @@
     </div>
   </div>
 
-=======
-        <p>© <script>document.write(new Date().getFullYear())</script> <strong>NDIA</strong>. All Rights Reserved.</p>
-      </div>
-    </div>
-  </div>
-  
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
   <!-- Overlay for mobile menu (when open) -->
   <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[98] hidden"></div>
 
@@ -312,12 +239,8 @@
         <a href="https://www.facebook.com/newdesignapparels" class="text-gray-500 hover:text-blue-700" title="Facebook">
           <i class="ti-facebook"></i>
         </a>
-<<<<<<< HEAD
         <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600"
           title="Instagram">
-=======
-        <a href="https://www.instagram.com/new__design______/" class="text-gray-500 hover:text-pink-600" title="Instagram">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           <i class="ti-instagram"></i>
         </a>
         <a href="https://www.youtube.com/@NDIA__" class="text-gray-500 hover:text-red-600" title="YouTube">
@@ -331,12 +254,8 @@
       <!-- Mobile Menu Button -->
       <button id="open-menu-btn" class="md:hidden text-gray-700 hover:text-gray-900">
         <!-- Menu Icon (Hamburger) -->
-<<<<<<< HEAD
         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
           stroke="currentColor">
-=======
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
@@ -350,7 +269,6 @@
       (Hidden on mobile, flex on md screens and up)
     -->
     <section id="hero-accordion" class="hidden md:flex w-full h-[calc(100vh-68px)] max-h-[900px]">
-<<<<<<< HEAD
 
       <!-- Item 1 -->
       <div class="hero-accordion-item active" data-desktop-img="img/products/1.jpg">
@@ -412,55 +330,6 @@
           <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Chef Coats & Workwear</h2>
           <p class="hero-item-desc text-lg max-w-lg will-animate">Heat-resistant and long-lasting fabrics built for
             kitchen and industrial environments — stylishly branded with embroidery.</p>
-=======
-      
-      <!-- Item 1 -->
-      <div class="hero-accordion-item active" style="background-image: url('img/products/1.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="hero-item-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
-          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Round Neck T-Shirts</h2>
-          <p class="hero-item-desc text-lg max-w-lg will-animate">Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
-        </div>
-      </div>
-      <!-- Item 2 -->
-      <div class="hero-accordion-item" style="background-image: url('img/products/2.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="hero-item-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
-          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Collar / Polo T-Shirts</h2>
-          <p class="hero-item-desc text-lg max-w-lg will-animate">Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
-        </div>
-      </div>
-      <!-- Item 3 -->
-      <div class="hero-accordion-item" style="background-image: url('img/products/3.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="hero-item-tag block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">SPORTSWEAR</span>
-          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Sublimation Jerseys</h2>
-          <p class="hero-item-desc text-lg max-w-lg will-animate">High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
-        </div>
-      </div>
-      <!-- Item 4 -->
-      <div class="hero-accordion-item" style="background-image: url('img/products/4.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="hero-item-tag block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">BOTTOM WEAR</span>
-          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Track Pants & Shorts</h2>
-          <p class="hero-item-desc text-lg max-w-lg will-animate">Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
-        </div>
-      </div>
-      <!-- Item 5 -->
-      <div class="hero-accordion-item" style="background-image: url('img/products/5.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="hero-item-tag block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">UNIFORMS</span>
-          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">School, Corporate & Hospitality Wear</h2>
-          <p class="hero-item-desc text-lg max-w-lg will-animate">Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
-        </div>
-      </div>
-      <!-- Item 6 -->
-      <div class="hero-accordion-item" style="background-image: url('img/products/6.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-text absolute bottom-0 left-0 p-8 w-full text-white">
-          <span class="hero-item-tag block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full will-animate">CHEF & INDUSTRIAL</span>
-          <h2 class="hero-item-title text-4xl font-bold mb-2 will-animate">Chef Coats & Workwear</h2>
-          <p class="hero-item-desc text-lg max-w-lg will-animate">Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
         </div>
       </div>
     </section>
@@ -469,17 +338,12 @@
       Hero Section: Mobile Slider
       (Visible on mobile, hidden on md screens and up)
     -->
-<<<<<<< HEAD
     <section id="hero-slider"
       class="md:hidden w-full h-[calc(100vh-68px)] max-h-[900px] overflow-hidden relative bg-gray-900 text-white">
-=======
-    <section id="hero-slider" class="md:hidden w-full h-[calc(100vh-68px)] max-h-[900px] overflow-hidden relative bg-gray-900 text-white">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       <!-- Slider Track -->
       <div class="hero-slider-track flex h-full">
 
         <!-- Slide 1 -->
-<<<<<<< HEAD
         <div class="hero-slider-item h-full" data-mobile-img="img/products/mobile/1.jpg">
           <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
             <span
@@ -543,64 +407,12 @@
         </div>
       </div>
 
-=======
-        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/1.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="hero-slide-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
-            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Round Neck T-Shirts</h2>
-            <p class="hero-slide-desc will-animate">Soft, breathable cotton and polyester blends — available in multiple fabrics, colors, and fits, customizable with your logo or text.</p>
-          </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/2.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="hero-slide-tag block text-sm font-semibold bg-blue-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">T-SHIRTS</span>
-            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Collar / Polo T-Shirts</h2>
-            <p class="hero-slide-desc will-animate">Premium polo styles in pique, honeycomb, and dry-fit materials — ideal for staff uniforms, events, and promotions with embroidery or print.</p>
-          </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/3.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="hero-slide-tag block text-sm font-semibold bg-green-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">SPORTSWEAR</span>
-            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Sublimation Jerseys</h2>
-            <p class="hero-slide-desc will-animate">High-quality dry-fit jerseys with full-color sublimation — perfect for sports teams and branding, customizable with any design or pattern.</p>
-          </div>
-        </div>
-        <!-- Slide 4 -->
-        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/4.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="hero-slide-tag block text-sm font-semibold bg-red-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">BOTTOM WEAR</span>
-            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Track Pants & Shorts</h2>
-            <p class="hero-slide-desc will-animate">Stretchable cotton and dry-fit fabrics — designed for activewear and comfort, customizable with your team or brand logo.</p>
-          </div>
-        </div>
-        <!-- Slide 5 -->
-        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/5.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="hero-slide-tag block text-sm font-semibold bg-purple-600 px-3 py-1 mb-2 inline-block rounded-full will-animate">UNIFORMS</span>
-            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">School, Corporate & Hospitality Wear</h2>
-            <p class="hero-slide-desc will-animate">Durable, professional uniforms for schools, offices, and hotels — available in custom colors, materials, and logo branding options.</p>
-          </div>
-        </div>
-        <!-- Slide 6 -->
-        <div class="hero-slider-item h-full" style="background-image: url('img/products/mobile/6.jpg'); background-size: cover; background-position: center;">
-          <div class="hero-mobile-text absolute bottom-0 left-0 w-full px-8 pt-8 pb-24">
-            <span class="hero-slide-tag block text-sm font-semibold bg-gray-700 px-3 py-1 mb-2 inline-block rounded-full will-animate">CHEF & INDUSTRIAL</span>
-            <h2 class="hero-slide-title text-3xl font-bold mb-2 will-animate">Chef Coats & Workwear</h2>
-            <p class="hero-slide-desc will-animate">Heat-resistant and long-lasting fabrics built for kitchen and industrial environments — stylishly branded with embroidery.</p>
-          </div>
-        </div>
-      </div>
-      
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       <!-- Slider Dots -->
       <div id="slider-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
         <!-- Dots will be generated by JS -->
       </div>
     </section>
 
-<<<<<<< HEAD
 
     <!-- --- LIVE STATISTICS SECTION --- -->
     <section id="stats" class="py-16 bg-gray-100">
@@ -637,8 +449,6 @@
     <!-- --- END NEW LIVE STATISTICS SECTION --- -->
 
 
-=======
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
     <!-- Welcome Section -->
     <section class="py-16 lg:py-24 bg-white">
       <div class="container mx-auto px-6 max-w-5xl">
@@ -652,22 +462,14 @@
               From round-neck and polo T-shirts to sublimation jerseys and hospitality wear — we craft every piece with
               <strong class="text-gray-900">comfort, durability, and your brand identity</strong> in mind.
             </p>
-<<<<<<< HEAD
             <a href="about.html"
               class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors">
-=======
-            <a href="about.html" class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
               Read Our Story
             </a>
           </div>
           <div>
-<<<<<<< HEAD
             <img src="img/about.jpg" alt="About New Design International Apparels"
               class="rounded-lg shadow-xl w-full h-full object-cover">
-=======
-            <img src="img/about.jpg" alt="About New Design International Apparels" class="rounded-lg shadow-xl w-full h-full object-cover">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           </div>
         </div>
       </div>
@@ -678,18 +480,13 @@
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Services</h2>
         <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
-<<<<<<< HEAD
           We provide end-to-end solutions, from a single custom piece to full-scale production runs, all handled
           in-house.
-=======
-          We provide end-to-end solutions, from a single custom piece to full-scale production runs, all handled in-house.
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <!-- Service 1 -->
           <div class="bg-white p-8 rounded-lg shadow-lg text-center">
             <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-<<<<<<< HEAD
               <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -699,25 +496,15 @@
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom Printing</h3>
             <p class="text-gray-700">High-detail DTF, vibrant Sublimation, and durable Screen Printing for any design.
             </p>
-=======
-              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom Printing</h3>
-            <p class="text-gray-700">High-detail DTF, vibrant Sublimation, and durable Screen Printing for any design.</p>
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           </div>
           <!-- Service 2 -->
           <div class="bg-white p-8 rounded-lg shadow-lg text-center">
             <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-<<<<<<< HEAD
               <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round"
                   d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0021.5 5.5V3.935m-18 0A2.5 2.5 0 015.5 1.5h13A2.5 2.5 0 0121.5 3.935m-18 0v.009A2.5 2.5 0 005.5 6.5h13A2.5 2.5 0 0021.5 3.945V3.935" />
               </svg>
-=======
-              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0021.5 5.5V3.935m-18 0A2.5 2.5 0 015.5 1.5h13A2.5 2.5 0 0121.5 3.935m-18 0v.009A2.5 2.5 0 005.5 6.5h13A2.5 2.5 0 0021.5 3.945V3.935" /></svg>
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Embroidery</h3>
             <p class="text-gray-700">Premium 3D stitching for logos and names on polos, chef coats, and caps.</p>
@@ -725,7 +512,6 @@
           <!-- Service 3 -->
           <div class="bg-white p-8 rounded-lg shadow-lg text-center">
             <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-<<<<<<< HEAD
               <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -739,15 +525,6 @@
         </div>
         <a href="services.html"
           class="inline-block bg-blue-600 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors mt-12">
-=======
-              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">Bulk Manufacturing</h3>
-            <p class="text-gray-700">Large-scale production for corporate uniforms, school events, and private labels.</p>
-          </div>
-        </div>
-        <a href="services.html" class="inline-block bg-blue-600 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors mt-12">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           Explore All Services
         </a>
       </div>
@@ -761,7 +538,6 @@
           A glimpse into the quality and variety of our work.
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<<<<<<< HEAD
           <a href="gallery.html"
             class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
             <img src="img/gallery/roundneck1.jpg" alt="Round Neck T-Shirt"
@@ -785,22 +561,6 @@
         </div>
         <a href="gallery.html"
           class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors mt-12">
-=======
-          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
-            <img src="img/gallery/roundneck1.jpg" alt="Round Neck T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </a>
-          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
-            <img src="img/gallery/jersey1.jpg" alt="Sports Jersey" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </a>
-          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
-            <img src="img/gallery/chef1.jpg" alt="Chef Coat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </a>
-          <a href="gallery.html" class="group block rounded-lg overflow-hidden shadow-lg relative aspect-[9/16] md:aspect-[4/3]">
-            <img src="img/gallery/corporate1.jpg" alt="Corporate Uniform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </a>
-        </div>
-        <a href="gallery.html" class="inline-block bg-orange-500 text-white text-lg font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-orange-600 transition-colors mt-12">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           View Full Gallery
         </a>
       </div>
@@ -811,21 +571,13 @@
   <footer class="bg-gray-800 text-gray-300">
     <div class="container mx-auto px-6 py-12">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
         <!-- About -->
         <div>
           <img src="img/logo.png" alt="NDIA Logo" class="h-10 mb-4">
           <p class="text-gray-400">
-<<<<<<< HEAD
             Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with
             comfort, durability, and your brand identity in mind.
-=======
-            Specializing in premium-quality custom T-shirts, uniforms, and sportswear. We craft every piece with comfort, durability, and your brand identity in mind.
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           </p>
         </div>
 
@@ -848,19 +600,12 @@
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
           <div class="flex space-x-5 text-xl">
-<<<<<<< HEAD
             <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500"
               title="Facebook">
               <i class="ti-facebook"></i>
             </a>
             <a href="httpsm://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500"
               title="Instagram">
-=======
-            <a href="https://www.facebook.com/newdesignapparels" class="text-gray-400 hover:text-blue-500" title="Facebook">
-              <i class="ti-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/new__design______/" class="text-gray-400 hover:text-pink-500" title="Instagram">
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
               <i class="ti-instagram"></i>
             </a>
             <a href="https://www.youtube.com/@NDIA__" class="text-gray-400 hover:text-red-500" title="YouTube">
@@ -873,7 +618,6 @@
         </div>
 
       </div>
-<<<<<<< HEAD
 
       <!-- Copyright -->
       <div class="mt-8 pt-8 border-t border-gray-700 text-center">
@@ -881,17 +625,10 @@
           <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>.
           All Rights Reserved.
         </p>
-=======
-      
-      <!-- Copyright -->
-      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
-        <p class="text-gray-400">© <script>document.write(new Date().getFullYear())</script> <strong>New Design International Apparels</strong>. All Rights Reserved.</p>
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       </div>
     </div>
   </footer>
 
-<<<<<<< HEAD
   <!-- 
     ============================================
     MAIN JAVASCRIPT FOR ALL PAGE FUNCTIONALITY
@@ -902,12 +639,6 @@
     document.addEventListener("DOMContentLoaded", function () {
 
       // --- 1. MOBILE MENU ---
-=======
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      
-      // --- Mobile Menu ---
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       const openMenuBtn = document.getElementById("open-menu-btn");
       const closeMenuBtn = document.getElementById("close-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -929,7 +660,6 @@
       closeMenuBtn.addEventListener("click", closeMenu);
       menuOverlay.addEventListener("click", closeMenu);
 
-<<<<<<< HEAD
 
       // --- 2. LIVE DATA & STATS ---
 
@@ -1166,31 +896,16 @@
         }
       }
 
-=======
-      
-      // --- Desktop Hero Accordion ---
-      const accordionItems = document.querySelectorAll(".hero-accordion-item");
-      
-      // Function to apply animation to a single item's children
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       function animateAccordionItem(item) {
         const tag = item.querySelector(".hero-item-tag");
         const title = item.querySelector(".hero-item-title");
         const desc = item.querySelector(".hero-item-desc");
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
         tag.classList.add("animate-fade-in-up");
         title.classList.add("animate-fade-in-up", "animation-delay-200");
         desc.classList.add("animate-fade-in-up", "animation-delay-300");
       }
 
-<<<<<<< HEAD
-=======
-      // Function to remove animation from a single item's children
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       function resetAccordionItem(item) {
         const els = item.querySelectorAll(".hero-item-tag, .hero-item-title, .hero-item-desc");
         els.forEach(el => {
@@ -1198,7 +913,6 @@
         });
       }
 
-<<<<<<< HEAD
       function animateSlide(slide) {
         const tag = slide.querySelector(".hero-slide-tag");
         const title = slide.querySelector(".hero-slide-title");
@@ -1221,40 +935,16 @@
         accordionItems.forEach(item => {
           item.addEventListener("mouseenter", () => {
             if (item.classList.contains("active")) return;
-=======
-      if (accordionItems.length > 0) {
-        // Animate the first active item on load
-        animateAccordionItem(document.querySelector(".hero-accordion-item.active"));
-
-        accordionItems.forEach(item => {
-          item.addEventListener("mouseenter", () => {
-            if (item.classList.contains("active")) return; // Don't re-animate if already active
-
-            // Reset all items
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
             accordionItems.forEach(i => {
               i.classList.remove("active");
               resetAccordionItem(i);
             });
-<<<<<<< HEAD
-=======
-            
-            // Add 'active' to the hovered item and animate it
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
             item.classList.add("active");
             animateAccordionItem(item);
           });
         });
       }
 
-<<<<<<< HEAD
-=======
-      
-      // --- Mobile Hero Slider ---
-      const slider = document.getElementById("hero-slider");
-      const track = document.querySelector(".hero-slider-track");
-
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
       if (slider && track) {
         const slides = Array.from(track.children);
         const dotsContainer = document.getElementById("slider-dots");
@@ -1263,32 +953,7 @@
         let startX = 0;
         let endX = 0;
 
-<<<<<<< HEAD
         if (slides.length > 0) {
-=======
-        // Function to apply animation to a single slide's children
-        function animateSlide(slide) {
-          const tag = slide.querySelector(".hero-slide-tag");
-          const title = slide.querySelector(".hero-slide-title");
-          const desc = slide.querySelector(".hero-slide-desc");
-
-          tag.classList.add("animate-fade-in-up");
-          title.classList.add("animate-fade-in-up", "animation-delay-200");
-          desc.classList.add("animate-fade-in-up", "animation-delay-300");
-        }
-
-        // Function to remove animation from a single slide's children
-        function resetSlide(slide) {
-          const els = slide.querySelectorAll(".hero-slide-tag, .hero-slide-title, .hero-slide-desc");
-          els.forEach(el => {
-            el.classList.remove("animate-fade-in-up", "animation-delay-200", "animation-delay-300");
-          });
-        }
-
-
-        if (slides.length > 0) {
-          // Create dots
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           slides.forEach((_, index) => {
             const dot = document.createElement("button");
             dot.classList.add("h-2", "w-2", "rounded-full", "transition-colors");
@@ -1303,7 +968,6 @@
           const dots = Array.from(dotsContainer.children);
 
           function goToSlide(slideIndex) {
-<<<<<<< HEAD
             if (slideIndex < 0) slideIndex = slides.length - 1;
             if (slideIndex >= slides.length) slideIndex = 0;
             if (slideIndex === currentSlide && document.querySelector('.animate-fade-in-up')) return;
@@ -1313,28 +977,6 @@
             animateSlide(slides[slideIndex]);
             currentSlide = slideIndex;
 
-=======
-            // Clamp slideIndex
-            if (slideIndex < 0) {
-              slideIndex = slides.length - 1;
-            } else if (slideIndex >= slides.length) {
-              slideIndex = 0;
-            }
-            
-            if (slideIndex === currentSlide && document.querySelector('.animate-fade-in-up')) return; // Do nothing if it's the same slide and already animated
-
-            track.style.transform = `translateX(-${slideIndex * 100}%)`;
-            
-            // Reset old slide
-            resetSlide(slides[currentSlide]);
-            
-            // Animate new slide
-            animateSlide(slides[slideIndex]);
-
-            currentSlide = slideIndex;
-
-            // Update dots
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
             dots.forEach((dot, index) => {
               dot.classList.toggle("bg-white", index === currentSlide);
               dot.classList.toggle("bg-white/50", index !== currentSlide);
@@ -1342,7 +984,6 @@
           }
 
           function nextSlide() {
-<<<<<<< HEAD
             goToSlide((currentSlide + 1) % slides.length);
           }
 
@@ -1352,19 +993,6 @@
 
           function startInterval() {
             slideInterval = setInterval(nextSlide, 5000);
-=======
-            const nextSlideIndex = (currentSlide + 1) % slides.length;
-            goToSlide(nextSlideIndex);
-          }
-          
-          function prevSlide() {
-            const prevSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
-            goToSlide(prevSlideIndex);
-          }
-
-          function startInterval() {
-            slideInterval = setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           }
 
           function resetInterval() {
@@ -1372,16 +1000,9 @@
             startInterval();
           }
 
-<<<<<<< HEAD
           slider.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
             clearInterval(slideInterval);
-=======
-          // --- Touch Swipe Logic ---
-          slider.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            clearInterval(slideInterval); // Pause auto-slide on touch
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
           }, { passive: true });
 
           slider.addEventListener('touchmove', (e) => {
@@ -1390,7 +1011,6 @@
 
           slider.addEventListener('touchend', () => {
             if (startX === 0 || endX === 0) {
-<<<<<<< HEAD
               startInterval();
               return;
             }
@@ -1414,33 +1034,6 @@
       loadStats(); // Load stats on page load
       window.addEventListener('resize', setHeroImageSources);
 
-=======
-              startInterval(); // Resume auto-slide if it was just a tap
-              return; 
-            }
-            
-            const diff = startX - endX;
-            if (Math.abs(diff) > 50) { // 50px threshold for a swipe
-              if (diff > 0) {
-                // Swiped left
-                nextSlide();
-              } else {
-                // Swiped right
-                prevSlide();
-              }
-            }
-            startX = 0;
-            endX = 0;
-            startInterval(); // Resume auto-slide
-          });
-          
-          // Animate the first slide on load
-          animateSlide(slides[0]);
-          startInterval(); // Start auto-slide on load
-        }
-      }
-
->>>>>>> cee562d7386b821f6fa75fcd02292e62c7a0e0d0
     });
   </script>
 
