@@ -12,6 +12,9 @@
       Get this from your Supabase project's API settings
     -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- NEW: Added Tone.js for sound effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.min.js"></script>
+
     <style>
         /* Transitions for modals and cards */
         .modal { transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; }
@@ -169,7 +172,7 @@
 
 <body class="bg-gray-100 font-sans">
     <header class="bg-gray-800 text-white p-4 shadow-md sticky top-0 z-20">
-        <h1 class="text-xl font-bold text-center">NDIA Bangalore Work Orders Dashboard</h1>
+        <h1 class="text-xl font-bold text-center">Work Orders Dashboard (Supabase)</h1>
     </header>
 
     <!-- Main Content Container (Increased max-width for the sidebar) -->
@@ -215,7 +218,7 @@
 
                 <!-- Add Button -->
                 <button onclick="openAddModal()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg mb-4 hover:bg-indigo-700 shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
-                    + Add Work Order
+                    ➕ Add Work Order
                 </button>
 
                 <div id="loader" class="text-center py-6 text-gray-600">Loading...</div>
@@ -396,6 +399,24 @@
 
         // --- End Supabase Setup ---
 
+        // --- NEW: Sound Effects Setup ---
+        // Create a synth for a simple 'click' sound
+        const clickSound = new Tone.MembraneSynth({
+            "octaves": 10,
+            "pitchDecay": 0.1
+        }).toDestination();
+
+        // Create a synth for a 'success' sound
+        const successSound = new Tone.Synth({
+            "oscillator": { "type": "triangle" },
+            "envelope": { "attack": 0.01, "decay": 0.2, "sustain": 0.1, "release": 0.1 }
+        }).toDestination();
+
+        // Create a synth for an 'error' sound
+        const errorSound = new Tone.PluckSynth().toDestination();
+
+        // --- End Sound Effects Setup ---
+
 
         let allData = [];
         let activeStatus = '';
@@ -424,6 +445,42 @@
         ];
         // allPossibleStatuses is automatically updated based on the new stages array
         const allPossibleStatuses = ['Unknown', ...stages, 'CANCELLED'];
+
+        // --- NEW: Helper Functions for Sound and Vibration ---
+
+        // Helper to start the audio context on user interaction
+        async function startAudioContext() {
+            if (Tone.context.state !== 'running') {
+                await Tone.context.resume();
+            }
+        }
+
+        // Helper to play sounds
+        function playSound(type) {
+            startAudioContext(); // Ensure audio is allowed
+            try {
+                if (type === 'click') {
+                    clickSound.triggerAttackRelease("C2", "8n");
+                } else if (type === 'success') {
+                    successSound.triggerAttackRelease("C5", "8n", Tone.now());
+                    successSound.triggerAttackRelease("G5", "8n", Tone.now() + 0.1);
+                } else if (type === 'error') {
+                    errorSound.triggerAttackRelease("C3", "4n");
+                }
+            } catch (e) {
+                console.error("Tone.js error:", e);
+            }
+        }
+
+        // Helper to play vibrations (on supported devices)
+        function playVibration(pattern) {
+            if (navigator.vibrate) {
+                navigator.vibrate(pattern);
+            }
+        }
+
+        // --- End Helper Functions ---
+
 
         // --- Helper function to format date from 'MMM d, yyyy' to 'yyyy-MM-dd' ---
         function formatDateForInput(dateStr) {
@@ -549,6 +606,8 @@
         function handleFailure(err) {
             document.getElementById('loader').style.display = 'none';
             showError(err.message || 'An unknown error occurred.');
+            playSound('error');
+            playVibration([100, 50, 100]);
             console.error(err);
         }
 
@@ -589,6 +648,8 @@
                 btn.className = `filter-btn px-3 py-1 rounded-full border text-sm shadow-sm ${isActive ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 hover:bg-gray-50'}`;
                 
                 btn.onclick = () => {
+                    playSound('click');
+                    playVibration(50);
                     activeStatus = (st === 'ALL') ? '' : st;
                     buildStatusFilters();
                     render();
@@ -996,6 +1057,8 @@
 
         // --- UPDATED: Function to handle clicks from stat cards ---
         function filterFromStats(status) {
+            playSound('click');
+            playVibration(50);
             if (status === 'ALL') {
                 activeStatus = '';
             } else if (status === 'IN PROGRESS') {
@@ -1009,6 +1072,8 @@
 
         // --- Details Modal Functions ---
         function openDetailsModal(item) {
+            playSound('click');
+            playVibration(50);
             document.getElementById('detailsTitle').textContent = `Work Order: ${item.workNo}`;
             const content = document.getElementById('detailsContent');
             const progress = getProgress(item.status);
@@ -1079,11 +1144,13 @@
         }
         
         function closeDetailsModal() {
+            playSound('click');
             document.getElementById('detailsModal').classList.add('hidden');
         }
         
         // --- MODIFIED: This function is now used by the card's status dropdown ---
         async function onStatusChange(event, itemId) {
+            playSound('click');
             const newStatus = event.target.value;
             const select = event.target;
             select.disabled = true;
@@ -1113,10 +1180,13 @@
 
         // --- ADD ---
         function openAddModal() {
+            playSound('click');
+            playVibration(50);
             document.getElementById('addForm').reset();
             document.getElementById('addModal').classList.remove('hidden');
         }
         function closeAddModal() {
+            playSound('click');
             document.getElementById('addModal').classList.add('hidden');
         }
         async function submitAdd(e) {
@@ -1151,6 +1221,8 @@
                     handleFailure(error);
                 }
             } else {
+                playSound('success');
+                playVibration(100);
                 closeAddModal();
                 loadData(); // Reload all data from Supabase
             }
@@ -1158,6 +1230,8 @@
         
         // --- Edit Modal Functions ---
         function openEditModal(item) {
+            playSound('click');
+            playVibration(50);
             // Pre-fill form
             document.getElementById('editId').value = item.id; // Store the 'id' (uuid)
             document.getElementById('editWorkNo').value = item.workNo;
@@ -1172,6 +1246,7 @@
         }
         
         function closeEditModal() {
+            playSound('click');
             document.getElementById('editModal').classList.add('hidden');
         }
         
@@ -1209,6 +1284,8 @@
                     handleFailure(error);
                 }
             } else {
+                playSound('success');
+                playVibration(100);
                 closeEditModal();
                 loadData(); // Reload all data
             }
@@ -1221,6 +1298,8 @@
             
             if (!files || files.length === 0) {
                 showError("Please select one or more images to upload.");
+                playSound('error');
+                playVibration([100, 50, 100]);
                 return;
             }
 
@@ -1266,6 +1345,8 @@
                 }
 
                 // Success!
+                playSound('success');
+                playVibration(100);
                 closeDetailsModal();
                 loadData(); // Refresh all data
 
@@ -1282,6 +1363,8 @@
         // --- DELETE ---
         // MODIFIED: Function now handles deleting 'order' or 'image'
         function openConfirmModal(id, type = 'order', associatedData) {
+            playSound('click');
+            playVibration(50);
             let text = '';
             let deleteFunction;
 
@@ -1347,6 +1430,8 @@
             if (error) {
                 handleFailure(error);
             } else {
+                playSound('success');
+                playVibration(100);
                 closeConfirmModal();
                 loadData(); // Reload data
             }
@@ -1379,7 +1464,9 @@
                 if (dbError) {
                     throw new Error(dbError.message);
                 }
-
+                
+                playSound('success');
+                playVibration(100);
                 closeConfirmModal();
                 closeDetailsModal(); // Close the details modal too
                 loadData(); // Reload all data
@@ -1391,6 +1478,7 @@
         }
         
         function closeConfirmModal() {
+            playSound('click');
             document.getElementById('confirmModal').classList.add('hidden');
             document.getElementById('confirmDeleteBtn').textContent = 'Delete';
             document.getElementById('confirmDeleteBtn').disabled = false;
@@ -1398,6 +1486,8 @@
 
         // --- NEW: Lightbox Gallery Functions ---
         function openLightbox(images, index) {
+            playSound('click');
+            playVibration(50);
             currentLightboxImages = images;
             currentLightboxIndex = index;
             document.getElementById('lightboxModal').classList.remove('hidden');
@@ -1420,6 +1510,7 @@
         }
 
         function closeLightbox() {
+            playSound('click');
             document.getElementById('lightboxModal').classList.add('hidden');
             currentLightboxImages = [];
             currentLightboxIndex = 0;
@@ -1429,18 +1520,21 @@
 
         // --- NEW: Jump to specific image from thumbnail click ---
         function jumpToImage(index) {
+            playSound('click');
             currentLightboxIndex = index;
             updateLightboxImage();
         }
 
         function showNextImage(event) {
             event.stopPropagation(); // Prevent modal from closing
+            playSound('click');
             currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
             updateLightboxImage();
         }
 
         function showPrevImage(event) {
             event.stopPropagation(); // Prevent modal from closing
+            playSound('click');
             currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
             updateLightboxImage();
         }
