@@ -82,9 +82,9 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.9);
             z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            /* display: flex; <-- REMOVED */
+            /* align-items: center; <-- REMOVED */
+            /* justify-content: center; <-- REMOVED */
             padding: 16px;
             box-sizing: border-box;
         }
@@ -328,7 +328,8 @@
     </div>
 
     <!-- NEW: Lightbox Modal for Full-screen Image Gallery -->
-    <div id="lightboxModal" class="modal hidden" onclick="closeLightbox()">
+    <!-- MODIFIED: Moved flex properties into the class list -->
+    <div id="lightboxModal" class="modal hidden flex items-center justify-center" onclick="closeLightbox()">
         <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
         <span class="lightbox-prev" onclick="showPrevImage(event)">&#10094;</span>
         <span class="lightbox-next" onclick="showNextImage(event)">&#10095;</span>
@@ -567,7 +568,8 @@
                 } else if (activeStatus === '') { // 'ALL'
                     return searchMatch;
                 } else { // Specific status filter
-                    return searchMatch && i.status === activeTatus;
+                    // --- BUG FIX: Was 'activeTatus' ---
+                    return searchMatch && i.status === activeStatus;
                 }
             });
 
@@ -1392,4 +1394,5 @@
     </script>
 </body>
 </html>
+
 
