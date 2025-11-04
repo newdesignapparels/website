@@ -90,7 +90,8 @@
         }
         #lightboxImage {
             max-width: 90%;
-            max-height: 90%;
+            /* MODIFIED: Make room for thumbnails */
+            max-height: calc(90% - 100px); 
             object-fit: contain;
             border-radius: 8px;
         }
@@ -118,12 +119,50 @@
         }
         #lightboxCaption {
             position: absolute;
-            bottom: 20px;
+            /* MODIFIED: Moved up to make room */
+            bottom: 100px; 
             left: 50%;
             transform: translateX(-50%);
             color: #ccc;
             font-size: 16px;
         }
+
+        /* NEW: Thumbnail gallery container */
+        #lightboxThumbnailContainer {
+            position: absolute;
+            bottom: 10px;
+            left: 10%;
+            right: 10%;
+            width: 80%;
+            height: 70px;
+            text-align: center;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            padding-top: 5px;
+        }
+        /* NEW: Individual thumbnail style */
+        .lightbox-thumbnail {
+            width: 80px;
+            height: 50px;
+            object-fit: cover;
+            border: 2px solid #555;
+            border-radius: 4px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.2s;
+            display: inline-block;
+        }
+        .lightbox-thumbnail:hover {
+            border-color: #999;
+            transform: scale(1.05);
+        }
+        /* NEW: Active thumbnail style */
+        .lightbox-thumbnail.active {
+            border-color: #fff;
+            transform: scale(1.1);
+        }
+
 
     </style>
 </head>
@@ -335,6 +374,10 @@
         <span class="lightbox-next" onclick="showNextImage(event)">&#10095;</span>
         <img id="lightboxImage" src="" alt="Full-screen work order image" onclick="event.stopPropagation()">
         <div id="lightboxCaption"></div>
+        <!-- NEW: Thumbnail Gallery Container -->
+        <div id="lightboxThumbnailContainer" onclick="event.stopPropagation()">
+            <!-- Thumbnails will be injected here -->
+        </div>
     </div>
 
 
@@ -1358,6 +1401,21 @@
             currentLightboxImages = images;
             currentLightboxIndex = index;
             document.getElementById('lightboxModal').classList.remove('hidden');
+            
+            // --- NEW: Populate thumbnail gallery ---
+            const thumbnailContainer = document.getElementById('lightboxThumbnailContainer');
+            thumbnailContainer.innerHTML = ''; // Clear old thumbs
+            images.forEach((imgSrc, idx) => {
+                const thumb = document.createElement('img');
+                thumb.src = imgSrc;
+                thumb.className = 'lightbox-thumbnail';
+                thumb.onclick = (e) => {
+                    e.stopPropagation();
+                    jumpToImage(idx);
+                };
+                thumbnailContainer.appendChild(thumb);
+            });
+
             updateLightboxImage();
         }
 
@@ -1365,6 +1423,14 @@
             document.getElementById('lightboxModal').classList.add('hidden');
             currentLightboxImages = [];
             currentLightboxIndex = 0;
+            // --- NEW: Clear thumbnails ---
+            document.getElementById('lightboxThumbnailContainer').innerHTML = '';
+        }
+
+        // --- NEW: Jump to specific image from thumbnail click ---
+        function jumpToImage(index) {
+            currentLightboxIndex = index;
+            updateLightboxImage();
         }
 
         function showNextImage(event) {
@@ -1395,6 +1461,18 @@
                 prevArrow.style.display = 'block';
                 nextArrow.style.display = 'block';
             }
+
+            // --- NEW: Update active thumbnail ---
+            const thumbnails = document.querySelectorAll('.lightbox-thumbnail');
+            thumbnails.forEach((thumb, index) => {
+                if (index === currentLightboxIndex) {
+                    thumb.classList.add('active');
+                    // Scroll the active thumbnail into view
+                    thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
         }
 
     </script>
