@@ -602,11 +602,13 @@
                 card.className = `card-item ${colorClasses} bg-white rounded-lg shadow p-4 cursor-pointer`;
                 card.onclick = () => openDetailsModal(item);
                 
-                // --- MODIFIED: Simplified card HTML ---
+                // --- MODIFIED: Added Status Dropdown and Delete Button back ---
                 card.innerHTML = `
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-lg ${colorName}">${item.workNo}</h3>
-                        <span class="text-sm font-medium px-2 py-1 rounded ${progress.percent === 100 ? 'bg-green-100 text-green-700' : (progress.percent === 0 ? 'bg-gray-100 text-gray-700' : 'bg-indigo-100 text-indigo-700')}">${item.status}</span>
+                        <select class="status-dropdown border rounded-lg px-2 py-1 text-sm bg-white" onchange="onStatusChange(event, '${item.id}')" onclick="event.stopPropagation()">
+                            ${allPossibleStatuses.map(s => `<option value="${s}" ${s === item.status ? 'selected' : ''}>${s}</option>`).join('')}
+                        </select>
                     </div>
                     <p class="text-gray-700 font-medium">${item.company || 'N/A'}</p>
                     <p class="text-sm text-gray-500">Delivery: ${item.deliveryDate || 'N/A'}</p>
@@ -618,6 +620,7 @@
                     
                     <div class="flex justify-end gap-2">
                         <button class="edit-btn text-sm text-blue-600 hover:underline">Edit</button>
+                        <button class="delete-btn text-sm text-red-600 hover:underline">Delete</button>
                     </div>
                 `;
                 // --- End MODIFIED card HTML ---
@@ -626,6 +629,13 @@
                     e.stopPropagation(); // Stop click from bubbling up to the card
                     openEditModal(item);
                 });
+
+                // --- NEW: Added event listener for delete button ---
+                card.querySelector('.delete-btn').addEventListener('click', (e) => {
+                    e.stopPropagation(); // Stop click from bubbling up to the card
+                    openConfirmModal(item.id, 'order', item.workNo);
+                });
+
 
                 div.appendChild(card);
             });
@@ -1029,14 +1039,8 @@
             document.getElementById('detailsModal').classList.add('hidden');
         }
         
-        // --- Function to handle direct status change from card (REMOVED) ---
-        // onStatusChange is no longer needed here as the dropdown was removed from the card.
-        // Status changes are now handled via the Edit Modal.
-        // We will keep the function definition in case we want to re-add it,
-        // but it's not currently used from the main card.
+        // --- MODIFIED: This function is now used by the card's status dropdown ---
         async function onStatusChange(event, itemId) {
-            // This function is still used by the (now-removed) card dropdown.
-            // If you add a status dropdown back to the card, this will work.
             const newStatus = event.target.value;
             const select = event.target;
             select.disabled = true;
@@ -1054,6 +1058,8 @@
                 if (itemIndex > -1) {
                     allData[itemIndex].status = newStatus;
                 }
+                // Re-enable select and refresh data
+                select.disabled = false;
                 render();
                 buildStatusFilters();
                 renderStats();
@@ -1394,5 +1400,4 @@
     </script>
 </body>
 </html>
-
 
