@@ -282,7 +282,7 @@
 
         // 2. Create the Supabase client
         // Ensure you've enabled Row Level Security (RLS) and created policies in your Supabase project
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         // 3. Define your Storage bucket name
         const IMAGE_BUCKET = 'work_order_images'; // Make sure this bucket exists and has RLS policies
@@ -387,7 +387,7 @@
 
             // --- REPLACED: Google Apps Script with Supabase ---
             // We fetch work_orders and all related work_order_images in one query
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('work_orders')
                 .select(`
                     id, 
@@ -918,7 +918,7 @@
             if (item.images && item.images.length > 0) {
                 item.images.forEach(image => {
                     // Get public URL for the image
-                    const { data } = supabase
+                    const { data } = supabaseClient
                         .storage
                         .from(IMAGE_BUCKET)
                         .getPublicUrl(image.image_path);
@@ -955,7 +955,7 @@
             select.disabled = true;
 
             // --- REPLACED: Google Apps Script with Supabase ---
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('work_orders')
                 .update({ status: newStatus })
                 .eq('id', itemId); // Use the 'id' (uuid) to update
@@ -1002,7 +1002,7 @@
             };
             
             // --- REPLACED: Google Apps Script with Supabase ---
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('work_orders')
                 .insert([newOrder]);
 
@@ -1060,7 +1060,7 @@
             const itemId = document.getElementById('editId').value;
 
             // --- REPLACED: Google Apps Script with Supabase ---
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('work_orders')
                 .update(updatedOrder)
                 .eq('id', itemId); // Use the 'id' (uuid) to update
@@ -1101,7 +1101,7 @@
                 for (const file of files) {
                     const filePath = `public/${item.workNo}/${Date.now()}-${file.name}`;
                     uploadPromises.push(
-                        supabase.storage.from(IMAGE_BUCKET).upload(filePath, file)
+                        supabaseClient.storage.from(IMAGE_BUCKET).upload(filePath, file)
                     );
                 }
 
@@ -1122,7 +1122,7 @@
 
                 // Insert all new image records into the database
                 if (newImageRecords.length > 0) {
-                    const { error: dbError } = await supabase
+                    const { error: dbError } = await supabaseClient
                         .from('work_order_images')
                         .insert(newImageRecords);
 
@@ -1182,7 +1182,7 @@
             // delete them from Storage, then delete the order record.
             // For simplicity, we just delete the order record here.
             
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('work_orders')
                 .delete()
                 .eq('id', itemId); // Use 'id' (uuid) to delete
@@ -1203,7 +1203,7 @@
 
             try {
                 // 1. Delete from Storage
-                const { error: storageError } = await supabase
+                const { error: storageError } = await supabaseClient
                     .storage
                     .from(IMAGE_BUCKET)
                     .remove([imagePath]);
@@ -1214,7 +1214,7 @@
                 }
 
                 // 2. Delete from Database
-                const { error: dbError } = await supabase
+                const { error: dbError } = await supabaseClient
                     .from('work_order_images')
                     .delete()
                     .eq('id', imageId);
@@ -1241,4 +1241,5 @@
     </script>
 </body>
 </html>
+
 
