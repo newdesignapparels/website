@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing App</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px; background: #f4f4f4; }
+        h1, h2 { color: #333; }
+        #app-container { display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
+        
+        /* Form Styles */
+        #add-product-form { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        #add-product-form div { margin-bottom: 15px; }
+        #add-product-form label { display: block; margin-bottom: 5px; font-weight: 600; }
+        #add-product-form input[type="text"],
+        #add-product-form input[type="number"],
+        #add-product-form input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box; /* Important for width: 100% */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #add-product-form button {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #add-product-form button:disabled { background: #ccc; }
+
+        /* Product List Styles */
+        #products-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #eee;
+        }
+        .product h3 { margin-top: 10px; margin-bottom: 5px; }
+        .product p { font-size: 14px; color: #555; margin: 5px 0; }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Cloth Manufacturing Manager</h1>
+
+    <div id="app-container">
+        
+        <div id="product-list-container">
+            <h2>Current Products</h2>
+            <div id="products-list">
+                </div>
+        </div>
+
+        <div id="add-product-form-container">
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+                <div>
+                    <label for="name">Product Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div>
+                    <label for="sku">SKU:</label>
+                    <input type="text" id="sku" required>
+                </div>
+                <div>
+                    <label for="stock">Stock Quantity:</label>
+                    <input type="number" id="stock" required>
+                </div>
+                <div>
+                    <label for="image">Product Image:</label>
+                    <input type="file" id="image" accept="image/*" required>
+                </div>
+                <button type="submit" id="submit-button">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        // --- 1. SET UP CLIENT ---
+        const SUPABASE_URL = 'https://ziwypjemkbzgxkrkpdtt.supabase.co';
+        const SUPABASE_KEY = 'YOUR_NEW_ANON_PUBLIC_KEY'; // <-- PUT YOUR 'anon' KEY HERE
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        // --- 2. GET AND DISPLAY ALL PRODUCTS ---
+        const productList = document.getElementById('products-list');
+        
+        async function getProducts() {
+            const { data, error } = await supabase
+                .from('products')
+                .select('*')
+                .order('created_at', { ascending: false }); // Show newest first
+
+            if (error) {
+                console.error('Error fetching data:', error);
+                return;
+            }
+
+            // Clear the list
+            productList.innerHTML = ''; 
+            
+            // Loop and display
+            for (let product of data) {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                
+                // Use a placeholder if image_url is missing
+                const imgUrl = product.image_url ? product.image_url : 'https://via.placeholder.com/200x150';
+                
+                productDiv.innerHTML = `
+                    <img src="${imgUrl}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>SKU: ${product.sku}</p>
+                    <p>In Stock: ${product.stock_quantity}</p>
+                `;
+                productList.appendChild(productDiv);
+            }
+        }
+
+        // --- 3. HANDLE THE NEW PRODUCT FORM ---
+        const form = document.getElementById('add-product-form');
+        const submitButton = document.getElementById('submit-button');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Stop the form from refreshing the page
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const sku = document.getElementById('sku').value;
+            const stock = document.getElementById('stock').value;
+            const imageFile = document.getElementById('image').files[0];
+            
+            if (!name || !sku || !stock || !imageFile) {
+                alert('Please fill out all fields and select an image.');
+                return;
+            }
+
+            // Disable button to prevent double-clicks
+            submitButton.disabled = true;
+            submitButton.textContent = 'Uploading...';
+
+            try {
+                // --- Step 3a: Upload the image ---
+                const fileExt = imageFile.name.split('.').pop();
+                const fileName = `${Date.now()}.${fileExt}`;
+                const filePath = `public/${fileName}`;
+
+                const { data: uploadData, error: uploadError } = await supabase.storage
+                    .from('product_images') // The bucket name
+                    .upload(filePath, imageFile);
+
+                if (uploadError) {
+                    throw uploadError;
+                }
+
+                // --- Step 3b: Get the public URL for the image ---
+                const { data: urlData } = supabase.storage
+                    .from('product_images')
+                    .getPublicUrl(uploadData.path);
+                
+                const publicUrl = urlData.publicUrl;
+
+                // --- Step 3c: Insert all data into the 'products' table ---
+                const { error: insertError } = await supabase
+                    .from('products')
+                    .insert([
+                        { 
+                            name: name, 
+                            sku: sku, 
+                            stock_quantity: stock,
+                            image_url: publicUrl // Save the URL
+                        }
+                    ]);
+
+                if (insertError) {
+                    throw insertError;
+                }
+
+                // --- Step 3d: Success! ---
+                alert('Product added successfully!');
+                form.reset(); // Clear the form
+                getProducts(); // Refresh the product list
+
+            } catch (error) {
+                console.error('Error in form submission:', error.message);
+                alert(`Error: ${error.message}`);
+            } finally {
+                // Re-enable the button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Add Product';
+            }
+        });
+
+        // --- 4. LOAD PRODUCTS ON PAGE START ---
+        getProducts();
+
+    </script>
+</body>
+</html>
