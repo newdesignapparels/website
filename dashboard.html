@@ -92,124 +92,122 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-   <script>
-    // --- 1. SET UP CLIENT ---
-    const SUPABASE_URL = 'https://ziwypjemkbzgxkrkpdtt.supabase.co';
-    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inppd3lwamVta2J6Z3hrcmtwZHR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNTM1MDQsImV4cCI6MjA3NzgyOTUwNH0.AU7y4vEljGC5FTZJTlTuWlOmfpEg7cHEFK-Aacd4nWE';
-    
-    // **FIX 1: Rename the variable to 'client'**
-    const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-    // --- 2. GET AND DISPLAY ALL PRODUCTS ---
-    const productList = document.getElementById('products-list');
-    
-    async function getProducts() {
-        // **FIX 2: Use 'client' instead of 'supabase'**
-        const { data, error } = await client
-            .from('products')
-            .select('*')
-            .order('created_at', { ascending: false }); // Show newest first
-
-        if (error) {
-            console.error('Error fetching data:', error);
-            return;
-        }
-
-        productList.innerHTML = ''; 
+    <script>
+        // --- 1. SET UP CLIENT ---
+        const SUPABASE_URL = 'https://ziwypjemkbzgxkrkpdtt.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inppd3lwamVta2J6Z3hrcmtwZHR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNTM1MDQsImV4cCI6MjA3NzgyOTUwNH0.AU7y4vEljGC5FTZJTlTuWlOmfpEg7cHEFK-Aacd4nWE';
         
-        for (let product of data) {
-            const productDiv = document.createElement('div');
-            productDiv.className = 'product';
-            
-            const imgUrl = product.image_url ? product.image_url : 'https://via.placeholder.com/200x150';
-            
-            productDiv.innerHTML = `
-                <img src="${imgUrl}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>SKU: ${product.sku}</p>
-                <p>In Stock: ${product.stock_quantity}</p>
-            `;
-            productList.appendChild(productDiv);
-        }
-    }
+        // This 'supabase' on the right refers to the library from the CDN
+        const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    // --- 3. HANDLE THE NEW PRODUCT FORM ---
-    const form = document.getElementById('add-product-form');
-    const submitButton = document.getElementById('submit-button');
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault(); 
+        // --- 2. GET AND DISPLAY ALL PRODUCTS ---
+        const productList = document.getElementById('products-list');
         
-        const name = document.getElementById('name').value;
-        const sku = document.getElementById('sku').value;
-        const stock = document.getElementById('stock').value;
-        const imageFile = document.getElementById('image').files[0];
-        
-        if (!name || !sku || !stock || !imageFile) {
-            alert('Please fill out all fields and select an image.');
-            return;
-        }
-
-        submitButton.disabled = true;
-        submitButton.textContent = 'Uploading...';
-
-        try {
-            // --- Step 3a: Upload the image ---
-            const fileExt = imageFile.name.split('.').pop();
-            const fileName = `${Date.now()}.${fileExt}`;
-            const filePath = `public/${fileName}`;
-
-            // **FIX 3: Use 'client' instead of 'supabase'**
-            const { data: uploadData, error: uploadError } = await client.storage
-                .from('product_images') // The bucket name
-                .upload(filePath, imageFile);
-
-            if (uploadError) {
-                throw uploadError;
-            }
-
-            // --- Step 3b: Get the public URL for the image ---
-            // **FIX 4: Use 'client' instead of 'supabase'**
-            const { data: urlData } = client.storage
-                .from('product_images')
-                .getPublicUrl(uploadData.path);
-            
-            const publicUrl = urlData.publicUrl;
-
-            // --- Step 3c: Insert all data into the 'products' table ---
-            // **FIX 5: Use 'client' instead of 'supabase'**
-            const { error: insertError } = await client
+        async function getProducts() {
+            const { data, error } = await client
                 .from('products')
-                .insert([
-                    { 
-                        name: name, 
-                        sku: sku, 
-                        stock_quantity: stock,
-                        image_url: publicUrl // Save the URL
-                    }
-                ]);
+                .select('*')
+                .order('created_at', { ascending: false }); // Show newest first
 
-            if (insertError) {
-                throw insertError;
+            if (error) {
+                console.error('Error fetching data:', error);
+                return;
             }
 
-            // --- Step 3d: Success! ---
-            alert('Product added successfully!');
-            form.reset(); 
-            getProducts(); 
-
-        } catch (error) {
-            console.error('Error in form submission:', error.message);
-            alert(`Error: ${error.message}`);
-        } finally {
-            submitButton.disabled = false;
-            submitButton.textContent = 'Add Product';
+            productList.innerHTML = ''; 
+            
+            for (let product of data) {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                
+                const imgUrl = product.image_url ? product.image_url : 'https://via.placeholder.com/200x150';
+                
+                productDiv.innerHTML = `
+                    <img src="${imgUrl}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>SKU: ${product.sku}</p>
+                    <p>In Stock: ${product.stock_quantity}</p>
+                `;
+                productList.appendChild(productDiv);
+            }
         }
-    });
 
-    // --- 4. LOAD PRODUCTS ON PAGE START ---
-    getProducts();
+        // --- 3. HANDLE THE NEW PRODUCT FORM ---
+        const form = document.getElementById('add-product-form');
+        const submitButton = document.getElementById('submit-button');
 
-</script>
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); 
+            
+            const name = document.getElementById('name').value;
+            const sku = document.getElementById('sku').value;
+            const stock = document.getElementById('stock').value;
+            const imageFile = document.getElementById('image').files[0];
+            
+            if (!name || !sku || !stock || !imageFile) {
+                alert('Please fill out all fields and select an image.');
+                return;
+            }
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Uploading...';
+
+            try {
+                // --- Step 3a: Upload the image ---
+                const fileExt = imageFile.name.split('.').pop();
+                const fileName = `${Date.now()}.${fileExt}`;
+                
+                // ***** THIS IS THE LINE WE FIXED *****
+                const filePath = fileName; 
+
+                const { data: uploadData, error: uploadError } = await client.storage
+                    .from('product_images') // The bucket name
+                    .upload(filePath, imageFile);
+
+                if (uploadError) {
+                    throw uploadError;
+                }
+
+                // --- Step 3b: Get the public URL for the image ---
+                const { data: urlData } = client.storage
+                    .from('product_images')
+                    .getPublicUrl(uploadData.path);
+                
+                const publicUrl = urlData.publicUrl;
+
+                // --- Step 3c: Insert all data into the 'products' table ---
+                const { error: insertError } = await client
+                    .from('products')
+                    .insert([
+                        { 
+                            name: name, 
+                            sku: sku, 
+                            stock_quantity: stock,
+                            image_url: publicUrl // Save the URL
+                        }
+                    ]);
+
+                if (insertError) {
+                    throw insertError;
+                }
+
+                // --- Step 3d: Success! ---
+                alert('Product added successfully!');
+                form.reset(); 
+                getProducts(); 
+
+            } catch (error) {
+                console.error('Error in form submission:', error.message);
+                alert(`Error: ${error.message}`);
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Add Product';
+            }
+        });
+
+        // --- 4. LOAD PRODUCTS ON PAGE START ---
+        getProducts();
+
+    </script>
 </body>
 </html>
