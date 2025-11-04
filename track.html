@@ -72,6 +72,59 @@
         .gallery-delete-btn:hover {
             opacity: 1;
         }
+
+        /* NEW: Lightbox Modal Styles */
+        #lightboxModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        #lightboxImage {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .lightbox-close, .lightbox-prev, .lightbox-next {
+            position: absolute;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+            color: #bbb;
+        }
+        .lightbox-close {
+            top: 20px;
+            right: 30px;
+        }
+        .lightbox-prev {
+            left: 20px;
+        }
+        .lightbox-next {
+            right: 20px;
+        }
+        #lightboxCaption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ccc;
+            font-size: 16px;
+        }
+
     </style>
 </head>
 
@@ -274,6 +327,16 @@
         </div>
     </div>
 
+    <!-- NEW: Lightbox Modal for Full-screen Image Gallery -->
+    <div id="lightboxModal" class="modal hidden" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-prev" onclick="showPrevImage(event)">&#10094;</span>
+        <span class="lightbox-next" onclick="showNextImage(event)">&#10095;</span>
+        <img id="lightboxImage" src="" alt="Full-screen work order image" onclick="event.stopPropagation()">
+        <div id="lightboxCaption"></div>
+    </div>
+
+
     <script>
         // --- NEW: Supabase Setup ---
         // 1. Get these values from your Supabase project's API settings
@@ -296,6 +359,11 @@
         // --- NEW: Chart.js instances ---
         let statusChart = null;
         let monthlyQtyChart = null;
+
+        // --- NEW: Lightbox state ---
+        let currentLightboxImages = [];
+        let currentLightboxIndex = 0;
+
 
         // UPDATED stages array to include the new statuses in the production flow
         const stages = [
@@ -499,7 +567,7 @@
                 } else if (activeStatus === '') { // 'ALL'
                     return searchMatch;
                 } else { // Specific status filter
-                    return searchMatch && i.status === activeStatus;
+                    return searchMatch && i.status === activeTatus;
                 }
             });
 
@@ -532,13 +600,11 @@
                 card.className = `card-item ${colorClasses} bg-white rounded-lg shadow p-4 cursor-pointer`;
                 card.onclick = () => openDetailsModal(item);
                 
+                // --- MODIFIED: Simplified card HTML ---
                 card.innerHTML = `
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-lg ${colorName}">${item.workNo}</h3>
-                        <!-- MODIFIED: Pass item.id (uuid) to onStatusChange -->
-                        <select class="status-dropdown border rounded-lg px-2 py-1 text-sm bg-white" onchange="onStatusChange(event, '${item.id}')" onclick="event.stopPropagation()">
-                            ${allPossibleStatuses.map(s => `<option value="${s}" ${s === item.status ? 'selected' : ''}>${s}</option>`).join('')}
-                        </select>
+                        <span class="text-sm font-medium px-2 py-1 rounded ${progress.percent === 100 ? 'bg-green-100 text-green-700' : (progress.percent === 0 ? 'bg-gray-100 text-gray-700' : 'bg-indigo-100 text-indigo-700')}">${item.status}</span>
                     </div>
                     <p class="text-gray-700 font-medium">${item.company || 'N/A'}</p>
                     <p class="text-sm text-gray-500">Delivery: ${item.deliveryDate || 'N/A'}</p>
@@ -550,15 +616,9 @@
                     
                     <div class="flex justify-end gap-2">
                         <button class="edit-btn text-sm text-blue-600 hover:underline">Edit</button>
-                        <button class="delete-btn text-sm text-red-600 hover:underline">Delete</button>
                     </div>
                 `;
-                
-                card.querySelector('.delete-btn').addEventListener('click', (e) => {
-                    e.stopPropagation(); // Stop click from bubbling up to the card
-                    // MODIFIED: Pass item.id (uuid) for deletion
-                    openConfirmModal(item.id, 'order', item.workNo);
-                });
+                // --- End MODIFIED card HTML ---
                 
                 card.querySelector('.edit-btn').addEventListener('click', (e) => {
                     e.stopPropagation(); // Stop click from bubbling up to the card
@@ -911,12 +971,13 @@
                 </div>
             `;
 
-            // --- NEW: Image Gallery and Upload Logic ---
+            // --- NEW: Image Gallery and Upload Logic (MODIFIED for Lightbox) ---
             const gallery = document.getElementById('imageGallery');
             gallery.innerHTML = ''; // Clear old images
+            const publicUrls = []; // To store URLs for the lightbox
             
             if (item.images && item.images.length > 0) {
-                item.images.forEach(image => {
+                item.images.forEach((image, index) => {
                     // Get public URL for the image
                     const { data } = supabaseClient
                         .storage
@@ -924,12 +985,30 @@
                         .getPublicUrl(image.image_path);
                     
                     if (data.publicUrl) {
+                        publicUrls.push(data.publicUrl); // Add URL for lightbox
+
                         const imgContainer = document.createElement('div');
                         imgContainer.className = 'gallery-image-container rounded-lg overflow-hidden border border-gray-200';
-                        imgContainer.innerHTML = `
-                            <img src="${data.publicUrl}" alt="Work order image" class="w-full h-24 object-cover">
-                            <button class="gallery-delete-btn" onclick="openConfirmModal('${image.id}', 'image', '${image.image_path}')">&times;</button>
-                        `;
+                        
+                        // Create image
+                        const img = document.createElement('img');
+                        img.src = data.publicUrl;
+                        img.alt = 'Work order image';
+                        img.className = 'w-full h-24 object-cover cursor-pointer';
+                        // Add click event to open lightbox
+                        img.onclick = () => openLightbox(publicUrls, index); 
+                        
+                        // Create delete button
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.className = 'gallery-delete-btn';
+                        deleteBtn.innerHTML = '&times;';
+                        deleteBtn.onclick = (e) => { 
+                            e.stopPropagation(); // Prevent modal from closing
+                            openConfirmModal(image.id, 'image', image.image_path);
+                        };
+
+                        imgContainer.appendChild(img);
+                        imgContainer.appendChild(deleteBtn);
                         gallery.appendChild(imgContainer);
                     }
                 });
@@ -948,23 +1027,27 @@
             document.getElementById('detailsModal').classList.add('hidden');
         }
         
-        // --- Function to handle direct status change from card ---
+        // --- Function to handle direct status change from card (REMOVED) ---
+        // onStatusChange is no longer needed here as the dropdown was removed from the card.
+        // Status changes are now handled via the Edit Modal.
+        // We will keep the function definition in case we want to re-add it,
+        // but it's not currently used from the main card.
         async function onStatusChange(event, itemId) {
+            // This function is still used by the (now-removed) card dropdown.
+            // If you add a status dropdown back to the card, this will work.
             const newStatus = event.target.value;
             const select = event.target;
             select.disabled = true;
 
-            // --- REPLACED: Google Apps Script with Supabase ---
             const { error } = await supabaseClient
                 .from('work_orders')
                 .update({ status: newStatus })
-                .eq('id', itemId); // Use the 'id' (uuid) to update
+                .eq('id', itemId); 
 
             if (error) {
                 handleFailure(error);
-                loadData(); // Reload data to revert any optimistic changes
+                loadData(); 
             } else {
-                // Update local data for immediate UI response
                 const itemIndex = allData.findIndex(i => i.id == itemId);
                 if (itemIndex > -1) {
                     allData[itemIndex].status = newStatus;
@@ -974,8 +1057,8 @@
                 renderStats();
                 renderUpcomingOrders();
             }
-            // 'select.disabled = false' is not needed since render() rebuilds the card
         }
+
 
         // --- ADD ---
         function openAddModal() {
@@ -1178,10 +1261,33 @@
             // Supabase will automatically delete all associated images from the DB.
             // However, it will NOT delete them from Storage.
             
-            // TODO: For a complete solution, you would first query all image paths for this order,
-            // delete them from Storage, then delete the order record.
-            // For simplicity, we just delete the order record here.
+            // We need to fetch all image paths first to delete from storage
+            const { data: images, error: fetchError } = await supabaseClient
+                .from('work_order_images')
+                .select('image_path')
+                .eq('work_order_id', itemId);
+
+            if (fetchError) {
+                handleFailure(fetchError);
+                btn.textContent = 'Delete';
+                btn.disabled = false;
+                return;
+            }
+
+            // Delete images from storage
+            if (images && images.length > 0) {
+                const imagePaths = images.map(img => img.image_path);
+                const { error: storageError } = await supabaseClient
+                    .storage
+                    .from(IMAGE_BUCKET)
+                    .remove(imagePaths);
+                
+                if (storageError) {
+                    console.error("Error deleting from storage, but proceeding with DB delete:", storageError);
+                }
+            }
             
+            // Now delete the order (which will cascade-delete image records from DB)
             const { error } = await supabaseClient
                 .from('work_orders')
                 .delete()
@@ -1238,8 +1344,52 @@
             document.getElementById('confirmDeleteBtn').textContent = 'Delete';
             document.getElementById('confirmDeleteBtn').disabled = false;
         }
+
+        // --- NEW: Lightbox Gallery Functions ---
+        function openLightbox(images, index) {
+            currentLightboxImages = images;
+            currentLightboxIndex = index;
+            document.getElementById('lightboxModal').classList.remove('hidden');
+            updateLightboxImage();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+            currentLightboxImages = [];
+            currentLightboxIndex = 0;
+        }
+
+        function showNextImage(event) {
+            event.stopPropagation(); // Prevent modal from closing
+            currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
+            updateLightboxImage();
+        }
+
+        function showPrevImage(event) {
+            event.stopPropagation(); // Prevent modal from closing
+            currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
+            updateLightboxImage();
+        }
+
+        function updateLightboxImage() {
+            if (currentLightboxImages.length === 0) return;
+            
+            document.getElementById('lightboxImage').src = currentLightboxImages[currentLightboxIndex];
+            document.getElementById('lightboxCaption').textContent = `Image ${currentLightboxIndex + 1} of ${currentLightboxImages.length}`;
+
+            // Hide/show arrows if only one image
+            const prevArrow = document.querySelector('.lightbox-prev');
+            const nextArrow = document.querySelector('.lightbox-next');
+            if (currentLightboxImages.length <= 1) {
+                prevArrow.style.display = 'none';
+                nextArrow.style.display = 'none';
+            } else {
+                prevArrow.style.display = 'block';
+                nextArrow.style.display = 'block';
+            }
+        }
+
     </script>
 </body>
 </html>
-
 
